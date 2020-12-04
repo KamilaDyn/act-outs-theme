@@ -1,0 +1,23 @@
+@media screen and (max-width: 600px) {
+
+    #message {
+        .author-thumbnail {
+
+            &:before,
+            &:after {
+                width: 150px;
+            }
+
+            &:before {
+                margin-right: 15px;
+            }
+
+            &:after {
+                margin-left: 15px;
+            }
+
+        }
+    }
+
+
+}

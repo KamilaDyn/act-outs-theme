@@ -1,0 +1,134 @@
+/*--------------------------------------------------------------
+# Layouts and titles
+--------------------------------------------------------------*/
+
+section {
+    position: relative;
+}
+
+.relative {
+    display: block;
+    position: relative;
+}
+
+.relative {
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.entry-content {
+    margin-top: 0;
+}
+
+
+.wrapper {
+    width: 90%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.entry-title {
+    font-size: 30px;
+    word-wrap: break-word;
+}
+
+.section-header {
+    position: relative;
+    display: block;
+    margin-bottom: 50px;
+
+    .section-title {
+        &:before {
+            right: 100%;
+            margin-right: 10px;
+        }
+
+        &:after {
+            left: 100%;
+            margin-left: 10px;
+        }
+
+    }
+}
+
+.section-title {
+    text-align: center;
+    width: 100%;
+    background: transparent;
+    display: inline-block;
+    position: relative;
+    padding: 30px 0 0;
+    vertical-align: middle;
+    font-size: 30px;
+    margin: 0 0 15px;
+    word-wrap: break-word;
+    color: $darkblue;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-family: 'Oxygen', cursive;
+}
+
+.section-subtitle {
+    margin: 0 auto;
+    color: #f9f9f9;
+    font-size: 18px;
+    font-weight: 400;
+    position: relative;
+    max-width: 600px;
+    line-height: 24px;
+}
+
+
+
+.overlay {
+    background-image: linear-gradient(rgba(253, 45, 85, 0.4), rgba(26, 26, 55, 0.4));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+
+.btn {
+    border-radius: 2px;
+    color: #fff;
+    display: inline-block;
+    font-weight: 600;
+    padding: 7px 25px;
+    font-size: 14px;
+    position: relative;
+    border: 2px solid;
+    background-color: $red;
+    border-color: $red;
+    border-radius: 20px;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: transparent;
+    border-color: $red;
+    color: #333;
+}

@@ -1,0 +1,35 @@
+#welcome-video {
+    margin: 20px auto 0 auto;
+    min-height: 700px;
+
+    .wrapper {
+        background-color: $white;
+        padding-bottom: 50px;
+    }
+
+    .responsive-container {
+        height: 500px;
+        width: 90%;
+    }
+
+    .entry-header h2 {
+        padding: 20px 0 50px 0;
+        text-align: center;
+    }
+
+    .wave {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        border: none;
+    }
+
+    .wave svg {
+        overflow: hidden;
+    }
+
+
+}

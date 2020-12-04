@@ -1,0 +1,29 @@
+/*Extra*/
+
+.blog-banner #page-site-header {
+    display: none;
+}
+
+.blog-banner .wrapper.page-section {
+    padding: 0px;
+}
+
+.blog-posts-wrapper article {
+    padding: 0 15px;
+}
+
+.blog .wrapper.page-section {
+    padding: 0px;
+}
+
+body.paged #popular,
+body.paged #blog,
+body.paged #video,
+body.paged #instagram {
+    display: none;
+}
+
+.page-template-default.page .page-section,
+.single.single-post .page-section {
+    padding: 20px 0;
+}

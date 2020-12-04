@@ -1,0 +1,141 @@
+@media screen and (max-width: 767px) {
+    #masthead.site-header .main-navigation ul.nav-menu {
+        max-width: 100%;
+    }
+
+    #featured-slider button.slick-arrow,
+    #featured-slider:hover button.slick-arrow {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    #page-site-header .page-title {
+        font-size: 24px;
+    }
+
+    #blog .section-content.col-3 article {
+        width: 100%;
+        float: none;
+    }
+
+    #blog .section-content.col-3 article:nth-child(3n+1) {
+        clear: none;
+        float: none;
+    }
+
+    #blog .section-content.col-3 article.large-width {
+        width: 100%;
+    }
+
+    #message .author-thumbnail,
+    #message .entry-container {
+        width: 100%;
+
+    }
+
+    #message .author-thumbnail img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #instagram .section-content {
+        margin: 40px 0px 0 0px;
+    }
+
+    #instagram .hentry img {
+        width: 100%;
+    }
+
+    .comment-navigation .nav-previous,
+    .posts-navigation .nav-previous,
+    .post-navigation .nav-previous,
+    .comment-navigation .nav-next,
+    .posts-navigation .nav-next,
+    .post-navigation .nav-next {
+        width: 100%;
+        margin: 15px 0;
+    }
+
+    .posts-navigation .nav-previous,
+    .posts-navigation .nav-next {
+        width: auto;
+        margin: 0;
+    }
+
+    .post-navigation span.previous-article b,
+    .post-navigations span.previous-article b,
+    .post-navigation span.next-article b,
+    .post-navigations span.next-article b {
+        font-size: 18px;
+    }
+
+    .posts-navigation .nav-previous,
+    .posts-navigation .nav-next {
+        width: 180px;
+        display: block;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .posts-navigation .nav-previous+.nav-next {
+        margin-top: 25px;
+    }
+
+    #respond {
+        margin-top: 40px;
+    }
+
+    .comment-meta img {
+        margin-right: 15px;
+    }
+
+    .comments-title,
+    #reply-title {
+        margin-bottom: 0;
+    }
+
+    #commentform p.comment-form-comment,
+    #commentform p.form-submit {
+        margin-top: 21px;
+    }
+
+    nav.navigation.pagination,
+    #secondary {
+        margin-top: 30px;
+    }
+
+    .comments-title,
+    #reply-title {
+        font-size: 26px;
+    }
+
+    #comments {
+        margin-top: 40px;
+    }
+
+    .tags-links {
+        margin-bottom: 25px;
+    }
+
+    #video .entry-container {
+        padding: 50px 0 0 0;
+    }
+
+    #singleevent .date-info {
+        text-align: center;
+    }
+
+    #singleevent .date-info .event-date,
+    #singleevent .date-info .event-header,
+    #singleevent .date-info .event-time {
+        margin-bottom: 20px;
+    }
+
+    .single-event-info .read-more {
+        float: none;
+        text-align: center;
+    }
+
+}

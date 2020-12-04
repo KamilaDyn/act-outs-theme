@@ -1,0 +1,42 @@
+/*--------------
+section gallery
+----------------
+*/
+
+
+
+#gallery-slider {
+    article {
+        padding: 300px 0;
+    }
+
+    .wrapper {
+        position: relative;
+        z-index: 1;
+    }
+
+
+    article {
+
+        padding: 150px 0;
+        background-size: cover;
+        background-position: 50%;
+        position: relative;
+        background-color: #111;
+    }
+
+    .slick-prev {
+        left: 10px;
+    }
+
+    .slick-next {
+        right: 10px;
+    }
+
+    .slick-dots {
+        bottom: 5%;
+    }
+
+
+
+}

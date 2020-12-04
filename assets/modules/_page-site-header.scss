@@ -1,0 +1,54 @@
+/*--------------------------------------------------------------
+#  Page Site Header
+--------------------------------------------------------------*/
+
+
+#custom-header-image {
+    background-color: #343434;
+}
+
+#page-site-header {
+    background-color: $darkblue;
+    background-size: cover;
+    background-position: 50%;
+    position: relative;
+    text-align: center;
+    padding: 280px 0;
+
+    &:before {
+        content: "";
+        background-color: #000;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+    }
+
+    .page-title {
+        max-width: 560px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        display: inline-block;
+        background-image: linear-gradient(rgba($darkblue, 0.5), rgba(26, 26, 55, 0.5));
+        color: $white;
+        font-size: 32px;
+        font-weight: bold;
+        padding: 30px;
+        min-width: 200px;
+    }
+
+    .page-header {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: 0 auto;
+        transform: translateY(-50%);
+    }
+
+
+}

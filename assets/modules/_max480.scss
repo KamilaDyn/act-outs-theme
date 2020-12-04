@@ -1,0 +1,61 @@
+/*--------------------------------------------------------------
+#                   RESPONSIVE
+--------------------------------------------------------------*/
+
+
+
+@media screen and (max-width: 480px) {
+    #masthead .wrapper {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .site-branding {
+        min-height: auto;
+        text-align: center;
+        width: 100%;
+        float: none;
+        padding: 15px;
+        display: block;
+    }
+
+    .menu-toggle {
+        margin: auto;
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: center;
+        width: 65px;
+        height: 65px;
+    }
+
+    .main-navigation {
+        float: none;
+    }
+
+    .main-navigation {
+        float: none;
+    }
+
+    #message .author-thumbnail {
+
+        &::before,
+        &::after {
+            width: 100px;
+        }
+
+        &:before {
+            margin-right: 10px;
+        }
+
+        &:after {
+            margin-left: 10px;
+        }
+    }
+
+
+    #our-story .content-wrapper {
+        padding: 25px;
+    }
+}

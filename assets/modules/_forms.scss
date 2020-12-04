@@ -1,0 +1,199 @@
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import 'variables';
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    border: 1px solid;
+    border-color: $lightgray $lightgray #bbb;
+    border-radius: 3px;
+    background: $white;
+    color: rgba(0, 0, 0, .8);
+    font-size: 12px;
+    font-size: 0.75rem;
+    line-height: 1;
+    padding: .6em 1em .4em;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+    border-color: #ccc #bbb #aaa;
+}
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+    border-color: #aaa #bbb #bbb;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+    color: $white;
+    border: 1px solid $lightgray;
+    border-radius: 0;
+    padding: 3px;
+}
+
+select {
+    border: 1px solid $lightgray;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+    color: #fff;
+    outline: dotted;
+}
+
+textarea {
+    width: 100%;
+}
+
+textarea,
+#respond input,
+.wpcf7 input {
+    width: 100%;
+    border: none;
+    background-color: $black3;
+    border-radius: 0;
+    outline: none;
+    height: 40px;
+    padding: 0 15px;
+}
+
+#respond input {
+    border: none;
+    min-height: 50px;
+}
+
+#respond textarea,
+textarea {
+    height: 200px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #555;
+}
+
+#respond input[type="text"],
+#respond input[type="email"],
+#respond input[type="url"],
+.wpcf7 input {
+    background-color: #555;
+}
+
+#respond input[type="submit"] {
+    border-radius: 2px;
+    color: #fff;
+    display: inline-block;
+    font-weight: 600;
+    padding: 7px 25px;
+    font-size: 14px;
+    position: relative;
+    border: 2px solid;
+    background-color: #fd2d55;
+    border-color: #fd2d55;
+    color: #fff;
+    z-index: 1;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+#respond input[type="submit"]:hover,
+#respond input[type="submit"]:focus {
+    background-color: #333;
+    border-color: #333;
+    color: #fff;
+}
+
+#respond input[type="checkbox"] {
+    min-height: auto;
+    height: auto;
+    float: left;
+    margin-right: 10px;
+    width: auto;
+}
+
+#respond .comment-form-cookies-consent label {
+    display: table;
+    margin: 0;
+    line-height: 1;
+}
+
+#commentform .comment-form-cookies-consent {
+    clear: both;
+    display: inline-block;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 0;
+}
+
+p.form-submit {
+    clear: both;
+    display: inline-block;
+    position: relative;
+}
+
+.comment-notes {
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 0;
+}
+
+#respond label {
+    color: #fff;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+#commentform p {
+    margin-bottom: 21px;
+}
+
+#commentform p.comment-form-comment {
+    margin-bottom: 0;
+}
+
+#commentform p.form-submit {
+    margin: 21px 0 0;
+}
+
+#comments {
+    margin: 50px 0 0;
+}
