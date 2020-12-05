@@ -49,7 +49,10 @@ if (!function_exists('act_outs_setup')) :
 		 */
 		add_theme_support('post-thumbnails');
 		add_image_size('act-outs-blog', 360, 270, true);
-		add_image_size('video-poster', 520, 351);
+		add_image_size('video-poster', 520, 350, true);
+		add_image_size('video-poster-welcome', 950, 450, true);
+		add_image_size('page-image', 1060, 470, true);
+		add_image_size('single-page-image', 700, 350, true);
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
@@ -183,6 +186,22 @@ function act_outs_widgets_init()
 }
 add_action('widgets_init', 'act_outs_widgets_init');
 
+/**
+ * Remove archive title:, 
+ */
+add_filter('get_the_archive_title', function ($title) {
+	if (is_tag()) {
+		$title = single_tag_title('', false);
+	} elseif (is_author()) {
+		$title = '<span class="vcard">' . get_the_author() . '</span>';
+	} elseif (is_tax()) { //for custom post types
+		$title = sprintf(__('%1$s'), single_term_title('', false));
+	} elseif (is_post_type_archive()) {
+		$title = post_type_archive_title('', false);
+	}
+	return $title;
+});
+
 
 /**
  * Register custom fonts.
@@ -266,6 +285,32 @@ function act_outs_scripts()
 	}
 }
 add_action('wp_enqueue_scripts', 'act_outs_scripts');
+
+
+
+/* customize login page */
+function ourheaderurl()
+{
+	return esc_url(site_url('/'));
+}
+add_filter('login_headerurl', 'ourheaderurl');
+
+/*change login style */
+function my_login_CSS()
+{
+	wp_enqueue_style('custom-login',  get_stylesheet_directory_uri() . '/style.css');
+	wp_enqueue_style('act-outs-google-fonts', $fonts_url, array(), null);
+}
+add_action('login_enqueue_scripts', 'my_login_CSS');
+
+
+/*change login headline title */
+
+function ourLoginTitle()
+{
+	return get_bloginfo('name');
+}
+add_filter('login_headertext', 'ourLoginTitle');
 
 /**
  * Load init.

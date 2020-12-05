@@ -81,21 +81,13 @@
         text-align: center;
     }
 
-    .col-1 {
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .section-content.col-1,
     .section-content.col-2 {
-        max-width: 400px;
         margin-left: auto;
         margin-right: auto;
     }
 
     .section-content.col-2 {
-        width: 85%;
+        width: 80%;
         max-width: 1200px;
         display: flex;
         flex-wrap: wrap;
@@ -138,12 +130,7 @@
 
     .service-content {
         .responsive-container {
-            // border-left: 10px solid #ccc;
-            // border-right: 10px solid #ccc;
-            // border-top: 10px solid #ccc;
             width: 96%;
-            min-height: 280px;
-
         }
 
         .img-preloader {
@@ -200,6 +187,10 @@
                 height: 100%;
             }
 
+            .img span img {
+                width: 80px;
+                height: 80px;
+            }
 
         }
     }

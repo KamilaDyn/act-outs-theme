@@ -10,10 +10,14 @@
 #page-site-header {
     background-color: $darkblue;
     background-size: cover;
-    background-position: 50%;
+    background-position: 100%;
+    background-position-x: center;
+    background-position-y: top;
     position: relative;
     text-align: center;
-    padding: 280px 0;
+    height: 300px;
+    background-repeat: no-repeat;
+
 
     &:before {
         content: "";

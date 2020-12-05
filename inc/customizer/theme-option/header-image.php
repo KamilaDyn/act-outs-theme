@@ -40,6 +40,29 @@ $wp_customize->add_control(
     )
 );
 
+
+/** Header Archive Image */
+$wp_customize->add_setting(
+    'theme_options[archive_event_header_image]',
+    array(
+        'default'           => '',
+        'sanitize_callback' => 'act_outs_sanitize_image',
+    )
+);
+
+$wp_customize->add_control(
+    new WP_Customize_Image_Control(
+        $wp_customize,
+        'theme_options[archive_event_header_image]',
+        array(
+            'label'         => esc_html__('Header Image For Archive Event Page', 'act-outs'),
+            'description'   => esc_html__('Choose Header Image of your choice for Archive Pages. Recommended size for this image is 1920px by 500px.', 'act-outs'),
+            'section'       => 'custom_header_image_settings',
+            'type'          => 'image',
+        )
+    )
+);
+
 /** Search Header Image */
 $wp_customize->add_setting(
     'theme_options[search_header_image]',

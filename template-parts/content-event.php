@@ -14,7 +14,8 @@ if (has_post_thumbnail()) {
     $img_class = 'has-post-thumbnail';
 } else {
     $img_class = 'no-post-thumbnail';
-} ?>
+}
+?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('grid-item ' . $img_class); ?>>
 
@@ -45,7 +46,10 @@ if (has_post_thumbnail()) {
             </header><!-- .entry-header -->
 
             <div class="entry-content">
-                <p> <?php echo wp_trim_words(get_the_content(), 30); ?></p>
+                <?php $content = strip_shortcodes(wp_trim_words(get_the_content(), 30));
+                $content = apply_filters('the_content', $content);
+                $content = str_replace(']]>', ']]&gt;', $content);
+                echo $content; ?>
                 <a class="btn" href="<?php the_permalink(); ?>">Read more</a>
             </div><!-- .entry-content -->
 

@@ -36,6 +36,7 @@ $wp_customize->add_control(new Act_Outs_Switch_Control(
     array(
         'label'     => __('Disable welcome video Section', 'act-outs'),
         'section'                => 'section_welcome_video',
+        'settings'          => 'theme_options[disable_welcome-video_section]',
         'on_off_label'         => act_outs_switch_options(),
     )
 ));
@@ -61,24 +62,23 @@ $wp_customize->add_control(
     )
 );
 
-// Choose post with video
+// Choose page with video
 $wp_customize->add_setting(
     'theme_options[welcome_video]',
     array(
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'act_outs_dropdown_posts'
+        'sanitize_callback' => 'act_outs_dropdown_pages'
     )
 );
 
-$wp_customize->add_control(new Act_Outs_Dropdown_Chooser(
-    $wp_customize,
+$wp_customize->add_control(
     'theme_options[welcome_video]',
     array(
-        'label'       => __('Select Post for Video', 'act-outs'),
+        'label'       => __('Select Page for Video', 'act-outs'),
         'section'     => 'section_welcome_video',
-        'choices'      => act_outs_post_choices(),
-        'type'        => 'dropdown-posts',
+        'settings' =>     'theme_options[welcome_video]',
+        'type'        => 'dropdown-pages',
         'active_callback' => 'act_outs_welcome_video_active',
     )
-));
+);

@@ -67,6 +67,11 @@
     .post-navigation .nav-next {
         width: 100%;
         margin: 15px 0;
+
+    }
+
+    .post-navigation .nav-previous {
+        border-right: 1px solid $darkblue;
     }
 
     .posts-navigation .nav-previous,

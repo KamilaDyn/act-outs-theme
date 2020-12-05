@@ -49,7 +49,7 @@ if (has_post_thumbnail()) {
             </header><!-- .entry-header -->
 
             <div class="entry-content">
-                <?php echo wp_trim_words(get_the_content(), 30); ?> <br>
+                <?php the_excerpt(); ?>
                 <a class="btn" href="<?php the_permalink(); ?>">Go to lesson</a>
             </div><!-- .entry-content -->
 

@@ -10,14 +10,16 @@
 
 .widget:last-child {
     margin-bottom: 0;
+    padding-bottom: 30px;
 }
 
 
 #secondary {
+    background-color: $lightblue;
 
     .widget>ul li,
     .widget_nav_menu ul li {
-        padding: 10px 20px;
+        padding: 5px 20px;
         /*    background-color: #343434;*/
         font-weight: 500;
     }
@@ -28,6 +30,17 @@
     }
 
 
+    .widget ul {
+        list-style-type: none;
+
+        li::before {
+            content: "\f101";
+            font-family: "FontAwesome";
+            float: left;
+            margin-right: 15px;
+            color: $black3;
+        }
+    }
 
     .widget li:not(:last-child) {
         margin-bottom: 0;
@@ -96,7 +109,18 @@ form.search-form button.search-submit {
     outline: none;
 }
 
+
+
+
 .widget_search {
+    form.search-form input[type="search"] {
+        background-image: linear-gradient(rgba(16, 24, 239, 0.8), rgba(26, 26, 55, 0.8));
+        padding: 0 55px 0 15px;
+        height: 50px;
+        /*border: 1px solid #ddd;*/
+        transition: all 0.3s ease-in-out;
+    }
+
     form.search-form button.search-submit {
         width: 50px;
         color: #fff;
@@ -112,13 +136,7 @@ form.search-form button.search-submit {
         background-image: linear-gradient(rgba(253, 45, 85, 0.8), rgba(26, 26, 55, 0.8));
     }
 
-    form.search-form input[type="search"] {
-        padding: 0 55px 0 15px;
-        height: 50px;
-        background-image: linear-gradient(rgba(253, 45, 85, 0.8), rgba(26, 26, 55, 0.8));
-        /*border: 1px solid #ddd;*/
-        transition: all 0.3s ease-in-out;
-    }
+
 
     form.search-form input[type="search"]:focus {
         border-color: #f5f5f5;
@@ -215,20 +233,17 @@ form.search-form input {
 
     .widget-title,
     .widgettitle {
-        font-size: 30px;
+        font-size: 28px;
         text-transform: capitalize;
         padding: 15px 40px;
         margin-bottom: 0;
         font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
         /*border-bottom: 1px solid #efefef;*/
         /*background-color: #343434;*/
     }
 
-    .widget {
-        /*box-shadow: 0 1px 0 0 rgba(238, 238, 238, 0.6);*/
-        /*border: 1px solid #efefef;*/
-        background-image: linear-gradient(rgba(253, 45, 85, 0.2), rgba(26, 26, 55, 0.2));
-    }
 
     .widget_tag_cloud .tagcloud {
         padding: 15px 40px;
@@ -243,7 +258,7 @@ form.search-form input {
 
 
     a {
-        color: #fff;
+        color: $black3;
         font-weight: 500;
     }
 
@@ -302,11 +317,11 @@ input[type="submit"],
     width: auto;
     height: auto;
     line-height: 28px;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: $red;
+    }
 }
 
 input[type="submit"]:hover,

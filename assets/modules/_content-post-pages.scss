@@ -42,11 +42,15 @@
 
         article.post,
         .navigation,
-        #comments,
-        article {
-            background-image: linear-gradient(rgba(253, 45, 85, 0.3), rgba(26, 26, 55, 0.3));
+        #comments {
+            background-color: $lightblue;
             box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.05);
-            padding: 40px;
+            margin-top: 40px;
+
+        }
+
+        article .post-item {
+            box-shadow: none;
         }
 
         .site-main>article {
@@ -59,11 +63,14 @@
 
         .navigation a {
             padding: 25px;
+            color: $darkblue;
+
+            &:hover {
+                color: $red;
+            }
         }
 
-        .navigation .nav-previous a {
-            border-right: 1px solid #eee;
-        }
+
 
     }
 

@@ -1,7 +1,7 @@
 @media screen and (min-width: 1024px) {
     .main-navigation {
         border-top: 2px solid $red;
-        // border-bottom: 2px solid $red;
+        border-bottom: 2px solid $red;
         padding: 15px 0;
 
         .menu-item-has-children>a:after {
@@ -156,6 +156,20 @@
         color: #111;
     }
 
+    .main-navigation ul.nav-menu>li>a {
+
+        color: $darkblue
+    }
+
+
+    .grid .grid-item:nth-last-child(2) {
+        margin-top: 30px;
+    }
+
+    #page-site-header {
+        height: 470px;
+    }
+
     #about {
         .wrapper {
             padding: 60px;
@@ -187,7 +201,6 @@
     .left-sidebar #primary {
         width: 70%;
         float: left;
-        padding-right: 50px;
     }
 
     .right-sidebar #secondary,

@@ -127,7 +127,7 @@ section {
 
 
 .overlay {
-    background-image: linear-gradient(rgba(253, 45, 85, 0.4), rgba(26, 26, 55, 0.4));
+    background-image: linear-gradient(rgba($blue, 0.1), rgba($darkblue, 0.1));
     position: absolute;
     top: 0;
     left: 0;

@@ -15,10 +15,10 @@ $args = array(
 
 );
 
-$the_query = new WP_Query($args);
+$query  = new WP_Query($args);
 
 // The Loop
-while ($the_query->have_posts()) : $the_query->the_post();
+while ($query->have_posts()) :   $query->the_post();
 ?>
     <div class="section-content">
         <?php if (has_post_thumbnail()) : ?>
@@ -38,13 +38,12 @@ while ($the_query->have_posts()) : $the_query->the_post();
             </header>
             <div class="entry-content">
                 <?php
-                $excerpt = act_outs_the_excerpt(75);
+                $excerpt = act_outs_the_excerpt(85);
                 echo wp_kses_post(wpautop($excerpt));
                 ?>
             </div><!-- .entry-content -->
-
             <div class="separator"></div>
-            <?php act_outs_render_social_links() ?>
+            <a class="btn" href="<?php echo get_permalink(); ?>">Read more</a>
         </div>
     </div><!-- .section-content -->
 <?php endwhile;

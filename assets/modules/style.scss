@@ -67,7 +67,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import 'menu';
 @import 'content-post-pages';
 @import 'layouts-and-title';
+@import 'page';
 @import 'page-site-header';
+@import 'blog-post-wrapper';
 @import 'gallery-slider-section';
 @import 'featured-slider-section';
 @import 'video';
@@ -75,6 +77,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import 'courses-section';
 @import 'message-section';
 @import 'about-section';
+@import 'single';
+@import 'comments';
 @import 'footer';
 @import 'widgets';
 @import 'min567';

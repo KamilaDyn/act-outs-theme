@@ -12,9 +12,11 @@ get_header(); ?>
 <div class="wrapper page-section">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main blog-posts-wrapper" role="main">
+
 			<div class="col-3 grid">
 
 				<?php
+
 				if (have_posts()) :
 					/* Start the Loop */
 					while (have_posts()) : the_post();

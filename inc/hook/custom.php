@@ -275,7 +275,7 @@ if (!function_exists('act_outs_banner_header')) :
     {
 
         if (is_front_page() && is_home()) {
-            $header_image = get_header_image();
+            $header_image = get_header_image('page-image');
             $header_image_url = !empty($header_image) ?  $header_image : get_template_directory_uri() . '/assets/images/default-header.jpg';
         } elseif (is_front_page()) {
             return;
@@ -341,7 +341,7 @@ if (!function_exists('act_outs_banner_image')) :
         $archive_header = act_outs_get_option('archive_header_image');
         $search_header = act_outs_get_option('search_header_image');
         $header_404 = act_outs_get_option('404_header_image');
-
+        $archive_header_event = act_outs_get_option('archive_event_header_image');
         if (is_home() && !is_front_page()) {
             $image_url      = get_the_post_thumbnail_url(get_option('page_for_posts'), 'full');
             $header_image = get_header_image();
@@ -352,12 +352,14 @@ if (!function_exists('act_outs_banner_image')) :
             $header_image = get_header_image();
             $fallback_image = !empty($header_image) ?  $header_image : get_template_directory_uri() . '/assets/images/default-header.jpg';
             $image_url      = (!empty($image_url)) ? $image_url : $fallback_image;
-        } elseif (is_archive()) {
+        } elseif (!is_archive('event') && is_archive()) {
             $image_url = (!empty($archive_header)) ? $archive_header : get_template_directory_uri() . '/assets/images/default-header.jpg';
         } elseif (is_search()) {
             $image_url = (!empty($search_header)) ? $search_header : get_template_directory_uri() . '/assets/images/default-header.jpg';
         } elseif (is_404()) {
             $image_url = (!empty($header_404)) ? $header_404 : get_template_directory_uri() . '/assets/images/default-header.jpg';
+        } elseif (is_archive('event')) {
+            $image_url = (!empty($archive_header_event)) ?     $archive_header_event : get_template_directory_uri() . '/assets/images/default-header.jpg';
         }
         return $image_url;
     }

@@ -1,0 +1,60 @@
+.single {
+    #primary {
+        background-color: $white;
+    }
+
+    #primary .event {
+
+        .entry-meta a {
+            color: $gray8;
+            font-weight: bold;
+        }
+
+        .entry-meta.event-date {
+            h3 {
+                text-align: center;
+                color: $red;
+            }
+        }
+
+        .post-item {
+            padding: 30px 15px 50px 15px;
+
+            span,
+            a {
+                color: $gray5;
+            }
+        }
+
+        .entry-header .entry-title {
+            text-align: center;
+            color: $darkblue;
+            font-weight: bold;
+        }
+
+        .entry-container {
+            .entry-title {
+                font-weight: bold;
+                color: $gray8;
+                text-align: center;
+            }
+
+            p {
+                text-align: justify;
+            }
+        }
+
+
+        #comments {
+            margin-top: 0;
+            padding: 20px 30px 50px 20px;
+        }
+    }
+
+
+
+}
+
+.single #colophon {
+    margin-top: 0;
+}
