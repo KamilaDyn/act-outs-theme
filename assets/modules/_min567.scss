@@ -90,9 +90,13 @@
     }
 
     #featured-slider {
-        article {
-            padding: 300px 0;
+        .slick-item {
+            padding: 235px 0;
         }
+    }
+
+    #gallery-slider .slick-item {
+        padding: 220px 0;
     }
 
     .blog-posts-wrapper .col-3 article {

@@ -30,9 +30,23 @@
         line-height: 35px;
     }
 
+    #courses {
+        .entry-content {
+            margin-top: 15px;
+            padding: 10px 0;
+        }
+
+        .col-2 article {
+            width: 100%;
+        }
+
+    }
+
+
     #page-site-header {
         padding: 175px 0;
     }
+
 
     body.blog.right-sidebar .blog-posts-wrapper .col-3 article,
     body.archive.right-sidebar .blog-posts-wrapper .col-3 article,

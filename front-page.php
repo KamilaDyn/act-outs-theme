@@ -59,8 +59,8 @@ if ('posts' != get_option('show_on_front')) {
                 if (true == $disable_featured_slider) : ?>
 
                     <section id="<?php echo esc_attr($section['id']); ?>">
+                        <div class="wrapper"> <?php get_template_part('inc/sections/section', esc_attr($section['id'])); ?></div>
 
-                        <?php get_template_part('inc/sections/section', esc_attr($section['id'])); ?>
                     </section>
                 <?php endif; ?>
 

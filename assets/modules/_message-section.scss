@@ -4,14 +4,38 @@
 
 
 #message {
-    background: $white;
+    padding: 0;
     text-align: center;
-    padding: 100px 0 30px 0;
+
+    .wrapper {
+        padding: 100px 50px 30px 30px;
+        background: $white;
+    }
 
 
     .section-content {
         /*max-width: 800px;*/
         margin: auto;
+        padding: 60px 0 0;
+
+        .author-thumbnail {
+            position: relative;
+            border: 1px solid #f6f4f3;
+            border-top-color: #fff;
+            border-radius: 3px;
+            border-top-color: #fff;
+            border-radius: 3px;
+            background-color: #ebe8e5;
+            box-shadow: 0 0 2px 2px rgba(0, 0, 0, .15);
+            overflow: hidden;
+
+            .img {
+                padding: 7px;
+                position: relative;
+            }
+
+
+        }
     }
 
     .entry-header {
@@ -55,7 +79,7 @@
     }
 
     .author-thumbnail img {
-        width: 400px;
+
         height: 400px;
     }
 
@@ -63,7 +87,7 @@
         width: 55%;
         position: relative;
         float: right;
-        padding: 60px 0;
+
     }
 
     .entry-container.no-feature-image {
@@ -73,25 +97,22 @@
 
 
     .author-thumbnail {
-        a {
-            &::before {
+        div {
+            &:before {
                 content: "";
-                border: 6px solid #fd2d55;
-                width: 400px;
-                bottom: 0;
-                left: 70px;
-                right: 28px;
+                border: 1px solid #fff;
                 position: absolute;
-                top: 240px;
-                bottom: -240px;
-                z-index: -1;
-                -webkit-transform: translateY(-50%);
-                -moz-transform: translateY(-50%);
-                -ms-transform: translateY(-50%);
-                -o-transform: translateY(-50%);
-                transform: translateY(-50%);
+                top: 15px;
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+                opacity: 1;
+                display: block;
+                transition: all 0.3s ease-in-out;
 
+                z-index: 2;
             }
+
         }
     }
 

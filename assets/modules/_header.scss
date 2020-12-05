@@ -4,11 +4,60 @@
 #masthead {
     background: $darkblue;
 
+    .header-top {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        background-color: rgba(26, 26, 55, 0.8);
+        padding: 0 30px;
+        align-items: center;
+
+        .container a {
+            margin-right: 20px;
+        }
+
+        .container a i {
+            padding-right: 5px;
+        }
+
+        .login-container {
+            margin: 5px 0;
+        }
+
+    }
+
+
+
 
 
 }
 
 .site-branding {
+    background-color: $white;
+    padding: 20px 0;
+
+    .site-logo {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+
+        .custom-logo-link {
+            padding-right: 30px;
+        }
+
+        img {
+            width: auto;
+            height: 200px;
+        }
+    }
+
+    .logo-alternative {
+        img {
+            height: 100px;
+        }
+    }
+
     .site-title {
         text-align: center;
     }

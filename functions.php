@@ -49,6 +49,7 @@ if (!function_exists('act_outs_setup')) :
 		 */
 		add_theme_support('post-thumbnails');
 		add_image_size('act-outs-blog', 360, 270, true);
+		add_image_size('video-poster', 520, 351);
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
@@ -94,6 +95,15 @@ if (!function_exists('act_outs_setup')) :
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 180,
+				'width'       => 517,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
 		add_theme_support(
 			'custom-logo',
 			array(
@@ -240,6 +250,7 @@ function act_outs_scripts()
 	wp_enqueue_script('jquery-packery', get_template_directory_uri() . '/assets/js/packery.pkgd' . $min . '.js', array('jquery'), '2017417', true);
 
 	wp_enqueue_script('act-outs-navigation', get_template_directory_uri() . '/assets/js/navigation' . $min . '.js', array(), '20151215', true);
+	wp_enqueue_script('lightbox', get_template_directory_uri() . '/assets/js/lightbox.js', array(), '1.0.0', true);
 
 	wp_enqueue_script('act-outs-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix' . $min . '.js', array(), '20151215', true);
 	$enable_counter = act_outs_get_option('disable_singleevent_counter');

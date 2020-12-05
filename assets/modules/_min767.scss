@@ -43,6 +43,8 @@
         }
     }
 
+
+
     #blog {
         .col-3 article {
             width: 33.33%;
@@ -76,13 +78,19 @@
 
     }
 
-    #courses .col-3 article {
-        width: 33.33%;
-    }
+    #courses {
+        .entry-content {
+            margin-top: 15px;
+            padding: 10px 0;
+        }
 
+        .col-3 article {
+            width: 33.33%;
+        }
 
-    #courses .col-3 article:nth-child(2n+1) {
-        clear: none;
+        .col-3 article:nth-child(2n+1) {
+            clear: none;
+        }
     }
 
 

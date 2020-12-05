@@ -29,10 +29,10 @@ if (!function_exists('act_outs_get_default_theme_options')) :
 
         $default['disable_courses_section'] = false;
 
-        // Featured Slider Section
+        // Top Bar Section 
         $defaults['disable_show_header_contact_info']    = false;
 
-        // Top Bar Section
+        // Featured Slider Section
         $defaults['disable_gallery-slider_section']    = false;
         $defaults['disable_gallery-white_overlay']                = true;
 

@@ -6,19 +6,31 @@ section gallery
 
 
 #gallery-slider {
-    article {
+    .slick-item {
         padding: 300px 0;
     }
 
     .wrapper {
         position: relative;
         z-index: 1;
+        background-color: $white;
+        padding-bottom: 50px;
     }
 
+    button.slick-arrow {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+    }
 
-    article {
+    &:hover button.slick-arrow {
+        visibility: visible;
+        opacity: 1;
+    }
 
-        padding: 150px 0;
+    .slick-item {
+
+        padding: 220px 0;
         background-size: cover;
         background-position: 50%;
         position: relative;

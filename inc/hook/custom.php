@@ -18,8 +18,8 @@ if (!function_exists('act_outs_header_top')) :
         <div class="header-top">
             <div class="container">
                 <?php
-                $email     = get_theme_mod('act_outs_email_address');
-                $phone     = get_theme_mod('act_outs_phone');
+                $email     = get_theme_mod('header_email');
+                $phone     = get_theme_mod('header_phone');
 
                 if ($email) echo '<a href="' . esc_url('mailto:' . sanitize_email($email)) . '" class="email"><i class="fa fa-envelope-o"></i>' . esc_html($email) . '</a>';
 
@@ -29,10 +29,10 @@ if (!function_exists('act_outs_header_top')) :
             </div>
             <div class="login-container">
                 <?php if (is_user_logged_in()) { ?>
-                    <a href="<?php echo wp_logout_url(); ?>" class="loginbtn">Log Out</a>
+                    <a href="<?php echo wp_logout_url(); ?>" class="btn logout-btn">Log Out</a>
                 <?php } else { ?>
-                    <a href="<?php echo wp_login_url(); ?>" class="btn">Log In</a><?php
-                                                                                } ?>
+                    <a href="<?php echo wp_login_url(); ?>" class="btn login-btn">Log In</a><?php
+                                                                                        } ?>
 
 
             </div>
@@ -52,27 +52,40 @@ if (!function_exists('act_outs_site_branding')) :
      */
     function act_outs_site_branding()
     { ?>
+
+        <div class="site-branding">
+            <div class="site-logo">
+
+                <?php if (has_custom_logo()) : ?>
+                    <?php the_custom_logo(); ?>
+                <?php endif; ?>
+                <?php
+                $sticky_logo_url = get_theme_mod('sticky_header_logo');
+                if ($sticky_logo_url) : ?>
+                    <a class="custom-logo-link" href="<?php echo esc_url(site_url('/')) ?>">
+                        <div class="logo-alternative">
+                            <?php
+                            echo '<img src="' . $sticky_logo_url . '" alt = "logo alt test" class="sticky_logo_class">';
+                            ?>
+                        </div>
+                    </a>
+                <?php endif; ?>
+
+            </div><!-- .site-logo -->
+
+            <div id="site-identity">
+                <h1 class="site-title">
+                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"> <?php bloginfo('name'); ?></a>
+                </h1>
+
+                <?php
+                $description = get_bloginfo('description', 'display');
+                if ($description || is_customize_preview()) : ?>
+                    <p class="site-description"><?php echo ($description); ?></p>
+                <?php endif; ?>
+            </div><!-- #site-identity -->
+        </div> <!-- .site-branding -->
         <div class="wrapper">
-            <div class="site-branding">
-                <div class="site-logo">
-                    <?php if (has_custom_logo()) : ?>
-                        <?php the_custom_logo(); ?>
-                    <?php endif; ?>
-                </div><!-- .site-logo -->
-
-                <div id="site-identity">
-                    <h1 class="site-title">
-                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"> <?php bloginfo('name'); ?></a>
-                    </h1>
-
-                    <?php
-                    $description = get_bloginfo('description', 'display');
-                    if ($description || is_customize_preview()) : ?>
-                        <p class="site-description"><?php echo ($description); ?></p>
-                    <?php endif; ?>
-                </div><!-- #site-identity -->
-            </div> <!-- .site-branding -->
-
             <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php echo esc_attr__('Primary Menu', 'act-outs'); ?>">
 
                 <button type="button" class="menu-toggle">
@@ -107,24 +120,25 @@ if (!function_exists('act_outs_footer_top_section')) :
         if (empty($footer_sidebar)) {
             return;
         }      ?>
-
-        <div class="footer-widgets-area page-section <?php echo esc_attr($footer_class); ?>">
-            <!-- widget area starting from here -->
-            <div class="wrapper">
-                <?php
-                for ($i = 1; $i <= 4; $i++) {
-                    if (is_active_sidebar('footer-' . $i)) {
-                ?>
-                        <div class="hentry">
-                            <?php dynamic_sidebar('footer-' . $i); ?>
-                        </div>
-                <?php
+        <div class="wrapper">
+            <div class="footer-widgets-area page-section <?php echo esc_attr($footer_class); ?>">
+                <!-- widget area starting from here -->
+                <div class="wrapper">
+                    <?php
+                    for ($i = 1; $i <= 4; $i++) {
+                        if (is_active_sidebar('footer-' . $i)) {
+                    ?>
+                            <div class="hentry">
+                                <?php dynamic_sidebar('footer-' . $i); ?>
+                            </div>
+                    <?php
+                        }
                     }
-                }
-                ?>
-            </div>
+                    ?>
+                </div>
 
-        </div> <!-- widget area starting from here -->
+            </div> <!-- widget area starting from here -->
+        </div>
     <?php
     }
 endif;
@@ -154,9 +168,8 @@ if (!function_exists('act_outs_footer_section')) :
             // Powered by content.
             $powered_by_text = sprintf(__('Theme Act-Outs by %s', 'act-outs'), '<a target="_blank" rel="designer" href="' . esc_url('http://sensationaltheme.com/') . '">' . esc_html__('Sensational Theme', 'act-outs') . '</a>');
             ?>
-            <div class="wrapper">
-                <span class="copy-right"><?php echo esc_html($copyright_footer); ?><?php echo  $powered_by_text; ?></span>
-            </div>
+
+            <span class="copy-right"><?php echo esc_html($copyright_footer); ?><?php echo  $powered_by_text; ?></span>
         </div> <!-- site generator ends here -->
 
     <?php }

@@ -3,7 +3,7 @@
 /**
  * Home Page Options.
  *
- * @package act-outs Pro
+ * @package act-outs 
  */
 
 $default = act_outs_get_default_theme_options();

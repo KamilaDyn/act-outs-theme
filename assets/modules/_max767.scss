@@ -28,16 +28,28 @@
         width: 100%;
     }
 
+    #welcome-video {
+        .responsive-container {
+            height: 450px;
+            width: 80%;
+        }
+    }
+
     #message .author-thumbnail,
     #message .entry-container {
         width: 100%;
+    }
 
+    #message .entry-header {
+        padding-top: 50px
     }
 
     #message .author-thumbnail img {
         width: 100%;
         height: 100%;
     }
+
+
 
     #instagram .section-content {
         margin: 40px 0px 0 0px;

@@ -41,7 +41,7 @@ $class = '';
         while ($loop->have_posts()) : $loop->the_post();
             $i++; ?>
 
-            <article class="slick-item" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>');">
+            <div class="slick-item" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>');">
                 <?php
                 $class = '';
                 if (false == $image_overlay) {
@@ -78,7 +78,7 @@ $class = '';
 
                     </div><!-- .featured-content-wrapper -->
                 </div><!-- .wrapper -->
-            </article><!-- .slick-item -->
+            </div><!-- .slick-item -->
         <?php endwhile; ?>
     <?php wp_reset_postdata();
     endif; ?>

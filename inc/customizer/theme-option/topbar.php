@@ -14,10 +14,10 @@ $wp_customize->add_section(
 $wp_customize->add_setting(
     'theme_options[disable_show_header_contact_info]',
     array(
-        'default' => $default['disable_show_header_contact_info'],
+        'default'           => $default['disable_show_header_contact_info'],
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'act_outs_contact_info_ac',
+        'sanitize_callback' => 'act_outs_sanitize_switch_control',
     )
 );
 
@@ -34,7 +34,7 @@ $wp_customize->add_control(new Act_Outs_Switch_Control(
 
 /** Phone Number  */
 $wp_customize->add_setting(
-    'header_phone',
+    'theme_options[ header_phone]',
     array(
         'default' => '',
         'type'              => 'theme_mod',
@@ -44,7 +44,7 @@ $wp_customize->add_setting(
 );
 
 $wp_customize->add_control(
-    'header_phone',
+    'theme_options[ header_phone]',
     array(
         'label' => __('Phone Number', 'act-outs'),
         'section' => 'topbar_section',
@@ -55,7 +55,7 @@ $wp_customize->add_control(
 
 /** Email Address  */
 $wp_customize->add_setting(
-    'header_email',
+    'theme_options[ header_email]',
     array(
         'default' => '',
         'type'              => 'theme_mod',
@@ -66,7 +66,7 @@ $wp_customize->add_setting(
 );
 
 $wp_customize->add_control(
-    'act_outs_email_address',
+    'theme_options[ header_email]',
     array(
         'label' => __('Email address', 'act-outs'),
         'section' => 'topbar_section',

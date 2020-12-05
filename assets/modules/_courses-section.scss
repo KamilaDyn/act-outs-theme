@@ -13,11 +13,11 @@
 }
 
 #courses {
-    background: $darkblue;
-    padding: 50px 0 150px 0;
 
     .wrapper {
         background-color: $white;
+        padding: 50px 0 150px 0;
+
     }
 
     .section-content {
@@ -66,17 +66,14 @@
     }
 
     .entry-content {
-        margin-top: 15px;
+        padding: 0;
     }
 
     .read-more {
         margin-top: 25px;
     }
 
-    article {
-        margin-bottom: 50px;
-        padding: 0 15px;
-    }
+
 
     .entry-header,
     .entry-content,
@@ -141,34 +138,77 @@
 
     .service-content {
         .responsive-container {
-            &:before {
-                border: 1px solid rgba($red, 0.5);
-                bottom: 15px;
-                content: "";
-                display: block;
-                left: 11px;
-                position: absolute;
-                right: 11px;
-                top: 15px;
-                z-index: 2;
-                background-color: rgba(26, 26, 55, 0.1);
+            // border-left: 10px solid #ccc;
+            // border-right: 10px solid #ccc;
+            // border-top: 10px solid #ccc;
+            width: 96%;
+            min-height: 280px;
+
+        }
+
+        .img-preloader {
+            position: relative;
+            border: 1px solid #f6f4f3;
+            border-top-color: #fff;
+            border-radius: 3px;
+            border-top-color: #fff;
+            border-radius: 3px;
+            background-color: #ebe8e5;
+            box-shadow: 0 0 2px 2px rgba(0, 0, 0, .15);
+
+
+
+            .img {
+                padding: 7px;
+                position: relative;
+
+                &:before {
+                    border: 1px solid rgba($white, 0.5);
+                    bottom: 15px;
+                    content: "";
+                    display: block;
+                    left: 11px;
+                    position: absolute;
+                    right: 11px;
+                    top: 15px;
+                    z-index: 2;
+                    background-color: rgba(26, 26, 55, 0.1);
+                }
+
+                &:after {
+                    border: 1px solid rgba($white, 0.5);
+                    bottom: 11px;
+                    content: "";
+                    display: block;
+                    left: 15px;
+                    position: absolute;
+                    right: 15px;
+                    top: 11px;
+                    z-index: 2;
+                    background-color: rgba(26, 26, 55, 0.1);
+                }
+
+                .play-icon {
+                    width: 80px;
+                    height: 80px;
+                }
             }
 
-            &:after {
-                border: 1px solid rgba($red, 0.5);
-                bottom: 11px;
-                content: "";
-                display: block;
-                left: 15px;
-                position: absolute;
-                right: 15px;
-                top: 11px;
-                z-index: 2;
-                background-color: rgba(26, 26, 55, 0.1);
+            .img img {
+                border-radius: 3px;
+                width: 100%;
+                height: 100%;
             }
+
+
         }
     }
 
+    .caption {
 
-
+        h3 {
+            color: $gray5;
+            font-style: italic;
+        }
+    }
 }

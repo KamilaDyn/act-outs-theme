@@ -47,6 +47,22 @@
         position: relative;
     }
 
+    ul ul {
+        float: left;
+        position: absolute;
+        top: 100%;
+        left: -999em;
+        z-index: 99999;
+        border-top: 1px solid #eee;
+        margin-top: -1px;
+    }
+
+    ul ul {
+        background-color: #333;
+        text-align: left;
+        padding: 0;
+    }
+
     a {
         display: block;
         text-decoration: none;

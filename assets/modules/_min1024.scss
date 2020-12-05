@@ -1,7 +1,8 @@
 @media screen and (min-width: 1024px) {
     .main-navigation {
-        border-top: 1px solid #ded9d9;
-        border-bottom: 1px solid #ded9d9;
+        border-top: 2px solid $red;
+        // border-bottom: 2px solid $red;
+        padding: 15px 0;
 
         .menu-item-has-children>a:after {
             content: "\f107";
@@ -45,7 +46,7 @@
 
     .main-navigation ul ul li {
         border-bottom: 1px solid #eee;
-        background-image: linear-gradient(rgba(253, 45, 85, 0.2), rgba(26, 26, 55, 0.2));
+        background: rgba($darkblue, 0.3);
     }
 
     .main-navigation ul ul>li:last-child {
@@ -155,9 +156,32 @@
         color: #111;
     }
 
-    #featured-slider article {
-        padding: 260px 0 385px;
+    #about {
+        .wrapper {
+            padding: 60px;
+        }
     }
+
+    #message {
+
+        .wrapper {
+            padding: 100px 15px 100px 15px;
+            background: $white;
+        }
+    }
+
+    #courses {
+        .wrapper {
+            background-color: $white;
+
+        }
+    }
+
+    #featured-slider article {
+        padding: 260px 0 260px;
+    }
+
+    #gallery-slider article {}
 
     .right-sidebar #primary,
     .left-sidebar #primary {

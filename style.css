@@ -1904,9 +1904,9 @@ html {
 }
 
 body {
-  background: #333;
   /* Fallback for when there is no custom background color defined. */
   overflow-x: hidden;
+  background-color: #1f3a58;
 }
 
 blockquote {
@@ -2179,6 +2179,52 @@ p.form-submit {
   background: #1f3a58;
 }
 
+#masthead .header-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: rgba(26, 26, 55, 0.8);
+  padding: 0 30px;
+  align-items: center;
+}
+
+#masthead .header-top .container a {
+  margin-right: 20px;
+}
+
+#masthead .header-top .container a i {
+  padding-right: 5px;
+}
+
+#masthead .header-top .login-container {
+  margin: 5px 0;
+}
+
+.site-branding {
+  background-color: white;
+  padding: 20px 0;
+}
+
+.site-branding .site-logo {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.site-branding .site-logo .custom-logo-link {
+  padding-right: 30px;
+}
+
+.site-branding .site-logo img {
+  width: auto;
+  height: 200px;
+}
+
+.site-branding .logo-alternative img {
+  height: 100px;
+}
+
 .site-branding .site-title {
   text-align: center;
 }
@@ -2186,37 +2232,6 @@ p.form-submit {
 .site-branding .site-description {
   color: white;
   text-align: center;
-}
-
-.wrapper {
-  width: 90%;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-@media screen and (max-width: 480px) {
-  .site-branding {
-    min-height: auto;
-    text-align: center;
-    width: 100%;
-    float: none;
-    padding: 15px;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 567px) {
-  .site-branding .site-logo + #site-identity {
-    margin-top: 15px;
-  }
-}
-
-@media screen and (max-width: 1023px) {
-  .site-branding {
-    padding: 20px 0;
-  }
 }
 
 /*--------------------------------------------------------------
@@ -2283,6 +2298,22 @@ a:active {
 
 .main-navigation li {
   position: relative;
+}
+
+.main-navigation ul ul {
+  float: left;
+  position: absolute;
+  top: 100%;
+  left: -999em;
+  z-index: 99999;
+  border-top: 1px solid #eee;
+  margin-top: -1px;
+}
+
+.main-navigation ul ul {
+  background-color: #333;
+  text-align: left;
+  padding: 0;
 }
 
 .main-navigation a {
@@ -2557,6 +2588,19 @@ section {
   position: relative;
 }
 
+section:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1px;
+  background-color: #c62f23;
+}
+
+#display {
+  display: block;
+}
+
 .relative {
   display: block;
   position: relative;
@@ -2573,8 +2617,7 @@ section {
 }
 
 .wrapper {
-  width: 90%;
-  max-width: 1180px;
+  max-width: 1280px;
   margin: 0 auto;
   padding-left: 0;
   padding-right: 0;
@@ -2598,7 +2641,6 @@ section {
 
 .section-header .section-title:after {
   left: 100%;
-  margin-left: 10px;
 }
 
 .section-title {
@@ -2616,6 +2658,12 @@ section {
   letter-spacing: 2px;
   font-weight: 400;
   font-family: 'Oxygen', cursive;
+  position: relative;
+  font-weight: bold;
+  text-shadow: 2px 6px 8px rgba(0, 0, 0, 0.25), -6px -3 0px rgba(0, 0, 0, 0.35);
+  -webkit-text-stroke: 3px rgba(0, 0, 0, 0.5);
+  text-stroke: 3px rgba(0, 0, 0, 0.5);
+  transition: all 300ms ease;
 }
 
 .section-subtitle {
@@ -2670,7 +2718,7 @@ section {
 .btn:focus {
   background-color: transparent;
   border-color: #c62f23;
-  color: #333;
+  color: white;
 }
 
 /*--------------------------------------------------------------
@@ -2728,17 +2776,30 @@ section {
 section gallery
 ----------------
 */
-#gallery-slider article {
+#gallery-slider .slick-item {
   padding: 300px 0;
 }
 
 #gallery-slider .wrapper {
   position: relative;
   z-index: 1;
+  background-color: white;
+  padding-bottom: 50px;
 }
 
-#gallery-slider article {
-  padding: 150px 0;
+#gallery-slider button.slick-arrow {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+#gallery-slider:hover button.slick-arrow {
+  visibility: visible;
+  opacity: 1;
+}
+
+#gallery-slider .slick-item {
+  padding: 220px 0;
   background-size: cover;
   background-position: 50%;
   position: relative;
@@ -2831,7 +2892,7 @@ section gallery
   z-index: 1;
 }
 
-#featured-slider article {
+#featured-slider .slick-item {
   padding: 225px 0;
   background-size: cover;
   background-position: 50%;
@@ -2943,7 +3004,7 @@ section gallery
 }
 
 .featured-content-wrapper .entry-content p,
-#featured-slider article .entry-content {
+#featured-slider .slick-item .entry-content {
   color: #222;
   font-size: 17px;
   margin: 0;
@@ -2955,6 +3016,22 @@ section gallery
 
 .featured-content-wrapper .read-more a {
   color: #fff;
+}
+
+.featured-slider-wrapper .slick-dots {
+  top: 0;
+  right: 10%;
+  transform: translateX(50%);
+}
+
+.featured-slider-wrapper .slick-dots button::before {
+  width: 15px;
+  height: 15px;
+  background-color: white;
+}
+
+.featured-slider-wrapper .slick-dots li.slick-active button::before {
+  background-color: #c62f23;
 }
 
 #featured-slider .slick-dots {
@@ -2982,22 +3059,30 @@ section gallery
 
 .responsive-container {
   position: relative;
-  width: 98%;
-  height: 300px;
+  width: 100%;
+  height: auto;
+  min-height: 300px;
   margin: 0 auto;
-  border: 3px solid rgba(238, 238, 238, 0.4);
 }
 
 .light {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 0;
+  left: 0;
   display: none;
   z-index: 99999;
   overflow: visible;
-  width: 90vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+}
+
+.light .container-btn {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 5;
 }
 
 .img-preloader {
@@ -3052,7 +3137,6 @@ section gallery
 
 .wp-video {
   margin: 0 auto;
-  padding-bottom: 50px;
 }
 
 .wp-video,
@@ -3128,23 +3212,23 @@ video.wp-video-shortcode {
   padding: 10px 20px;
 }
 
-#welcome-video {
-  margin: 20px auto 0 auto;
-  min-height: 700px;
-}
-
 #welcome-video .wrapper {
   background-color: white;
   padding-bottom: 50px;
 }
 
 #welcome-video .responsive-container {
-  height: 500px;
-  width: 90%;
+  height: 450px;
+  width: 75%;
 }
 
-#welcome-video .entry-header h2 {
-  padding: 20px 0 50px 0;
+#welcome-video .img-preloader img {
+  width: 100%;
+  height: 100%;
+}
+
+#welcome-video .section-title {
+  padding: 50px 0 30px;
   text-align: center;
 }
 
@@ -3156,6 +3240,7 @@ video.wp-video-shortcode {
   overflow: hidden;
   line-height: 0;
   border: none;
+  transform: translateY(25%);
 }
 
 #welcome-video .wave svg {
@@ -3173,13 +3258,9 @@ video.wp-video-shortcode {
   color: #c62f23;
 }
 
-#courses {
-  background: #1f3a58;
-  padding: 50px 0 150px 0;
-}
-
 #courses .wrapper {
   background-color: white;
+  padding: 50px 0 150px 0;
 }
 
 #courses .section-content {
@@ -3228,16 +3309,11 @@ video.wp-video-shortcode {
 }
 
 #courses .entry-content {
-  margin-top: 15px;
+  padding: 0;
 }
 
 #courses .read-more {
   margin-top: 25px;
-}
-
-#courses article {
-  margin-bottom: 50px;
-  padding: 0 15px;
 }
 
 #courses .entry-header,
@@ -3293,8 +3369,29 @@ video.wp-video-shortcode {
   width: 100%;
 }
 
-#courses .service-content .responsive-container:before {
-  border: 1px solid rgba(198, 47, 35, 0.5);
+#courses .service-content .responsive-container {
+  width: 96%;
+  min-height: 280px;
+}
+
+#courses .service-content .img-preloader {
+  position: relative;
+  border: 1px solid #f6f4f3;
+  border-top-color: #fff;
+  border-radius: 3px;
+  border-top-color: #fff;
+  border-radius: 3px;
+  background-color: #ebe8e5;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+#courses .service-content .img-preloader .img {
+  padding: 7px;
+  position: relative;
+}
+
+#courses .service-content .img-preloader .img:before {
+  border: 1px solid rgba(255, 255, 255, 0.5);
   bottom: 15px;
   content: "";
   display: block;
@@ -3306,8 +3403,8 @@ video.wp-video-shortcode {
   background-color: rgba(26, 26, 55, 0.1);
 }
 
-#courses .service-content .responsive-container:after {
-  border: 1px solid rgba(198, 47, 35, 0.5);
+#courses .service-content .img-preloader .img:after {
+  border: 1px solid rgba(255, 255, 255, 0.5);
   bottom: 11px;
   content: "";
   display: block;
@@ -3319,18 +3416,56 @@ video.wp-video-shortcode {
   background-color: rgba(26, 26, 55, 0.1);
 }
 
+#courses .service-content .img-preloader .img .play-icon {
+  width: 80px;
+  height: 80px;
+}
+
+#courses .service-content .img-preloader .img img {
+  border-radius: 3px;
+  width: 100%;
+  height: 100%;
+}
+
+#courses .caption h3 {
+  color: #555;
+  font-style: italic;
+}
+
 /*--------------------------------------------------------------
 ## Message From Author
 --------------------------------------------------------------*/
 #message {
-  background: white;
+  padding: 0;
   text-align: center;
-  padding: 100px 0 30px 0;
+}
+
+#message .wrapper {
+  padding: 100px 50px 30px 30px;
+  background: white;
 }
 
 #message .section-content {
   /*max-width: 800px;*/
   margin: auto;
+  padding: 60px 0 0;
+}
+
+#message .section-content .author-thumbnail {
+  position: relative;
+  border: 1px solid #f6f4f3;
+  border-top-color: #fff;
+  border-radius: 3px;
+  border-top-color: #fff;
+  border-radius: 3px;
+  background-color: #ebe8e5;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+#message .section-content .author-thumbnail .img {
+  padding: 7px;
+  position: relative;
 }
 
 #message .entry-header {
@@ -3368,7 +3503,6 @@ video.wp-video-shortcode {
 }
 
 #message .author-thumbnail img {
-  width: 400px;
   height: 400px;
 }
 
@@ -3376,25 +3510,24 @@ video.wp-video-shortcode {
   width: 55%;
   position: relative;
   float: right;
-  padding: 60px 0;
 }
 
 #message .entry-container.no-feature-image {
   width: 100%;
 }
 
-#message .author-thumbnail a::before {
+#message .author-thumbnail div:before {
   content: "";
-  border: 6px solid #fd2d55;
-  width: 400px;
-  bottom: 0;
-  left: 70px;
-  right: 28px;
+  border: 1px solid #fff;
   position: absolute;
-  top: 240px;
-  bottom: -240px;
-  z-index: -1;
-  transform: translateY(-50%);
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  opacity: 1;
+  display: block;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
 }
 
 #message .author-thumbnail:before {
@@ -3410,9 +3543,9 @@ video.wp-video-shortcode {
 /*--------------------------------------------------------------
 #  About Section
 --------------------------------------------------------------*/
-#about {
+#about .wrapper {
   background: white;
-  padding: 60px 0;
+  padding: 60px 0 150px;
 }
 
 #about .section-header {
@@ -3420,7 +3553,8 @@ video.wp-video-shortcode {
 }
 
 #about .section-content {
-  margin: 0 -15px;
+  padding-top: 30px;
+  margin: 0;
 }
 
 #about article {
@@ -3560,6 +3694,321 @@ video.wp-video-shortcode {
   font-size: 12px;
 }
 
+#colophon {
+  margin-top: 50px;
+  background-image: linear-gradient(rgba(16, 61, 103, 0.8), rgba(0, 0, 0, 0.8));
+}
+
+#colophon .wrapper {
+  padding: 20px 40px;
+}
+
+#colophon ul {
+  list-style: none;
+}
+
+#colophon .widget li:before {
+  content: "\f101";
+  font-family: "FontAwesome";
+  float: left;
+  margin-right: 15px;
+}
+
+#colophon .widget .textwidget p {
+  color: white;
+}
+
+#colophon .site-info {
+  background-color: #111;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 18px 0;
+  line-height: 1.5;
+}
+
+#colophon .site-info span {
+  display: block;
+  text-align: center;
+  margin: 10px 0;
+}
+
+#colophon .site-info a {
+  color: white;
+}
+
+#colophon .site-info a:hover, #colophon .site-info a:focus {
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+  margin: 0 0 1.3em;
+}
+
+.widget:last-child {
+  margin-bottom: 0;
+}
+
+#secondary .widget > ul li,
+#secondary .widget_nav_menu ul li {
+  padding: 10px 20px;
+  /*    background-color: #343434;*/
+  font-weight: 500;
+}
+
+#secondary .widget > ul li:last-child,
+#secondary .widget_nav_menu ul li:last-child {
+  border-bottom: none;
+}
+
+#secondary .widget li:not(:last-child) {
+  margin-bottom: 0;
+}
+
+#secondary .widget_nav_menu ul ul li:first-child,
+#secondary .widget_nav_menu ul ul li:hover {
+  border-left: none;
+}
+
+#colophon .widget {
+  margin: 0 0 40px;
+  padding: 0 20px;
+}
+
+#colophon .widget.widget_text {
+  margin-bottom: 20px;
+}
+
+#colophon .widget:last-child {
+  margin-bottom: 0;
+}
+
+/* Make sure select elements fit in widgets. */
+.widget select {
+  max-width: 100%;
+  background-color: #f6f6f6;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  max-width: 300px;
+}
+
+.widget select:focus {
+  outline: dotted;
+}
+
+.widget input {
+  outline: none;
+  height: 40px;
+  border-radius: 0;
+  padding: 0 15px;
+  border: none;
+}
+
+form.search-form button.search-submit {
+  height: 45px;
+  line-height: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: transparent;
+  border: none;
+  width: 45px;
+  border-radius: 0;
+  outline: none;
+}
+
+.widget_search form.search-form button.search-submit {
+  width: 50px;
+  color: #fff;
+  background-color: #000;
+  font-size: 15px;
+  line-height: 26px;
+  height: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.widget_search form.search-form button.search-submit:hover,
+.widget_search form.search-form button.search-submit:focus {
+  background-image: linear-gradient(rgba(253, 45, 85, 0.8), rgba(26, 26, 55, 0.8));
+}
+
+.widget_search form.search-form input[type="search"] {
+  padding: 0 55px 0 15px;
+  height: 50px;
+  background-image: linear-gradient(rgba(253, 45, 85, 0.8), rgba(26, 26, 55, 0.8));
+  /*border: 1px solid #ddd;*/
+  transition: all 0.3s ease-in-out;
+}
+
+.widget_search form.search-form input[type="search"]:focus {
+  border-color: #f5f5f5;
+}
+
+form.search-form {
+  position: relative;
+}
+
+form.search-form input {
+  width: 100%;
+  padding: 0 40px 0 15px;
+  font-weight: 300;
+}
+
+#wp-calendar tbody td {
+  text-align: center;
+}
+
+#wp-calendar caption {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.widget-title {
+  font-size: 18px;
+  margin: 0 0 32px;
+}
+
+.widget li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.widget_instagram ul {
+  list-style: none;
+  margin: -5px;
+  padding: 0;
+}
+
+.widget.widget_instagram li {
+  margin: 0;
+  padding: 5px;
+}
+
+.widget_instagram .col-1 li {
+  width: 100%;
+  float: none;
+}
+
+.widget_instagram .col-2 li {
+  width: 50%;
+  float: left;
+}
+
+.widget_instagram .col-3 li {
+  width: 33.33%;
+  float: left;
+}
+
+.widget_instagram .col-4 li {
+  width: 25%;
+  float: left;
+}
+
+.widget_instagram .col-5 li {
+  width: 20%;
+  float: left;
+}
+
+.widget_instagram li img {
+  width: 100%;
+}
+
+#colophon .widget-title,
+#colophon .widgettitle {
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 0;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #888;
+}
+
+#secondary .widget-title,
+#secondary .widgettitle {
+  font-size: 30px;
+  text-transform: capitalize;
+  padding: 15px 40px;
+  margin-bottom: 0;
+  font-weight: 600;
+  /*border-bottom: 1px solid #efefef;*/
+  /*background-color: #343434;*/
+}
+
+#secondary .widget {
+  /*box-shadow: 0 1px 0 0 rgba(238, 238, 238, 0.6);*/
+  /*border: 1px solid #efefef;*/
+  background-image: linear-gradient(rgba(253, 45, 85, 0.2), rgba(26, 26, 55, 0.2));
+}
+
+#secondary .widget_tag_cloud .tagcloud {
+  padding: 15px 40px;
+}
+
+#secondary .widget_tag_cloud .tagcloud a {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0 5px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+#secondary a {
+  color: #fff;
+  font-weight: 500;
+}
+
+#colophon .widget_tag_cloud .tagcloud a {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0 5px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+#colophon .widget_tag_cloud .tagcloud a {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+#colophon a:hover, #colophon a:focus {
+  color: #c62f23;
+}
+
+#colophon .widget:not(:last-child) {
+  margin-bottom: 35px;
+}
+
+.no-sidebar #secondary {
+  display: none;
+}
+
+input[type="submit"],
+.wpcf7 input[type="submit"] {
+  border-radius: 2px;
+  color: #fff;
+  display: inline-block;
+  font-weight: 600;
+  padding: 7px 25px;
+  font-size: 14px;
+  position: relative;
+  border: 2px solid;
+  background-color: #000;
+  border-color: #f5f5f5;
+  color: #fff;
+  z-index: 1;
+  width: auto;
+  height: auto;
+  line-height: 28px;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+.wpcf7 input[type="submit"]:hover,
+.wpcf7 input[type="submit"]:focus {
+  background-color: #333;
+  border-color: #333;
+  color: #fff;
+}
+
 @media screen and (min-width: 567px) {
   .videos-container .video {
     width: 50%;
@@ -3628,8 +4077,11 @@ video.wp-video-shortcode {
   #blog .blog-posts-wrapper .col-2 article:nth-last-child(-n+2) {
     margin-bottom: 0;
   }
-  #featured-slider article {
-    padding: 300px 0;
+  #featured-slider .slick-item {
+    padding: 235px 0;
+  }
+  #gallery-slider .slick-item {
+    padding: 220px 0;
   }
   .blog-posts-wrapper .col-3 article {
     width: 50%;
@@ -3707,6 +4159,10 @@ video.wp-video-shortcode {
   .footer-widgets-area.col-3:not(:last-child) {
     padding-right: 40px;
   }
+  #courses .entry-content {
+    margin-top: 15px;
+    padding: 10px 0;
+  }
   #courses .col-3 article {
     width: 33.33%;
   }
@@ -3774,10 +4230,6 @@ video.wp-video-shortcode {
 @media screen and (min-width: 992px) {
   #courses .col-2 article {
     width: 50%;
-  }
-  .light {
-    width: 75vw;
-    height: 75vh;
   }
   .widget-events .event-item {
     width: 45%;
@@ -3935,8 +4387,8 @@ video.wp-video-shortcode {
 
 @media screen and (min-width: 1024px) {
   .main-navigation {
-    border-top: 1px solid #ded9d9;
-    border-bottom: 1px solid #ded9d9;
+    border-top: 2px solid #c62f23;
+    padding: 15px 0;
   }
   .main-navigation .menu-item-has-children > a:after {
     content: "\f107";
@@ -3971,7 +4423,7 @@ video.wp-video-shortcode {
   }
   .main-navigation ul ul li {
     border-bottom: 1px solid #eee;
-    background-image: linear-gradient(rgba(253, 45, 85, 0.2), rgba(26, 26, 55, 0.2));
+    background: rgba(31, 58, 88, 0.3);
   }
   .main-navigation ul ul > li:last-child {
     border-bottom: none;
@@ -4054,8 +4506,18 @@ video.wp-video-shortcode {
     border-color: #fff;
     color: #111;
   }
+  #about .wrapper {
+    padding: 60px;
+  }
+  #message .wrapper {
+    padding: 100px 15px 100px 15px;
+    background: white;
+  }
+  #courses .wrapper {
+    background-color: white;
+  }
   #featured-slider article {
-    padding: 260px 0 385px;
+    padding: 260px 0 260px;
   }
   .right-sidebar #primary,
   .left-sidebar #primary {
@@ -4122,9 +4584,6 @@ video.wp-video-shortcode {
     margin-bottom: 0;
     position: relative;
     min-height: 80px;
-  }
-  .site-branding {
-    padding: 20px 0;
   }
   .site-title {
     font-size: 26px;
@@ -4266,9 +4725,16 @@ video.wp-video-shortcode {
   #blog .section-content.col-3 article.large-width {
     width: 100%;
   }
+  #welcome-video .responsive-container {
+    height: 450px;
+    width: 80%;
+  }
   #message .author-thumbnail,
   #message .entry-container {
     width: 100%;
+  }
+  #message .entry-header {
+    padding-top: 50px;
   }
   #message .author-thumbnail img {
     width: 100%;
@@ -4366,6 +4832,13 @@ video.wp-video-shortcode {
   #message .author-thumbnail:after {
     margin-left: 15px;
   }
+  #welcome-video .wrapper {
+    padding-bottom: 0;
+  }
+  #welcome-video .responsive-container {
+    height: 320px;
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 567px) {
@@ -4393,6 +4866,13 @@ video.wp-video-shortcode {
   #about article .entry-content p {
     font-size: 22px;
     line-height: 35px;
+  }
+  #courses .entry-content {
+    margin-top: 15px;
+    padding: 10px 0;
+  }
+  #courses .col-2 article {
+    width: 100%;
   }
   #page-site-header {
     padding: 175px 0;
@@ -4473,13 +4953,16 @@ video.wp-video-shortcode {
 #                   RESPONSIVE
 --------------------------------------------------------------*/
 @media screen and (max-width: 480px) {
+  #masthead .header-top {
+    justify-content: flex-end;
+    padding: 0;
+  }
   #masthead .wrapper {
     width: 100%;
     max-width: 100%;
     padding: 0;
   }
   .site-branding {
-    min-height: auto;
     text-align: center;
     width: 100%;
     float: none;
@@ -4500,6 +4983,10 @@ video.wp-video-shortcode {
   }
   .main-navigation {
     float: none;
+  }
+  #welcome-video .responsive-container {
+    height: 300px;
+    width: 95%;
   }
   #message .author-thumbnail::before, #message .author-thumbnail::after {
     width: 100px;

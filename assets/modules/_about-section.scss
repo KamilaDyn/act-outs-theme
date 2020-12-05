@@ -3,8 +3,10 @@
 --------------------------------------------------------------*/
 
 #about {
-    background: $white;
-    padding: 60px 0;
+    .wrapper {
+        background: $white;
+        padding: 60px 0 150px;
+    }
 
 
     .section-header {
@@ -13,7 +15,8 @@
 
 
     .section-content {
-        margin: 0 -15px;
+        padding-top: 30px;
+        margin: 0;
     }
 
     article {

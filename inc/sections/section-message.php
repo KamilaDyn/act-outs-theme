@@ -23,7 +23,9 @@ while ($the_query->have_posts()) : $the_query->the_post();
     <div class="section-content">
         <?php if (has_post_thumbnail()) : ?>
             <div class="author-thumbnail">
-                <a href="<?php the_permalink(); ?>"><img src="<?php the_post_thumbnail_url('full'); ?>"></a>
+                <a href="<?php the_permalink(); ?>">
+                    <div> <img class="img" src="<?php the_post_thumbnail_url('full'); ?>"></div>
+                </a>
             </div><!-- .author-thumbnail -->
         <?php endif;
         $message_class = '';

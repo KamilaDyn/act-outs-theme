@@ -74,6 +74,7 @@ if (!function_exists('act_outs_header_start')) :
             ?>
             </div>
             <footer id="colophon" class="site-footer" role="contentinfo">
+
                 <?php if (true === act_outs_get_option('scroll_top_visible')) : ?>
                     <div class="backtotop"><i class="fa fa-chevron-up"></i></div>
                 <?php endif;
@@ -84,6 +85,7 @@ if (!function_exists('act_outs_header_start')) :
         if (!function_exists('act_outs_footer_end')) :
             function act_outs_footer_end()
             { ?>
+
             </footer>
     <?php  }
         endif;

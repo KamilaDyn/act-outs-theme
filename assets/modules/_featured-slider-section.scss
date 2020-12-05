@@ -87,7 +87,7 @@
         z-index: 1;
     }
 
-    article {
+    .slick-item {
         padding: 225px 0;
         background-size: cover;
         background-position: 50%;
@@ -226,7 +226,7 @@
 
 
 .featured-content-wrapper .entry-content p,
-#featured-slider article .entry-content {
+#featured-slider .slick-item .entry-content {
     color: #222;
     font-size: 17px;
     margin: 0;
@@ -237,6 +237,28 @@
 
     a {
         color: #fff;
+    }
+}
+
+.featured-slider-wrapper {
+    .slick-dots {
+        top: 0;
+        right: 10%;
+        transform: translateX(50%);
+    }
+
+    .slick-dots button {
+        &::before {
+            width: 15px;
+            height: 15px;
+            background-color: $white;
+        }
+    }
+
+    .slick-dots li.slick-active button {
+        &::before {
+            background-color: $red;
+        }
     }
 }
 
