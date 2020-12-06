@@ -66,7 +66,7 @@
     .posts-navigation .nav-next,
     .post-navigation .nav-next {
         width: 100%;
-        margin: 15px 0;
+
 
     }
 
@@ -153,6 +153,10 @@
     .single-event-info .read-more {
         float: none;
         text-align: center;
+    }
+
+    #content .page-section .entry-content {
+        padding: 15px 15px;
     }
 
 }

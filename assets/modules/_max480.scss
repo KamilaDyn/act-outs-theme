@@ -7,9 +7,14 @@
 @media screen and (max-width: 480px) {
     #masthead {
         .header-top {
-            justify-content: flex-end;
             padding: 0;
+
+            .wrapper {
+                justify-content: flex-end;
+
+            }
         }
+
 
     }
 
@@ -26,7 +31,10 @@
         float: none;
         padding: 15px;
         display: block;
+
+
     }
+
 
     .menu-toggle {
         margin: auto;
@@ -73,5 +81,9 @@
 
     #our-story .content-wrapper {
         padding: 25px;
+    }
+
+    #content .page-section .entry-content {
+        padding: 15px 5px;
     }
 }

@@ -19,7 +19,7 @@ $img_class = '';
 
     <div class="post-item">
         <?php if (has_post_thumbnail()) { ?>
-            <figure><?php the_post_thumbnail('singlepageimage'); ?>
+            <figure><?php the_post_thumbnail('page-image'); ?>
 
             </figure>
 

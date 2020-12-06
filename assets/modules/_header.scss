@@ -5,12 +5,17 @@
     background-color: $white;
 
     .header-top {
+        background-color: rgba(26, 26, 55, 0.8);
+
+    }
+
+    .header-top .wrapper {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        background-color: rgba(26, 26, 55, 0.8);
         padding: 0 30px;
         align-items: center;
+
 
         .container a {
             margin-right: 20px;
@@ -22,13 +27,13 @@
 
         .login-container {
             margin: 5px 0;
+
+            a {
+                float: right;
+            }
         }
 
     }
-
-
-
-
 
 }
 
@@ -41,9 +46,14 @@
         justify-content: center;
         flex-wrap: wrap;
         align-items: center;
+        padding: 20px 30px;
 
         .custom-logo-link {
             padding-right: 30px;
+
+            &:last-child {
+                padding-right: 0;
+            }
         }
 
         img {

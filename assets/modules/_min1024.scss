@@ -1,4 +1,14 @@
 @media screen and (min-width: 1024px) {
+
+    .header-top .wrapper {
+        justify-content: space-between;
+
+        .container,
+        .login-container {
+            width: 50%;
+        }
+    }
+
     .main-navigation {
         border-top: 2px solid $red;
         border-bottom: 2px solid $red;
@@ -203,10 +213,23 @@
         float: left;
     }
 
+    .right-sidebar #primary.archive-group {
+        width: 100%;
+    }
+
+    body.archive.right-sidebar .archive-group .blog-posts-wrapper .col-3 article {
+        width: 40%;
+    }
+
+    body.archive.right-sidebar .archive-group .blog-posts-wrapper .col-3 article {
+        padding: 40px 15px;
+    }
+
     .right-sidebar #secondary,
     .left-sidebar #secondary {
         width: 30%;
         float: right;
+        margin-top: 40px;
     }
 
     .home.right-sidebar #secondary,
@@ -233,4 +256,9 @@
     .no-sidebar.home #primary {
         max-width: 100%;
     }
+
+    #main #comments {
+        width: 70%;
+    }
+
 }

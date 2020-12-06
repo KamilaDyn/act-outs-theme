@@ -43,11 +43,22 @@
         article.post,
         .navigation,
         #comments {
-            background-color: $lightblue;
             box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.05);
             margin-top: 40px;
 
         }
+
+        article.post,
+        .navigation {
+            background-color: $lightblue;
+
+        }
+
+        #comments {
+            padding: 0 20px 50px 20px;
+
+        }
+
 
         article .post-item {
             box-shadow: none;
@@ -127,6 +138,10 @@ nav.navigation.pagination {
     text-align: center;
 }
 
+.post-navigation .nav-previous,
+.post-navigation .nav-next {
+    margin: 15px 0;
+}
 
 .posts-wrapper.blog-posts {
     .featured-image {

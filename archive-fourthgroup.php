@@ -5,12 +5,12 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package EventBell
+ * @package act-outs
  */
 
 get_header(); ?>
 <div class="wrapper page-section">
-    <div id="primary" class="content-area">
+    <div id="primary" class="content-area archive-group">
         <main id="main" class="site-main blog-posts-wrapper" role="main">
             <div class="col-3 grid height">
 
@@ -32,11 +32,11 @@ get_header(); ?>
             </div>
             <?php
             /**
-             * Hook - eventbell_pagination_action.
+             * Hook - act_outs_pagination_action.
              *
-             * @hooked eventbell_pagination 
+             * @hooked act_outs_pagination 
              */
-            do_action('eventbell_pagination_action');
+            do_action('act_outs_pagination_action');
             // the_posts_navigation(); 
             ?>
         </main><!-- #main -->

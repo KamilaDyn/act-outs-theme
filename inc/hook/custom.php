@@ -16,25 +16,27 @@ if (!function_exists('act_outs_header_top')) :
     function act_outs_header_top()
     { ?>
         <div class="header-top">
-            <div class="container">
-                <?php
-                $email     = get_theme_mod('header_email');
-                $phone     = get_theme_mod('header_phone');
+            <div class="wrapper">
+                <div class="container">
+                    <?php
+                    $email     = get_theme_mod('header_email');
+                    $phone     = get_theme_mod('header_phone');
 
-                if ($email) echo '<a href="' . esc_url('mailto:' . sanitize_email($email)) . '" class="email"><i class="fa fa-envelope-o"></i>' . esc_html($email) . '</a>';
+                    if ($email) echo '<a href="' . esc_url('mailto:' . sanitize_email($email)) . '" class="email"><i class="fa fa-envelope-o"></i>' . esc_html($email) . '</a>';
 
-                if ($phone) echo '<a href="' . esc_url('tel:' . preg_replace('/[^\d+]/', '', $phone)) . '" class="tel-link"><i class="fa fa-phone"></i>' . esc_html($phone) . '</a>';
+                    if ($phone) echo '<a href="' . esc_url('tel:' . preg_replace('/[^\d+]/', '', $phone)) . '" class="tel-link"><i class="fa fa-phone"></i>' . esc_html($phone) . '</a>';
 
-                ?>
-            </div>
-            <div class="login-container">
-                <?php if (is_user_logged_in()) { ?>
-                    <a href="<?php echo wp_logout_url(); ?>" class="btn logout-btn">Log Out</a>
-                <?php } else { ?>
-                    <a href="<?php echo wp_login_url(); ?>" class="btn login-btn">Log In</a><?php
-                                                                                        } ?>
+                    ?>
+                </div>
+                <div class="login-container">
+                    <?php if (is_user_logged_in()) { ?>
+                        <a href="<?php echo wp_logout_url(); ?>" class="btn logout-btn">Log Out</a>
+                    <?php } else { ?>
+                        <a href="<?php echo wp_login_url(); ?>" class="btn login-btn">Log In</a><?php
+                                                                                            } ?>
 
 
+                </div>
             </div>
         </div>
     <?php

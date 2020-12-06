@@ -18,7 +18,7 @@ if (has_post_thumbnail()) {
     $img_class = 'no-post-thumbnail';
 } ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('grid-item group ' . $img_class); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('group ' . $img_class); ?>>
 
     <div class="post-item">
         <?php if (has_post_thumbnail()) { ?>
@@ -49,7 +49,10 @@ if (has_post_thumbnail()) {
             </header><!-- .entry-header -->
 
             <div class="entry-content">
-                <?php the_excerpt(); ?>
+                <?php $content = strip_shortcodes(wp_trim_words(get_the_content(), 80));
+                $content = apply_filters('the_content', $content);
+                $content = str_replace(']]>', ']]&gt;', $content);
+                echo $content; ?>
                 <a class="btn" href="<?php the_permalink(); ?>">Go to lesson</a>
             </div><!-- .entry-content -->
 

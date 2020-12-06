@@ -1,6 +1,9 @@
 /*--------------------------------------------------------------
 # Blog Posts Wrapper
 --------------------------------------------------------------*/
+#main.site-main {
+    padding-bottom: 60px;
+}
 
 #main.blog-posts-wrapper .entry-meta,
 #main.blog-posts-wrapper .entry-title,
@@ -247,6 +250,10 @@ body:not(.home).right-sidebar .blog-posts-wrapper .entry-title {
     padding: 0 15px;
 }
 
+.page-section .wrapper.page-section {
+    background-color: #fff;
+}
+
 .search .page-section,
 .archive .page-section {
     margin-top: 40px;
@@ -322,6 +329,20 @@ body.search.left-sidebar .blog-posts-wrapper .col-3 article {
     width: 50%;
 }
 
-.right-sidebar #primary {
+body.archive.right-sidebar .archive-group .blog-posts-wrapper .col-3 article {
+    padding: 40px 15px;
+}
+
+body.archive.right-sidebar .archive-group .blog-posts-wrapper .col-3 article {
+    .entry-container {
+        .btn {
+            margin-top: 15px;
+        }
+    }
+}
+
+
+.right-sidebar #primary,
+.right-sidebar #primary.archive-group {
     background-color: $white;
 }

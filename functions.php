@@ -52,7 +52,8 @@ if (!function_exists('act_outs_setup')) :
 		add_image_size('video-poster', 520, 350, true);
 		add_image_size('video-poster-welcome', 950, 450, true);
 		add_image_size('page-image', 1060, 470, true);
-		add_image_size('single-page-image', 700, 350, true);
+		add_image_size('single-page-image', 860, 350, true);
+		add_image_size('vertical-large', 1200, 450, true);
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
