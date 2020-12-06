@@ -5,9 +5,6 @@
         }
     }
 
-    .widget-events .event-item {
-        width: 45%;
-    }
 
 
     #top-bar {
@@ -62,111 +59,6 @@
     }
 
 
-    .blog-posts-wrapper {
-        .col-3 article {
-            width: 33.33%;
-        }
-
-        .col-3 article:nth-child(2n+1) {
-            clear: none;
-        }
-
-        .col-3 article:nth-child(3n+1) {
-            clear: left;
-        }
-
-    }
-
-
-    #courses .col-4 article {
-        width: 25%;
-    }
-
-    #courses .col-4 article:nth-child(2n+1) {
-        clear: none;
-    }
-
-    #courses .col-4 article:nth-child(4n+1) {
-        clear: left;
-    }
-
-    #courses .col-4 article:nth-last-child(-n+4) {
-        margin-bottom: 0;
-    }
-
-    .grid-item {
-        .entry-container {
-            padding: 0 10px 40px;
-        }
-
-        .entry-title {
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-    }
-
-    .grid-item:nth-child(1),
-    .grid-item:nth-child(5),
-    .grid-item:nth-child(9),
-    .grid-item:nth-child(2),
-    .grid-item:nth-child(6),
-    .grid-item:nth-child(10) {
-        width: 50%;
-    }
-
-    .grid-item:nth-child(3),
-    .grid-item:nth-child(7),
-    .grid-item:nth-child(11),
-    .grid-item:nth-child(4),
-    .grid-item:nth-child(8),
-    .grid-item:nth-child(12) {
-        width: 25%;
-    }
-
-    .grid-item:nth-child(1) .featured-image,
-    .grid-item:nth-child(5) .featured-image,
-    .grid-item:nth-child(9) .featured-image {
-        padding: 352px 0;
-    }
-
-    .grid-item:nth-child(2) .featured-image,
-    .grid-item:nth-child(6) .featured-image,
-    .grid-item:nth-child(10) .featured-image,
-    .grid-item:nth-child(3) .featured-image,
-    .grid-item:nth-child(7) .featured-image,
-    .grid-item:nth-child(11) .featured-image,
-    .grid-item:nth-child(4) .featured-image,
-    .grid-item:nth-child(8) .featured-image,
-    .grid-item:nth-child(12) .featured-image {
-        padding: 171px 0;
-    }
-
-    .grid-item .overlay:after {
-        border: 20px solid rgba(255, 255, 255, 0.5);
-    }
-
-
-    .blog-posts-wrapper {
-        .col-3 article {
-            width: 33.33%;
-        }
-
-        .col-3 article:nth-last-child(-n+3) {
-            margin-bottom: 0;
-        }
-
-        .col-3 article:nth-child(2n+1) {
-            clear: none;
-        }
-
-        .col-3 article:nth-child(3n+1) {
-            clear: left;
-        }
-
-
-    }
 
     #counter .section-content.col-5 .inner {
         width: 20%;

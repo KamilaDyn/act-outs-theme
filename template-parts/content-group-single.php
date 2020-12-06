@@ -19,8 +19,7 @@ $img_class = '';
 
     <div class="post-item">
         <?php if (has_post_thumbnail()) { ?>
-            <figure><?php the_post_thumbnail('page-image'); ?>
-
+            <figure><?php the_post_thumbnail('vertical-large'); ?>
             </figure>
 
         <?php } ?>
@@ -35,6 +34,13 @@ $img_class = '';
         </header><!-- .entry-header -->
 
         <div class="entry-container">
+
+            <div class="entry-content">
+                <?php $content = strip_shortcodes(get_the_content());
+                $content = apply_filters('the_content', $content);
+                $content = str_replace(']]>', ']]&gt;', $content);
+                echo $content; ?>
+            </div><!-- .entry-content -->
             <?php if ($video) { ?>
                 <h3 class="video-title">Videos Section for lesson</h3>
 
@@ -50,12 +56,6 @@ $img_class = '';
 
                 </div>
             <?php } ?>
-            <div class="entry-content">
-                <?php $content = strip_shortcodes(get_the_content());
-                $content = apply_filters('the_content', $content);
-                $content = str_replace(']]>', ']]&gt;', $content);
-                echo $content; ?>
-            </div><!-- .entry-content -->
 
 
 

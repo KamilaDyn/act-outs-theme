@@ -7,7 +7,7 @@
  *
  * @package act-outs
  */
-
+require get_theme_file_path('/inc/widgets.php');
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
 	define('_S_VERSION', '1.0.0');
@@ -53,7 +53,8 @@ if (!function_exists('act_outs_setup')) :
 		add_image_size('video-poster-welcome', 950, 450, true);
 		add_image_size('page-image', 1060, 470, true);
 		add_image_size('single-page-image', 860, 350, true);
-		add_image_size('vertical-large', 1200, 450, true);
+		add_image_size('vertical-large', 1280, 450, true);
+		add_image_size('widget-event-small', 300, 200, true);
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
@@ -99,15 +100,7 @@ if (!function_exists('act_outs_setup')) :
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
-		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 180,
-				'width'       => 517,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
-		);
+
 		add_theme_support(
 			'custom-logo',
 			array(
@@ -140,18 +133,28 @@ add_action('after_setup_theme', 'act_outs_content_width', 0);
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function act_outs_widgets_init()
+
 {
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Sidebar', 'act-outs'),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__('Add widgets here.', 'act-outs'),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+	register_widget('events_widget');
+	register_sidebar(array(
+		'name'          => esc_html__('Sidebar Event', 'act-outs'),
+		'id'            => 'sidebar-events',
+		'description'   => esc_html__('Sidebar for events side, add widget here'),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	));
+
+	register_sidebar(array(
+		'name'          => esc_html__('Sidebar', 'act-outs'),
+		'id'            => 'sidebar-1',
+		'description'   => esc_html__('Add widgets here.', 'act-outs'),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	));
 	register_sidebar(array(
 		'name'          => sprintf(esc_html__('Footer %d', 'act-outs'), 1),
 		'id'            => 'footer-1',
@@ -267,7 +270,6 @@ function act_outs_scripts()
 
 	wp_enqueue_script('imagesloaded');
 
-	wp_enqueue_script('jquery-packery', get_template_directory_uri() . '/assets/js/packery.pkgd' . $min . '.js', array('jquery'), '2017417', true);
 
 	wp_enqueue_script('act-outs-navigation', get_template_directory_uri() . '/assets/js/navigation' . $min . '.js', array(), '20151215', true);
 	wp_enqueue_script('lightbox', get_template_directory_uri() . '/assets/js/lightbox.js', array(), '1.0.0', true);

@@ -12,7 +12,7 @@ get_header(); ?>
 <div class="wrapper page-section">
     <div id="primary" class="content-area archive-group">
         <main id="main" class="site-main blog-posts-wrapper" role="main">
-            <div class="col-3 grid height">
+            <div class="row flex">
 
                 <?php
                 if (have_posts()) :

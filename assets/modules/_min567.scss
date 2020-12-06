@@ -3,24 +3,12 @@
         width: 50%;
     }
 
-    #courses .col-2 article,
-    #courses .col-3 article,
-    #courses .col-4 article {
-        width: 50%;
+    #courses .col-2 article {
+        width: 80%;
         float: left;
+        margin-bottom: 30px;
     }
 
-    #courses .col-2 article:nth-child(2n+1),
-    #courses .col-3 article:nth-child(2n+1),
-    #courses .col-4 article:nth-child(2n+1) {
-        clear: left;
-    }
-
-    #courses .col-2 article:nth-last-child(-n+2),
-    #courses .col-3 article:nth-last-child(-n+2),
-    #courses .col-4 article:nth-last-child(-n+2) {
-        margin-bottom: 0;
-    }
 
     .blog-posts-wrapper {
         .col-3 article {
@@ -37,22 +25,16 @@
         }
     }
 
-    #counter .section-content.col-2 .inner,
-    #counter .section-content.col-4 .inner,
-    #counter .section-content.col-5 .inner {
+    #counter .section-content.col-2 .inner {
         width: 50%;
         float: left;
     }
 
-    #counter .section-content.col-2 .inner:nth-child(2n+1),
-    #counter .section-content.col-4 .inner:nth-child(2n+1),
-    #counter .section-content.col-5 .inner:nth-child(2n+1) {
+    #counter .section-content.col-2 .inner:nth-child(2n+1) {
         clear: left;
     }
 
-    #counter .section-content.col-2 .inner:nth-last-child(-n+2),
-    #counter .section-content.col-4 .inner:nth-last-child(-n+2),
-    #counter .section-content.col-5 .inner:nth-last-child(-n+2) {
+    #counter .section-content.col-2 .inner:nth-last-child(-n+2) {
         margin-bottom: 0;
     }
 

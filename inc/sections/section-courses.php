@@ -44,9 +44,12 @@ if (!empty($courses_title)) : ?>
                 <div class="img"><img src="<?php the_post_thumbnail_url('video-poster'); ?>">
                   <span class="watch play-icon"><img src="<?php echo get_theme_file_uri('/assets/images/play-arrow.svg') ?>" alt="play-icon" title='play video'></span>
                 </div>
-                <div class="caption">
-                  <h3><?php the_title(); ?></h3>
-                </div>
+                <a href="<?php echo get_permalink() ?>">
+                  <div class="caption">
+
+                    <h3><?php the_title(); ?></h3>
+                  </div>
+                </a>
                 <div class="light">
                   <div class="container-btn">
                     <button class="closebtn">x</button>
@@ -59,8 +62,6 @@ if (!empty($courses_title)) : ?>
                   ?>
 
                 </div>
-
-
 
               </div>
 

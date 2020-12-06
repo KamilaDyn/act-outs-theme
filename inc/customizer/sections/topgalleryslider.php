@@ -59,24 +59,31 @@ $wp_customize->add_control(new Act_Outs_Switch_Control(
     )
 ));
 
-// Setting  Slider Category.
-$wp_customize->add_setting(
-    'theme_options[gallery_category]',
-    array(
 
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'absint',
-    )
-);
-$wp_customize->add_control(
-    new act_outs_Dropdown_Taxonomies_Control(
-        $wp_customize,
-        'theme_options[gallery_category]',
+
+
+for ($i = 1; $i <= 4; $i++) {
+    // Setting  Slider Images
+    $wp_customize->add_setting(
+        'theme_options[gallery_image_' . $i . ']',
         array(
-            'label'    => __('Select Category', 'act-outs'),
-            'section'  => 'section_gallery_slider',
-            'settings' => 'theme_options[gallery_category]',
-            'active_callback' => 'act_outs_gallery_slider_active',
+
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' =>  'act_outs_sanitize_image',
         )
-    )
-);
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'theme_options[gallery_image_' . $i . ']',
+            array(
+                'label'         =>  sprintf(__('Select Image #%1$s', 'act-outs'), $i),
+                'description'   => esc_html__('Choose image for slider in front page.  Recommended size for this image is 1920px by 500px.', 'act-outs'),
+                'settings' => 'theme_options[gallery_image_' . $i . ']',
+                'section'       =>   'section_gallery_slider',
+                'type'          => 'image',
+                'active_callback' =>  'act_outs_gallery_slider_active',
+            )
+        )
+    );
+}

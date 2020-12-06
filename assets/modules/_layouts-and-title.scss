@@ -3,6 +3,7 @@
 --------------------------------------------------------------*/
 
 section {
+
     position: relative;
 
     &:after {
@@ -12,6 +13,10 @@ section {
         left: 0;
         height: 1px;
         background-color: $red;
+    }
+
+    &:last-child .wrapper {
+        padding-bottom: 100px !important;
     }
 }
 
@@ -169,5 +174,5 @@ section {
 .btn:focus {
     background-color: transparent;
     border-color: $red;
-    color: $white;
+    color: $gray8;
 }

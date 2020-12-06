@@ -13,7 +13,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main blog-posts-wrapper" role="main">
 
-			<div class="col-3 grid">
+			<div class="row flex">
 
 				<?php
 
