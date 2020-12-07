@@ -261,18 +261,18 @@ function act_outs_scripts()
 	wp_enqueue_style('slick-css', get_template_directory_uri() . '/assets/css/slick' . $min . '.css', '', 'v1.8.0');
 
 	wp_enqueue_style('act-outs-blocks', get_template_directory_uri() . '/assets/css/blocks' . $min . '.css');
+	wp_enqueue_style('act-outs-custom-style', get_template_directory_uri() . '/assets/css/style' . $min . '.css');
 
 	wp_enqueue_style('act-outs-style', get_stylesheet_uri());
 
 	wp_enqueue_script('jquery-slick', get_template_directory_uri() . '/assets/js/slick' . $min . '.js', array('jquery'), '2017417', true);
 
-	wp_enqueue_script('jquery-match-height', get_template_directory_uri() . '/assets/js/jquery.matchHeight' . $min . '.js', array('jquery'), '2017417', true);
 
 	wp_enqueue_script('imagesloaded');
 
 
 	wp_enqueue_script('act-outs-navigation', get_template_directory_uri() . '/assets/js/navigation' . $min . '.js', array(), '20151215', true);
-	wp_enqueue_script('lightbox', get_template_directory_uri() . '/assets/js/lightbox.js', array(), '1.0.0', true);
+	wp_enqueue_script('lightbox', get_template_directory_uri() . '/assets/js/lightbox' . $min . '.js', array(), '1.0.0', true);
 
 	wp_enqueue_script('act-outs-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix' . $min . '.js', array(), '20151215', true);
 	$enable_counter = act_outs_get_option('disable_singleevent_counter');

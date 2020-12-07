@@ -153,6 +153,7 @@
     right: 0;
     transform: translateY(-50%);
 
+
     .entry-title {
         &:hover {
             opacity: 0.7;
@@ -171,7 +172,8 @@
     .more-link,
     .entry-meta a,
     .entry-title a,
-    .entry-meta {
+    .entry-meta,
+    .entry-meta h3 {
         color: #fff;
     }
 }

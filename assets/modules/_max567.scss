@@ -14,16 +14,27 @@
     }
 
     .featured-content-wrapper {
-        padding: 25px;
+        width: 90%;
+        margin: 0 auto;
     }
 
     #featured-slider article .entry-content {
         display: none;
     }
 
-    .section-header {
-        margin-bottom: 40px;
+    #welcome-video {
+        .featured-content-wrapper {
+            width: 90%;
+            margin: 0 auto;
+        }
+
     }
+
+    #message .wrapper {
+        padding: 50px 10px 30px;
+    }
+
+
 
     #about article .entry-content p {
         font-size: 22px;
@@ -31,6 +42,10 @@
     }
 
     #courses {
+        .wrapper {
+            padding: 10px 0 100px 0;
+        }
+
         .entry-content {
             margin-top: 15px;
             padding: 10px 0;
@@ -38,6 +53,10 @@
 
         .col-2 article {
             width: 100%;
+        }
+
+        .section-content.col-2 {
+            width: 90%;
         }
 
     }
@@ -134,4 +153,12 @@
         margin-bottom: 0;
         padding-right: 0;
     }
+
+    #colophon {
+
+        .wrapper {
+            padding: 10px 5px;
+        }
+    }
+
 }

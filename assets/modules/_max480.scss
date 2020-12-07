@@ -27,9 +27,7 @@
 
     .site-branding {
         text-align: center;
-        width: 100%;
         float: none;
-        padding: 15px;
         display: block;
 
 
@@ -56,8 +54,8 @@
 
     #welcome-video {
         .responsive-container {
-            height: 300px;
-            width: 95%;
+            height: 250px;
+            width: 100%;
         }
     }
 
@@ -89,4 +87,11 @@
     #content .page-section .entry-content {
         padding: 15px 5px;
     }
+
+    .featured-slider-wrapper {
+        .slick-dots {
+            right: 15%;
+        }
+    }
+
 }

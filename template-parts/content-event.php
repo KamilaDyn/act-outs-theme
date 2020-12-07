@@ -22,7 +22,7 @@ if (has_post_thumbnail()) {
     <div class="post-item">
         <?php if (has_post_thumbnail()) { ?>
             <figure>
-                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('act-outs-blog'); ?></a>
 
             </figure>
 

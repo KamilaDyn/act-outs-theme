@@ -14,7 +14,6 @@ section gallery
         position: relative;
         z-index: 1;
         background-color: $white;
-        padding-bottom: 50px;
     }
 
     button.slick-arrow {
@@ -30,7 +29,7 @@ section gallery
 
     .slick-item {
 
-        padding: 220px 0;
+        padding: 180px 0;
         background-size: cover;
         background-position: 50%;
         position: relative;

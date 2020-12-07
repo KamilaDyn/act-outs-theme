@@ -13,7 +13,7 @@ $class = '';
 ?>
 <div class="wrapper">
 
-    <div class="featured-slider-wrapper" data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "speed": 400, "dots": true, "arrows":true, "autoplay": true, "fade": false }'>
+    <div class="featured-slider-wrapper" data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "speed": 1000, "dots": true, "arrows":true, "autoplay": true, "fade": false }'>
 
 
         <?php for ($i = 1; $i <= 4; $i++) :

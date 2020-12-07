@@ -40,33 +40,24 @@
 .site-branding {
     background-color: $white;
     padding: 25px 0;
+    width: 90%;
+    margin: 0 auto;
 
     .site-logo {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         align-items: center;
-        padding: 20px 30px;
 
         .custom-logo-link {
-            padding-right: 30px;
 
             &:last-child {
                 padding-right: 0;
             }
         }
 
-        img {
-            width: auto;
-            height: 200px;
-        }
     }
 
-    .logo-alternative {
-        img {
-            height: 100px;
-        }
-    }
 
     .site-title {
         text-align: center;

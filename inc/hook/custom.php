@@ -74,18 +74,21 @@ if (!function_exists('act_outs_site_branding')) :
                 <?php endif; ?>
 
             </div><!-- .site-logo -->
+            <?php $title =  get_bloginfo('name', 'display');
+            if ($title || is_customize_preview()) :
+            ?>
+                <div id="site-identity">
+                    <h1 class="site-title">
+                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"> <?php bloginfo('name'); ?></a>
+                    </h1>
 
-            <div id="site-identity">
-                <h1 class="site-title">
-                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"> <?php bloginfo('name'); ?></a>
-                </h1>
-
-                <?php
-                $description = get_bloginfo('description', 'display');
-                if ($description || is_customize_preview()) : ?>
-                    <p class="site-description"><?php echo ($description); ?></p>
-                <?php endif; ?>
-            </div><!-- #site-identity -->
+                    <?php
+                    $description = get_bloginfo('description', 'display');
+                    if ($description || is_customize_preview()) : ?>
+                        <p class="site-description"><?php echo ($description); ?></p>
+                    <?php endif; ?>
+                </div><!-- #site-identity -->
+            <?php endif; ?>
         </div> <!-- .site-branding -->
         <div class="wrapper">
             <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php echo esc_attr__('Primary Menu', 'act-outs'); ?>">
@@ -168,7 +171,6 @@ if (!function_exists('act_outs_footer_section')) :
             }
             // Powered by content.
             // Powered by content.
-            $powered_by_text = sprintf(__('Theme Act-Outs by %s', 'act-outs'), '<a target="_blank" rel="designer" href="' . esc_url('http://sensationaltheme.com/') . '">' . esc_html__('Sensational Theme', 'act-outs') . '</a>');
             ?>
 
             <span class="copy-right"><?php echo esc_html($copyright_footer); ?><?php echo  $powered_by_text; ?></span>

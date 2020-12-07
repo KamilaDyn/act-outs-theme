@@ -71,18 +71,6 @@ jQuery(document).ready(function($) {
     featured_slider.slick();
     
 
-    $('.popup-video').magnificPopup({
-       type: 'iframe',
-       mainClass: 'mfp-fade',
-       preloader: true,
-    });
-/*------------------------------------------------
-            MATCH HEIGHT
-------------------------------------------------*/
-
-    $('.single #primary .navigation a').matchHeight();
-
-
 /*------------------------------------------------
                 END JQUERY
 ------------------------------------------------*/

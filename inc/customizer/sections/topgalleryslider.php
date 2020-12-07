@@ -81,6 +81,10 @@ for ($i = 1; $i <= 4; $i++) {
                 'description'   => esc_html__('Choose image for slider in front page.  Recommended size for this image is 1920px by 500px.', 'act-outs'),
                 'settings' => 'theme_options[gallery_image_' . $i . ']',
                 'section'       =>   'section_gallery_slider',
+                'width' => '1280px',
+                'height' => '300px',
+                'flex-width'         => true,
+                'flex-height'        => true,
                 'type'          => 'image',
                 'active_callback' =>  'act_outs_gallery_slider_active',
             )
