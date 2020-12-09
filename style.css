@@ -19,3 +19,89 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
+
+
+/*--------------------------------------------------------------
+# Login Page
+--------------------------------------------------------------*/
+body.login {
+    background-color: #d4e0ee;
+}
+
+body.login div#login h1 a {
+    color: #1f3a58 !important;
+    padding: 5%;
+    background-image: url(./assets/images/logo-transparentbgc.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 200px;
+    height: 200px;
+}
+
+body.login div#login form#loginform {
+    background-color: #1f3a58;
+    position: relative;
+    margin-top: 0;
+}
+
+body.login div#login form#loginform:before {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    bottom: 15px;
+    content: "";
+    display: block;
+    left: 11px;
+    position: absolute;
+    right: 11px;
+    top: 15px;
+    z-index: 2;
+}
+
+body.login div#login form#loginform:after {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    bottom: 11px;
+    content: "";
+    display: block;
+    left: 15px;
+    position: absolute;
+    right: 15px;
+    top: 11px;
+    z-index: 2;
+}
+
+body.login div#login form#loginform p,
+body.login div#login form#loginform p label,
+body.login div#login form#loginform input#user_login,
+body.login div#login form#loginform .user-pass-wrap label {
+    color: white;
+}
+
+body.login div#login form#loginform input#user_login,
+body.login div#login form#loginform input#user_pass {
+    z-index: 5;
+    position: relative;
+    color: #333;
+}
+
+body.login div#login form#loginform p.submit input#wp-submit {
+    border-radius: 2px;
+    color: #fff;
+    display: inline-block;
+    font-weight: 600;
+    padding: 2px 15px;
+    font-size: 14px;
+    position: relative;
+    border: 2px solid;
+    background-color: #c62f23;
+    border-color: #c62f23;
+    border-radius: 20px;
+    z-index: 5;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+body.login div#login form#loginform p.submit input#wp-submit:hover {
+    background-color: transparent;
+    border-color: #c62f23;
+    color: #fff;
+}

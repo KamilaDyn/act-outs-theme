@@ -1,0 +1,21 @@
+#main .not-logged {
+    h1 {
+        color: $darkblue;
+    }
+
+    a {
+        color: $blue;
+    }
+
+    ul>li>a {
+        color: $blue;
+
+        &:hover {
+            color: $red;
+        }
+    }
+
+    .video-container {
+        padding: 30px 0;
+    }
+}
