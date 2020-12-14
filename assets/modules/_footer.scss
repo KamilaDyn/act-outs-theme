@@ -22,7 +22,12 @@
         font-family: "FontAwesome";
         float: left;
         margin-right: 15px;
+        color: $gray8;
       }
+    }
+
+    .textwidget strong {
+      color: $gray8
     }
 
     .textwidget {
@@ -53,6 +58,17 @@
       }
     }
 
+  }
+
+  .overflow {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($darkblue, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
   }
 
 }

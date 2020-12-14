@@ -1,11 +1,14 @@
 @media screen and (min-width: 1024px) {
+    #masthead .header-top .wrapper .container {
+        width: 45%;
+    }
 
     .header-top .wrapper {
         justify-content: space-between;
 
         .container,
         .login-container {
-            width: 50%;
+            width: 45%;
         }
     }
 
@@ -20,6 +23,8 @@
             padding-left: 8px;
         }
     }
+
+
 
 
     .main-navigation ul ul .menu-item-has-children>a:after {
@@ -45,9 +50,13 @@
         right: auto;
     }
 
+    .main-navigation ul ul li:hover {
+        background-color: $lightgray;
+
+    }
+
     .main-navigation ul ul li:hover>a {
-        background-color: #000;
-        color: #fff !important;
+        color: $red !important;
     }
 
     .main-navigation ul.sub-menu>li:last-child>a {
@@ -57,6 +66,7 @@
     .main-navigation ul ul li {
         border-bottom: 1px solid #eee;
         background: rgba($darkblue, 0.3);
+        padding: 15px 20px;
     }
 
     .main-navigation ul ul>li:last-child {
@@ -186,7 +196,7 @@
     #message {
 
         .wrapper {
-            padding: 100px 15px 100px 15px;
+            padding: 100px 50px 100px 50px;
             background: $white;
         }
     }
@@ -283,6 +293,10 @@
 
         .wrapper {
             padding: 20px 40px;
+        }
+
+        .overflow {
+            display: none !important;
         }
     }
 

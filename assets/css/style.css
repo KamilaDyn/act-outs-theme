@@ -2145,7 +2145,7 @@ p.form-submit {
 }
 
 #masthead .header-top {
-  background-color: rgba(26, 26, 55, 0.8);
+  background-color: #1f3a58;
 }
 
 #masthead .header-top .wrapper {
@@ -2203,6 +2203,10 @@ p.form-submit {
   text-align: center;
 }
 
+.rotate {
+  transform: rotate(180deg);
+}
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -2233,6 +2237,10 @@ a:active {
 
 .main-navigation .nav-menu {
   z-index: 10;
+}
+
+.main-navigation .nav-menu > li a:hover {
+  color: #c62f23;
 }
 
 .main-navigation ul.nav-menu .current-menu-item > a {
@@ -2281,7 +2289,7 @@ a:active {
 }
 
 .main-navigation ul ul {
-  background-color: #333;
+  background-color: #2c4d72;
   text-align: left;
   padding: 0;
 }
@@ -3628,6 +3636,7 @@ video.wp-video-shortcode {
   padding: 0;
   text-align: center;
   margin: 0;
+  position: relative;
 }
 
 #courses article .entry-content p {
@@ -3719,8 +3728,13 @@ video.wp-video-shortcode {
   width: 96%;
 }
 
+#courses .service-content .responsive-container:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
 #courses .service-content .img-preloader {
-  position: relative;
   border: 1px solid #f6f4f3;
   border-top-color: #fff;
   border-radius: 3px;
@@ -3728,11 +3742,20 @@ video.wp-video-shortcode {
   border-radius: 3px;
   background-color: #ebe8e5;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  line-height: 100%;
+  height: 100%;
 }
 
 #courses .service-content .img-preloader .img {
   padding: 7px;
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 #courses .service-content .img-preloader .img:before {
@@ -4367,6 +4390,11 @@ ol.comment-list {
   font-family: "FontAwesome";
   float: left;
   margin-right: 15px;
+  color: #888;
+}
+
+#colophon .widget .textwidget strong {
+  color: #888;
 }
 
 #colophon .widget .textwidget p {
@@ -4675,6 +4703,9 @@ input[type="submit"]:focus,
 }
 
 @media screen and (min-width: 567px) {
+  #masthead .header-top .wrapper .container {
+    width: 70%;
+  }
   .videos-container .video {
     width: 50%;
   }
@@ -4961,12 +4992,15 @@ input[type="submit"]:focus,
 }
 
 @media screen and (min-width: 1024px) {
+  #masthead .header-top .wrapper .container {
+    width: 45%;
+  }
   .header-top .wrapper {
     justify-content: space-between;
   }
   .header-top .wrapper .container,
   .header-top .wrapper .login-container {
-    width: 50%;
+    width: 45%;
   }
   .main-navigation {
     border-top: 2px solid #c62f23;
@@ -4997,9 +5031,11 @@ input[type="submit"]:focus,
     left: 100%;
     right: auto;
   }
+  .main-navigation ul ul li:hover {
+    background-color: #ccc;
+  }
   .main-navigation ul ul li:hover > a {
-    background-color: #000;
-    color: #fff !important;
+    color: #c62f23 !important;
   }
   .main-navigation ul.sub-menu > li:last-child > a {
     border-bottom: none;
@@ -5007,6 +5043,7 @@ input[type="submit"]:focus,
   .main-navigation ul ul li {
     border-bottom: 1px solid #eee;
     background: rgba(31, 58, 88, 0.3);
+    padding: 15px 20px;
   }
   .main-navigation ul ul > li:last-child {
     border-bottom: none;
@@ -5099,7 +5136,7 @@ input[type="submit"]:focus,
     padding: 60px;
   }
   #message .wrapper {
-    padding: 100px 15px 100px 15px;
+    padding: 100px 50px 100px 50px;
     background: white;
   }
   #courses .wrapper {
@@ -5162,6 +5199,9 @@ input[type="submit"]:focus,
   }
   #colophon .wrapper {
     padding: 20px 40px;
+  }
+  #colophon .overflow {
+    display: none !important;
   }
 }
 
@@ -5307,6 +5347,12 @@ input[type="submit"]:focus,
   #gallery-slider .slick-item {
     padding: 150px 0;
   }
+  #courses .wrapper {
+    padding-top: 0;
+  }
+  #courses .section-content.col-2 {
+    margin-top: 40px;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -5327,6 +5373,18 @@ input[type="submit"]:focus,
   #video .entry-container {
     width: 100%;
     float: none;
+  }
+  #message .section-content {
+    padding: 0 0 60px 0;
+  }
+  #message .author-thumbnail,
+  #message .entry-container {
+    width: 80%;
+    margin: 0 auto;
+    float: none;
+  }
+  #message .entry-container {
+    padding-top: 30px;
   }
 }
 
@@ -5505,7 +5563,7 @@ input[type="submit"]:focus,
     margin: 0 auto;
   }
   #message .wrapper {
-    padding: 50px 10px 30px;
+    padding: 80px 10px 30px;
   }
   #about article .entry-content p {
     font-size: 22px;
@@ -5519,7 +5577,7 @@ input[type="submit"]:focus,
     padding: 10px 0;
   }
   #courses .col-2 article {
-    width: 100%;
+    width: 90%;
   }
   #courses .section-content.col-2 {
     width: 90%;
@@ -5620,13 +5678,20 @@ input[type="submit"]:focus,
     max-width: 100%;
     padding: 0;
   }
+  #masthead .header-top .wrapper {
+    justify-content: space-between;
+    padding: 0;
+  }
+  #masthead .header-top .wrapper .container a {
+    display: block;
+  }
   .site-branding {
     text-align: center;
     float: none;
     display: block;
   }
   .menu-main-menu-container {
-    width: 90vw;
+    width: 80vw;
   }
   .menu-toggle {
     margin: auto;
@@ -5656,8 +5721,14 @@ input[type="submit"]:focus,
   #message .author-thumbnail:after {
     margin-left: 10px;
   }
+  #courses .col-2 article {
+    width: 100%;
+  }
   #our-story .content-wrapper {
     padding: 25px;
+  }
+  #content {
+    width: 98%;
   }
   #content .page-section .entry-content {
     padding: 15px 5px;

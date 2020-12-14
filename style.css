@@ -39,6 +39,10 @@ body.login div#login h1 a {
     height: 200px;
 }
 
+body.login div#login {
+    padding: 8% 0;
+}
+
 body.login div#login form#loginform {
     background-color: #1f3a58;
     position: relative;

@@ -334,6 +334,48 @@ function ourLoginTitle()
 }
 add_filter('login_headertext', 'ourLoginTitle');
 
+/*
+redirect subscriber and groups accounts out of admin to home page
+*/
+function redirectSubsToFrontend()
+{
+	$ourCurrentUser = wp_get_current_user();
+
+	if (count($ourCurrentUser->roles) <= 2 and $ourCurrentUser->roles[1] == 'group_first') {
+		wp_redirect(esc_url(site_url('/courses/5-7year-olds/')));
+		exit;
+	}
+	if (count($ourCurrentUser->roles) <= 2 and $ourCurrentUser->roles[1] == 'group_second') {
+		wp_redirect(esc_url(site_url('/courses/7-9year-olds/')));
+		exit;
+	}
+	if (count($ourCurrentUser->roles) <= 2 and $ourCurrentUser->roles[1] == 'group_third') {
+		wp_redirect(site_url('/courses/9-13year-olds/'));
+		exit;
+	}
+	if (count($ourCurrentUser->roles) <= 2 and $ourCurrentUser->roles[1] == 'group_fourth') {
+		wp_redirect(esc_url(site_url('/courses/13-16year-olds/')));
+		exit;
+	}
+	if (count($ourCurrentUser->roles) == 1 and $ourCurrentUser->roles[0] == 'subscriber') {
+		wp_redirect(esc_url(site_url('/')));
+		exit;
+	}
+}
+add_action('admin_init', 'redirectSubsToFrontend');
+
+// hide admin bar 
+
+function noSubsAdminBar()
+{
+	$currentUser = wp_get_current_user();
+	if (count($currentUser->roles) <= 2 and  ($currentUser->roles[0] == 'subscriber' or $currentUser->roles[1] == 'group_first' or $currentUser->roles[1] == 'group_second' or $currentUser->roles[1] == 'group_third' or  $currentUser->roles[1] == 'group_fourth')) {
+		show_admin_bar(false);
+	}
+}
+add_action('admin_init', 'noSubsAdminBar');
+
+
 /**
  * Load init.
  */

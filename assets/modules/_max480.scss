@@ -24,6 +24,15 @@
         padding: 0;
     }
 
+    #masthead .header-top .wrapper {
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    #masthead .header-top .wrapper .container a {
+        display: block;
+    }
+
 
     .site-branding {
         text-align: center;
@@ -33,10 +42,14 @@
 
     }
 
+    .menu-main-menu-container {
+        width: 80vw;
+    }
+
 
     .menu-toggle {
         margin: auto;
-        float: none;
+        float: right;
         display: block;
         width: 100%;
         text-align: center;
@@ -77,11 +90,17 @@
     }
 
 
-
+    #courses .col-2 article {
+        width: 100%;
+    }
 
 
     #our-story .content-wrapper {
         padding: 25px;
+    }
+
+    #content {
+        width: 98%;
     }
 
     #content .page-section .entry-content {

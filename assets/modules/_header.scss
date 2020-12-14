@@ -5,8 +5,7 @@
     background-color: $white;
 
     .header-top {
-        background-color: rgba(26, 26, 55, 0.8);
-
+        background-color: $darkblue;
     }
 
     .header-top .wrapper {
@@ -49,6 +48,10 @@
         flex-wrap: wrap;
         align-items: center;
 
+        .custom-logo-link:first-child {
+            margin-right: 30px;
+        }
+
         .custom-logo-link {
 
             &:last-child {
@@ -67,4 +70,8 @@
         color: $white;
         text-align: center;
     }
+}
+
+.rotate {
+    transform: rotate(180deg);
 }

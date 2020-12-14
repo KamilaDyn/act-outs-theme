@@ -1,4 +1,9 @@
 @media screen and (min-width: 567px) {
+
+    #masthead .header-top .wrapper .container {
+        width: 70%;
+    }
+
     .videos-container .video {
         width: 50%;
     }
@@ -41,6 +46,10 @@
     #counter .section-content.col-5 .inner:last-child {
         width: 100%;
         float: none;
+    }
+
+    .site-branding .site-logo .custom-logo-link:first-child {
+        margin-right: 30px;
     }
 
 

@@ -250,6 +250,11 @@ body:not(.home).right-sidebar .blog-posts-wrapper .entry-title {
     padding: 0 15px;
 }
 
+.no-sidebar #primary,
+.right-sidebar #primary {
+    padding-top: 30px;
+}
+
 
 #primary #main .flex {
     display: flex;

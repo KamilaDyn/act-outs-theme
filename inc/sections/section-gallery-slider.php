@@ -17,7 +17,8 @@ $class = '';
 
 
         <?php for ($i = 1; $i <= 4; $i++) :
-            $images_post = act_outs_get_option('gallery_image_' . $i); ?>
+            $images_post = act_outs_get_option('gallery_image_' . $i);
+        ?>
             <div class="slick-item" style="background-image: url('<?php echo esc_url($images_post); ?> ?>');">
                 <?php
                 $class = '';

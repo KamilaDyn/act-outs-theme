@@ -29,6 +29,11 @@
         padding: 0;
         text-align: center;
         margin: 0;
+        position: relative;
+
+
+
+
 
         .entry-content p {
             margin-bottom: 0;
@@ -128,10 +133,16 @@
     .service-content {
         .responsive-container {
             width: 96%;
+
+            &:before {
+                content: '';
+                display: block;
+                padding-top: 100%;
+            }
+
         }
 
         .img-preloader {
-            position: relative;
             border: 1px solid #f6f4f3;
             border-top-color: #fff;
             border-radius: 3px;
@@ -139,12 +150,20 @@
             border-radius: 3px;
             background-color: #ebe8e5;
             box-shadow: 0 0 2px 2px rgba(0, 0, 0, .15);
-
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            line-height: 100%;
+            height: 100%;
 
 
             .img {
                 padding: 7px;
                 position: relative;
+                width: 100%;
+                height: 100%;
 
                 &:before {
                     border: 1px solid rgba($white, 0.5);

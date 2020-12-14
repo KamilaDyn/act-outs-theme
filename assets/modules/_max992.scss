@@ -29,5 +29,19 @@
         }
     }
 
+    #message .section-content {
+        padding: 0 0 60px 0;
+    }
+
+    #message .author-thumbnail,
+    #message .entry-container {
+        width: 80%;
+        margin: 0 auto;
+        float: none;
+    }
+
+    #message .entry-container {
+        padding-top: 30px;
+    }
 
 }

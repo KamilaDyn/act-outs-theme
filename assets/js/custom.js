@@ -54,6 +54,7 @@ jQuery(document).ready(function ($) {
     $('button.dropdown-toggle').click(function () {
         $(this).toggleClass('active');
         $(this).parent().find('.sub-menu').first().slideToggle();
+        $(this).children('.fa-angle-down').toggleClass('rotate');
     });
 
     $(window).scroll(function () {
