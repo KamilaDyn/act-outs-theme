@@ -23,8 +23,15 @@ body {
     margin: 0;
 }
 
-body {
-    font-family: 'Source Sans Pro'
+th,
+td {
+    font-family: 'Oxygen, cursive'
+}
+
+li,
+p,
+a {
+    font-family: 'Muli', sans-serif;
 }
 
 input:focus,
