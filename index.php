@@ -18,7 +18,7 @@ $latest_posts_title = act_outs_get_option('latest_posts_title'); ?>
 <div class="wrapper page-section">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main blog-posts-wrapper" role="main">
-			<div class="col-<?php echo esc_attr($latest_post_column); ?> grid">
+			<div class="row flex">
 
 				<?php
 				if (have_posts()) :

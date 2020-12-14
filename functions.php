@@ -270,24 +270,22 @@ function act_outs_scripts()
 	wp_enqueue_script('imagesloaded');
 
 
-	wp_enqueue_script('act-outs-navigation', get_template_directory_uri() . '/assets/js/navigation' . $min . '.js', array(), '20151215', true);
+	wp_enqueue_script('act-outs-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true);
 	wp_enqueue_script('lightbox', get_template_directory_uri() . '/assets/js/lightbox' . $min . '.js', array(), '1.0.0', true);
 
 	wp_enqueue_script('act-outs-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix' . $min . '.js', array(), '20151215', true);
 
-	if(is_front_page()){
+	if (is_front_page()) {
 
 		wp_enqueue_script('jquery-slick', get_template_directory_uri() . '/assets/js/slick' . $min . '.js', array('jquery'), '2017417', true);
 		wp_enqueue_script('act-outs-custom-front-page', get_template_directory_uri() . '/assets/js/custom-front-page' . $min . '.js', array('jquery'), '', true);
-
 	}
 
-	if(is_page('calendar')){
+	if (is_page('calendar')) {
 		wp_enqueue_style('act-outs-calendar-style', get_template_directory_uri() . '/assets/evo-calendar/evo-calendar' . $min . '.css');
 		wp_enqueue_script('jquery-api', get_template_directory_uri() . '/assets/evo-calendar/jquery-3.5.1' . $min . '.js', array('jquery'), '3.5.1', true);
 		wp_enqueue_script('act-outs-calendar', get_template_directory_uri() . '/assets/evo-calendar/evo-calendar' . $min . '.js', array('jquery'), '1.1.3', true);
 		wp_enqueue_script('act-outs-custom-calendar', get_template_directory_uri() . '/assets/evo-calendar/custom-calendar' . $min . '.js', array('jquery'), '1.0.0', true);
-	
 	}
 
 	$enable_counter = act_outs_get_option('disable_singleevent_counter');
@@ -302,12 +300,11 @@ function act_outs_scripts()
 		wp_enqueue_script('comment-reply');
 	}
 
-// localize scripts 
+	// localize scripts 
 	wp_localize_script('act-outs-custom-js', 'actoutsData', array(
-        'root_url' => get_site_url(),
-        'nonce' => wp_create_nonce('wp_rest')
-    ));
-
+		'root_url' => get_site_url(),
+		'nonce' => wp_create_nonce('wp_rest')
+	));
 }
 add_action('wp_enqueue_scripts', 'act_outs_scripts');
 
