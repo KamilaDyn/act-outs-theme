@@ -73,7 +73,7 @@ add_action('wp_head', 'act_outs_pingback_header');
  */
 function act_outs_get_sections()
 {
-  $sections = array('gallery-slider', 'welcome-video', 'courses',  'featured-slider', 'message', 'about', 'blog');
+  $sections = array('gallery-slider', 'welcome-video', 'message', 'courses', 'featured-slider',  'about', 'blog');
   $enabled_section = array();
   foreach ($sections as $section) {
 
