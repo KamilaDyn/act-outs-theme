@@ -64,6 +64,27 @@ $wp_customize->add_control(
 for ($i = 1; $i <= 4; $i++) {
 
 
+    // Additional Information First Title
+    $wp_customize->add_setting(
+        'theme_options[course_title_' . $i . ']',
+        array(
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'sanitize_text_field'
+        )
+    );
+
+    $wp_customize->add_control(
+        'theme_options[course_title_' . $i . ']',
+        array(
+            'label'       => sprintf(__('Title Page #%1$s', 'act-outs'), $i),
+            'section'     => 'section_home_courses',
+            'settings'    => 'theme_options[course_title_' . $i . ']',
+            'type'        => 'text',
+            'active_callback' => 'act_outs_courses_active',
+        )
+    );
+
     // Additional Information First Page
     $wp_customize->add_setting(
         'theme_options[course_page_' . $i . ']',
