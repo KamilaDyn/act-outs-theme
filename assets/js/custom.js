@@ -47,9 +47,7 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    menu_toggle.click(function () {
-        nav_menu.slideToggle();
-    });
+   
 
     $('.main-navigation .nav-menu .menu-item-has-children > a').after($('<button class="dropdown-toggle"><i class="fa fa-angle-down"></i></button>'));
 
