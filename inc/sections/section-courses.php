@@ -7,6 +7,7 @@
  */
 
 $courses_title       = act_outs_get_option('course_title');
+
 $content = apply_filters('the_content', get_the_content());
 $video = get_media_embedded_in_content($content, array('video', 'object', 'embed', 'iframe'));
 for ($i = 1; $i <= 4; $i++) :
@@ -44,12 +45,16 @@ if (!empty($courses_title)) : ?>
                 <div class="img"><img src="<?php the_post_thumbnail_url('video-poster'); ?>">
                   <span class="watch play-icon"><img src="<?php echo get_theme_file_uri('/assets/images/play-arrow.svg') ?>" alt="play-icon" title='play video'></span>
                 </div>
-                <a href="<?php echo get_permalink() ?>">
-                  <div class="caption">
+                <?php $single_title = act_outs_get_option('course_title_' . $i);
+                if (!empty($single_title)) :
+                ?>
+                  <a href="<?php echo get_permalink() ?>">
+                    <div class="caption">
+                      <h3><?php echo esc_attr($single_title) ?></h3>
+                    </div>
+                  </a>
+                <?php endif; ?>
 
-                    <h3><?php the_title(); ?></h3>
-                  </div>
-                </a>
                 <div class="light">
                   <div class="container-btn">
                     <button class="closebtn">x</button>
