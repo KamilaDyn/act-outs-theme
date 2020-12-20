@@ -46,6 +46,10 @@
 
 
     #blog {
+        .section-content {
+            padding-top: 50px;
+        }
+
         .col-3 article {
             width: 33.33%;
 
@@ -172,6 +176,6 @@
     }
 
     #main #comments {
-        width: 80%;
+        width: 100%;
     }
 }

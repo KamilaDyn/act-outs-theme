@@ -12,7 +12,7 @@ $default = act_outs_get_default_theme_options();
 $wp_customize->add_section(
     'section_home_blog',
     array(
-        'title'      => __('Upcoming Event Section', 'act-outs'),
+        'title'      => __('Last Post in Blog Section', 'act-outs'),
         'priority'   => 30,
         'capability' => 'edit_theme_options',
         'panel'      => 'home_page_panel',
@@ -107,31 +107,5 @@ for ($i = 1; $i <= 3; $i++) {
             'type'        => 'dropdown-posts',
             'active_callback' => 'act_outs_blog_active',
         )
-    ));
-    // message title setting and control 
-    $wp_customize->add_setting('theme_options[blog_date_' . $i . ']', array(
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-
-    $wp_customize->add_control('theme_options[blog_date_' . $i . ']', array(
-        'label'               =>  sprintf(__('Event Date ', 'act-outs'), $i),
-        'section'            => 'section_home_blog',
-        'active_callback'     => 'act_outs_blog_active',
-        'type'                    => 'date',
-        'input_attrs' => array(
-            'id' => 'datepicker',
-            'placeholder' => __('mm-dd-yyyy', 'act-outs'),
-        )
-    ));
-    // message title setting and control 
-    $wp_customize->add_setting('theme_options[blog_address_' . $i . ']', array(
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-
-    $wp_customize->add_control('theme_options[blog_address_' . $i . ']', array(
-        'label'               =>  sprintf(__('Event Address ', 'act-outs'), $i),
-        'section'            => 'section_home_blog',
-        'active_callback'     => 'act_outs_blog_active',
-        'type'                => 'text',
     ));
 }

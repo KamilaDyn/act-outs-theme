@@ -758,7 +758,11 @@ html {
 #content {
   position: relative;
   width: 90%;
-  margin: 30px auto;
+  margin: 30px auto 0;
+}
+
+article {
+  padding: 0 20px;
 }
 
 article,
@@ -1474,7 +1478,11 @@ html {
 #content {
   position: relative;
   width: 90%;
-  margin: 30px auto;
+  margin: 30px auto 0;
+}
+
+article {
+  padding: 0 20px;
 }
 
 article,
@@ -2214,7 +2222,7 @@ p.form-submit {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: white;
+  color: #333;
   text-decoration: none;
   outline: none;
 }
@@ -2248,10 +2256,10 @@ a:active {
 }
 
 .main-navigation ul.nav-menu > li > a {
-  padding: 15px 18px;
+  padding: 15px 10px;
   color: white;
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .main-navigation ul {
@@ -2381,10 +2389,14 @@ a:active {
   margin-right: 3px;
 }
 
-.single #primary article.post,
 .single #primary .navigation,
 .single #primary #comments {
   box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.05);
+}
+
+.single #primary article.post,
+.single #primary .navigation,
+.single #primary #comments {
   margin-top: 40px;
 }
 
@@ -2403,6 +2415,7 @@ a:active {
 
 .single #primary .site-main > article {
   margin-bottom: 50px;
+  background-color: white;
 }
 
 .single #primary .navigation {
@@ -2589,7 +2602,6 @@ section:after {
   top: 0;
   left: 0;
   height: 1px;
-  background-color: #c62f23;
 }
 
 section:last-child .wrapper {
@@ -2717,10 +2729,6 @@ section:last-child .wrapper {
   background-color: transparent;
   border-color: #c62f23;
   color: #888;
-}
-
-#content .page-section .entry-content {
-  padding: 15px 30px;
 }
 
 /*--------------------------------------------------------------
@@ -3805,6 +3813,27 @@ video.wp-video-shortcode {
   font-style: italic;
 }
 
+#blog .wrapper {
+  background-color: white;
+  padding: 50px 20px 50px 20px;
+}
+
+#blog .entry-container .entry-header {
+  text-align: center;
+}
+
+#blog .entry-container .cat-links span {
+  text-align: center;
+}
+
+#blog .entry-container .entry-content .link-read {
+  color: #c62f23;
+}
+
+#blog .section-content {
+  padding-top: 30px;
+}
+
 /*--------------------------------------------------------------
 ## Message From Author
 --------------------------------------------------------------*/
@@ -3910,6 +3939,208 @@ video.wp-video-shortcode {
 #message .author-thumbnail:after {
   left: 100%;
   margin-left: 35px;
+}
+
+#message .social-icons li a {
+  color: #333;
+}
+
+#message .social-icons li a:focus, #message .social-icons li a:hover {
+  color: #c62f23;
+}
+
+/*===================================================================
+## Social Icons
+===================================================================*/
+.social-icons {
+  padding: 20px 0;
+}
+
+ul.social-icons {
+  margin: 0;
+  padding: 0;
+}
+
+.social-icons li {
+  display: inline-block;
+  width: 50px;
+  height: auto;
+  text-align: center;
+  line-height: 50px;
+  position: relative;
+  list-style: none;
+}
+
+.social-icons ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-icons li:not(:last-child) {
+  margin-right: 20px;
+}
+
+.social-icons li a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  transition: all 0.2s ease-in-out;
+}
+
+.social-icons li a:hover {
+  color: #c62f23;
+}
+
+.social-icons li a:before {
+  font-family: "FontAwesome";
+  visibility: visible;
+  font-size: 30px;
+}
+
+.social-icons li a {
+  color: #333;
+  border: 1px solid #c62f23;
+  background-color: white;
+  border-radius: 50px;
+  transition: all 0.5s ease-in;
+}
+
+.social-icons li a:hover, .social-icons li a:focus {
+  background-color: #c62f23;
+}
+
+.social-icons li a:hover:before {
+  color: white;
+}
+
+.social-icons li a[href*="facebook.com"]:before,
+.social-icons li a[href*="fb.com"]:before {
+  content: "\f09a";
+}
+
+.social-icons li a[href*="twitter.com"]:before {
+  content: "\f099";
+}
+
+.social-icons li a[href*="wa.link"]:before {
+  content: "\f232";
+}
+
+.social-icons li a[href*="messenger.com"]:before {
+  content: "\f27b";
+}
+
+.social-icons li a[href*="linkedin.com"]:before {
+  content: "\f0e1";
+}
+
+.social-icons li a[href*="plus.google.com"]:before {
+  content: "\f0d5";
+}
+
+.social-icons li a[href*="youtube.com"]:before {
+  content: "\f167";
+}
+
+.social-icons li a[href*="dribbble.com"]:before {
+  content: "\f17d";
+}
+
+.social-icons li a[href*="pinterest.com"]:before {
+  content: "\f231";
+}
+
+.social-icons li a[href*="bitbucket.org"]:before {
+  content: "\f171";
+}
+
+.social-icons li a[href*="github.com"]:before {
+  content: "\f113";
+}
+
+.social-icons li a[href*="codepen.io"]:before {
+  content: "\f1cb";
+}
+
+.social-icons li a[href*="flickr.com"]:before {
+  content: "\f16e";
+}
+
+.social-icons li a[href$="/feed/"]:before {
+  content: "\f09e";
+}
+
+.social-icons li a[href*="foursquare.com"]:before {
+  content: "\f180";
+}
+
+.social-icons li a[href*="instagram.com"]:before {
+  content: "\f16d";
+}
+
+.social-icons li a[href*="tumblr.com"]:before {
+  content: "\f173";
+}
+
+.social-icons li a[href*="reddit.com"]:before {
+  content: "\f1a1";
+}
+
+.social-icons li a[href*="vimeo.com"]:before {
+  content: "\f194";
+}
+
+.social-icons li a[href*="digg.com"]:before {
+  content: "\f1a6";
+}
+
+.social-icons li a[href*="twitch.tv"]:before {
+  content: "\f1e8";
+}
+
+.social-icons li a[href*="stumbleupon.com"]:before {
+  content: "\f1a4";
+}
+
+.social-icons li a[href*="delicious.com"]:before {
+  content: "\f1a5";
+}
+
+.social-icons li a[href*="mailto:"]:before {
+  content: "\f0e0";
+}
+
+.social-icons li a[href*="soundcloud.com"]:before {
+  content: "\f1be";
+}
+
+.social-icons li a[href*="wordpress.org"]:before {
+  content: "\f19a";
+}
+
+.social-icons li a[href*="wordpress.com"]:before {
+  content: "\f19a";
+}
+
+.social-icons li a[href*="jsfiddle.net"]:before {
+  content: "\f1cc";
+}
+
+.social-icons li a[href*="tripadvisor.com"]:before {
+  content: "\f262";
+}
+
+.social-icons li a[href*="foursquare.com"]:before {
+  content: "\f180";
+}
+
+.social-icons li a[href*="angel.co"]:before {
+  content: "\f209";
+}
+
+.social-icons li a[href*="slack.com"]:before {
+  content: "\f198";
 }
 
 /*--------------------------------------------------------------
@@ -4058,8 +4289,153 @@ video.wp-video-shortcode {
   font-size: 12px;
 }
 
+/* ===========================
+ Single Event
+================================================== */
+#single-event {
+  margin-top: 0;
+  border-bottom: 1px solid #c62f23;
+  border-top: 1px solid #c62f23;
+}
+
+#single-event .wrapper {
+  background-color: white;
+}
+
+#single-event .single-event-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0;
+}
+
+#single-event .date-info {
+  padding-bottom: 30px;
+}
+
+#single-event .date-info .event-header h2.event-title {
+  margin: 7px 0;
+  font-size: 32px;
+}
+
+#single-event .date-info .event-header .event-address {
+  font-size: 16px;
+}
+
+#single-event .date-info .event-header li.event-img img {
+  float: left;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+}
+
+#single-event .date-info li:first-child {
+  margin-left: 0;
+  font-weight: 700;
+  padding-left: 0;
+}
+
+#single-event .date-info li i.fa {
+  color: #c62f23;
+  font-size: 18px;
+}
+
+#single-event .date-info li:last-child {
+  margin-right: 0;
+}
+
+#single-event .date-info .event-header li.event-img {
+  padding-right: 15px;
+}
+
+#single-event .date-info li {
+  font-weight: 400;
+  display: inline-block;
+  padding: 0 15px;
+  font-size: 22px;
+  vertical-align: middle;
+}
+
+#single-event .date-info li i {
+  font-size: 14px;
+  padding-right: 10px;
+}
+
+#single-event .date-info .event-header li.event-detail {
+  padding-left: 0;
+}
+
+#single-event .date-info .event-header ul {
+  margin-left: 0;
+  padding-left: 15px;
+}
+
+#single-event .date-info .event-time {
+  color: #c62f23;
+  font-size: 20px;
+}
+
+#single-event .date-info .event-date,
+#single-event .date-info .event-date .fa {
+  color: #c62f23;
+  font-size: 30px;
+}
+
+#single-event .single-event-info .read-more {
+  float: right;
+}
+
+#single-event .event-address,
+#single-event .event-time {
+  color: #c62f23;
+}
+
+#single-event .event-starting-time {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  text-align: center;
+}
+
+#event-timer {
+  font-size: 42px;
+}
+
+#event-timer span {
+  color: white;
+  min-width: 100px;
+  min-height: 100px;
+  display: inline-block;
+  text-align: center;
+  max-width: 100px;
+  font-weight: 700;
+  margin-right: 20px;
+  border-radius: 10px;
+  padding: 8px 0;
+}
+
+#event-timer small {
+  font-size: 14px;
+  display: block;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
 .single #primary {
   background-color: white;
+}
+
+.single #primary article .post-item {
+  padding: 0 35px 50px 35px;
+}
+
+.single #primary article .post-item .entry-content {
+  padding-bottom: 30px;
+}
+
+.single #primary article .post-item .entry-title {
+  text-align: center;
+  color: #1f3a58;
 }
 
 .single #primary .event .entry-meta a,
@@ -4369,7 +4745,7 @@ ol.comment-list {
 }
 
 #colophon {
-  margin-top: 50px;
+  padding-top: 50px;
   background-image: linear-gradient(rgba(16, 61, 103, 0.8), rgba(0, 0, 0, 0.8));
 }
 
@@ -4383,6 +4759,10 @@ ol.comment-list {
 
 #colophon ul {
   list-style: none;
+}
+
+#colophon a {
+  color: white;
 }
 
 #colophon .widget li:before {
@@ -4399,6 +4779,14 @@ ol.comment-list {
 
 #colophon .widget .textwidget p {
   color: white;
+}
+
+#colophon .widget .social-icons li a {
+  color: #333;
+}
+
+#colophon .widget .social-icons li::before {
+  display: none;
 }
 
 #colophon .site-info {
@@ -4821,6 +5209,9 @@ input[type="submit"]:focus,
   #about .col-3 article:nth-last-child(-n+3) {
     margin-bottom: 0;
   }
+  #blog .section-content {
+    padding-top: 50px;
+  }
   #blog .col-3 article {
     width: 33.33%;
   }
@@ -4908,7 +5299,7 @@ input[type="submit"]:focus,
     padding: 10px 0;
   }
   #main #comments {
-    width: 80%;
+    width: 100%;
   }
 }
 
@@ -5181,9 +5572,6 @@ input[type="submit"]:focus,
   .no-sidebar.home #primary {
     max-width: 100%;
   }
-  #main #comments {
-    width: 70%;
-  }
   #content {
     width: 85%;
   }
@@ -5404,6 +5792,15 @@ input[type="submit"]:focus,
   #blog .section-content.col-3 article {
     width: 100%;
     float: none;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+  #blog .section-content.col-3 article:last-child {
+    border: none;
+  }
+  #blog .section-content.col-3 article .blog-image {
+    display: none;
   }
   #blog .section-content.col-3 article:nth-child(3n+1) {
     clear: none;
@@ -5535,6 +5932,9 @@ input[type="submit"]:focus,
   }
   #gallery-slider .slick-item {
     padding: 100px 0;
+  }
+  .single #primary #comments {
+    width: 100%;
   }
 }
 

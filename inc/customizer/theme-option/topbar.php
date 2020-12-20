@@ -23,7 +23,7 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(new Act_Outs_Switch_Control(
     $wp_customize,
-    'theme_options[disable__header_contact_info]',
+    'theme_options[disable_show_header_contact_info]',
     array(
         'label'             => __('Enable/Disable Contact Section', 'act-outs'),
         'section'            => 'topbar_section',
@@ -34,7 +34,7 @@ $wp_customize->add_control(new Act_Outs_Switch_Control(
 
 /** Phone Number  */
 $wp_customize->add_setting(
-    'theme_options[ header_phone]',
+    'theme_options[header_phone]',
     array(
         'default' => '',
         'type'              => 'theme_mod',
@@ -44,10 +44,11 @@ $wp_customize->add_setting(
 );
 
 $wp_customize->add_control(
-    'theme_options[ header_phone]',
+    'theme_options[header_phone]',
     array(
         'label' => __('Phone Number', 'act-outs'),
         'section' => 'topbar_section',
+        'settings'    => 'theme_options[header_phone]',
         'type' => 'text',
         'active_callback' => 'act_outs_contact_info_ac'
     )
@@ -55,7 +56,7 @@ $wp_customize->add_control(
 
 /** Email Address  */
 $wp_customize->add_setting(
-    'theme_options[ header_email]',
+    'theme_options[header_email]',
     array(
         'default' => '',
         'type'              => 'theme_mod',
@@ -66,7 +67,7 @@ $wp_customize->add_setting(
 );
 
 $wp_customize->add_control(
-    'theme_options[ header_email]',
+    'theme_options[header_email]',
     array(
         'label' => __('Email address', 'act-outs'),
         'section' => 'topbar_section',
@@ -74,3 +75,24 @@ $wp_customize->add_control(
         'active_callback' => 'act_outs_contact_info_ac',
     )
 );
+
+
+$wp_customize->add_setting(
+    'theme_options[disable_show_login_btn]',
+    array(
+        'default'           => $default['disable_show_login_btn'],
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'act_outs_sanitize_switch_control',
+    )
+);
+$wp_customize->add_control(new Act_Outs_Switch_Control(
+    $wp_customize,
+    'theme_options[disable_show_login_btn]',
+    array(
+        'label'     => __('Disable login button for users', 'act-outs'),
+        'section' => 'topbar_section',
+        'settings'          => 'theme_options[disable_show_login_btn]',
+        'on_off_label'         => act_outs_switch_options(),
+    )
+));

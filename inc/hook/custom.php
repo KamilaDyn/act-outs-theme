@@ -14,29 +14,36 @@ if (!function_exists('act_outs_header_top')) :
      * 
      */
     function act_outs_header_top()
-    { ?>
+    {   ?>
+
         <div class="header-top">
             <div class="wrapper">
-                <div class="container">
-                    <?php
-                    $email     = get_theme_mod('header_email');
-                    $phone     = get_theme_mod('header_phone');
+                <?php $disable_contact = act_outs_get_option('disable_show_header_contact_info');
+                if (true == $disable_contact) : ?>
+                    <div class="container">
+                        <?php
 
-                    if ($email) echo '<a href="' . esc_url('mailto:' . sanitize_email($email)) . '" class="email"><i class="fa fa-envelope-o"></i>' . esc_html($email) . '</a>';
+                        $email     =  act_outs_get_option('header_email');
+                        $phone     =  act_outs_get_option('header_phone');
 
-                    if ($phone) echo '<a href="' . esc_url('tel:' . preg_replace('/[^\d+]/', '', $phone)) . '" class="tel-link"><i class="fa fa-phone"></i>' . esc_html($phone) . '</a>';
+                        if ($email) echo '<a href="' . esc_url('mailto:' . sanitize_email($email)) . '" class="email"><i class="fa fa-envelope-o"></i>' . esc_html($email) . '</a>';
 
-                    ?>
-                </div>
-                <div class="login-container">
-                    <?php if (is_user_logged_in()) { ?>
-                        <a href="<?php echo wp_logout_url(); ?>" class="btn logout-btn">Log Out</a>
-                    <?php } else { ?>
-                        <a href="<?php echo wp_login_url(); ?>" class="btn login-btn">Log In</a><?php
-                                                                                            } ?>
+                        if ($phone) echo '<a href="' . esc_url('tel:' . preg_replace('/[^\d+]/', '', $phone)) . '" class="tel-link"><i class="fa fa-phone"></i>' . esc_html($phone) . '</a>';
 
-
-                </div>
+                        ?>
+                    </div>
+                <?php endif;
+                $disable_login_btn = act_outs_get_option('disable_show_login_btn');
+                if (true == $disable_login_btn) :
+                ?>
+                    <div class="login-container">
+                        <?php if (is_user_logged_in()) { ?>
+                            <a href="<?php echo wp_logout_url(); ?>" class="btn logout-btn">Log Out</a>
+                        <?php } else { ?>
+                            <a href="<?php echo wp_login_url(); ?>" class="btn login-btn">Log In</a><?php
+                                                                                                } ?>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     <?php
@@ -287,12 +294,16 @@ if (!function_exists('act_outs_banner_header')) :
             $header_image_url = act_outs_banner_image($image_url = '');
         } ?>
         <div id="page-site-header" style="background-image: url('<?php echo esc_url($header_image_url); ?>');">
-            <div class="overlay"></div>
-            <header class='page-header'>
-                <div class="wrapper">
-                    <?php act_outs_banner_title(); ?>
-                </div><!-- .wrapper -->
-            </header>
+            <?php $header_title   = act_outs_get_option('disable_header_title');
+            if (true == $header_title) : ?>
+                <div class="overlay"></div>
+                <header class='page-header'>
+                    <div class="wrapper">
+                        <?php act_outs_banner_title(); ?>
+                    </div>
+                </header>
+            <?php endif; ?>
+
         </div><!-- #page-site-header -->
         <?php echo '<div class= "page-section">';
     }

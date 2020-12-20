@@ -135,7 +135,9 @@ add_action('after_setup_theme', 'act_outs_content_width', 0);
  */
 function act_outs_widgets_init()
 
+
 {
+	register_widget('social_links_widget');
 	register_widget('events_widget');
 	register_sidebar(array(
 		'name'          => esc_html__('Sidebar Event', 'act-outs'),
@@ -288,7 +290,7 @@ function act_outs_scripts()
 		wp_enqueue_script('act-outs-custom-calendar', get_template_directory_uri() . '/assets/evo-calendar/custom-calendar' . $min . '.js', array('jquery'), '1.0.0', true);
 	}
 
-	$enable_counter = act_outs_get_option('disable_singleevent_counter');
+	$enable_counter = act_outs_get_option('disable_single-event_counter');
 	$singleevent_date = act_outs_get_option('singleevent_date');
 	if (($enable_counter == true) && !empty($singleevent_date) && is_front_page()) :
 		// count down js

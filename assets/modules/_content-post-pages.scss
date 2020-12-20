@@ -40,12 +40,17 @@
 
     #primary {
 
-        article.post,
+
         .navigation,
         #comments {
             box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.05);
-            margin-top: 40px;
 
+        }
+
+        article.post,
+        .navigation,
+        #comments {
+            margin-top: 40px;
         }
 
         article.post,
@@ -66,6 +71,9 @@
 
         .site-main>article {
             margin-bottom: 50px;
+            background-color: $white;
+
+
         }
 
         .navigation {

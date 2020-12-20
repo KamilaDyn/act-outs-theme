@@ -28,3 +28,4 @@ require get_template_directory() . '/inc/customizer/sections/slider.php';
 require get_template_directory() . '/inc/customizer/sections/blog.php';
 require get_template_directory() . '/inc/customizer/sections/about.php';
 require get_template_directory() . '/inc/customizer/sections/message.php';
+require get_template_directory() . '/inc/customizer/sections/singleevent.php';

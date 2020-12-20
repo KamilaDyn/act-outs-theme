@@ -39,10 +39,20 @@ function act_outs_about_active($control)
     }
 }
 
+/*-------------------------------------------------------------------*/
 
 function act_outs_gallery_slider_active($control)
 {
     if ($control->manager->get_setting('theme_options[disable_gallery-slider_section]')->value() == true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function act_outs_header_title($control)
+{
+    if ($control->manager->get_setting('theme_options[disable_header_title]')->value() == true) {
         return true;
     } else {
         return false;
@@ -92,9 +102,32 @@ function act_outs_contact_info_ac($control)
     }
 }
 
+function act_outs_login_button($control)
+{
+
+    if ($control->manager->get_setting('theme_options[disable_show_login_btn]')->value() == true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/*-------------------------------------------------------------------*/
+
 function act_outs_social_links_active($control)
 {
     if ($control->manager->get_setting('theme_options[show_header_social_links]')->value() == true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/*-------------------------------------------------------------------*/
+
+function act_outs_single_event_active($control)
+{
+    if ($control->manager->get_setting('theme_options[disable_single-event_section]')->value() == true) {
         return true;
     } else {
         return false;

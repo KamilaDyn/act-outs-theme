@@ -128,4 +128,19 @@
 
     }
 
+
+    .social-icons li a {
+        color: $black3;
+
+    }
+
+    .social-icons li a {
+
+        &:focus,
+        &:hover {
+            color: $red;
+        }
+    }
+
+
 }

@@ -1,5 +1,5 @@
 #colophon {
-  margin-top: 50px;
+  padding-top: 50px;
   background-image: linear-gradient(rgba(16, 61, 103, 0.8), rgba(0, 0, 0, 0.8));
 
   .wrapper {
@@ -13,6 +13,10 @@
   ul {
     list-style: none;
 
+  }
+
+  a {
+    color: $white;
   }
 
   .widget {
@@ -35,6 +39,24 @@
         color: $white;
       }
     }
+  }
+
+  .widget .social-icons {
+    li {
+      a {
+        color: $black3;
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+
+    // ul {
+    //   display: flex;
+    //   flex-wrap: wrap;
+    //   justify-content: center;
+    // }
   }
 
   .site-info {

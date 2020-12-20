@@ -35,10 +35,15 @@ if (!function_exists('act_outs_get_default_theme_options')) :
         // Top Bar Section 
         $defaults['disable_show_header_contact_info']    = false;
 
+        // Login button on top to show
+        $default['disable_show_login_btn'] = false;
+
         // Featured Slider Section
         $defaults['disable_gallery-slider_section']    = false;
         $defaults['disable_gallery-white_overlay']                = true;
 
+        // Title on Header Imgae
+        $defaults['disable_header_title']    = false;
 
         // Act-Outs goal Section
         $defaults['disable_act_outs_section']            = false;
@@ -70,7 +75,10 @@ if (!function_exists('act_outs_get_default_theme_options')) :
 
         // Blog Section
         $defaults['disable_blog_section']                = false;
-        $defaults['blog_title']                                = esc_html__('Upcoming Act Outs', 'act-outs');
+        $defaults['blog_title']                                = esc_html__('Last Post in Ours Blog', 'act-outs');
+
+        // Single Event
+        $default['disable_single-event_section'] = false;
 
         //General Section
         $defaults['excerpt_length']                        = 20;

@@ -34,9 +34,12 @@ html {
 #content {
     position: relative;
     width: 90%;
-    margin: 30px auto;
+    margin: 30px auto 0;
 }
 
+article {
+    padding: 0 20px;
+}
 
 article,
 aside,

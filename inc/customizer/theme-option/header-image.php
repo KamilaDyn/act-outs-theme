@@ -18,6 +18,26 @@ $wp_customize->add_section(
     )
 );
 
+$wp_customize->add_setting(
+    'theme_options[disable_header_title]',
+    array(
+        'default'           => $default['disable_header_title'],
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'act_outs_sanitize_switch_control',
+    )
+);
+$wp_customize->add_control(new Act_Outs_Switch_Control(
+    $wp_customize,
+    'theme_options[disable_header_title]',
+    array(
+        'label'     => __('Disable title on header image in each page', 'act-outs'),
+        'section'                => 'custom_header_image_settings',
+        'on_off_label'         => act_outs_switch_options(),
+    )
+));
+
+
 /** Header Image */
 $wp_customize->add_setting(
     'theme_options[archive_header_image]',

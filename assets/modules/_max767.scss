@@ -17,12 +17,24 @@
     #blog .section-content.col-3 article {
         width: 100%;
         float: none;
+        border-bottom: 1px solid $lightgray;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+
+        &:last-child {
+            border: none;
+        }
+
+        .blog-image {
+            display: none;
+        }
     }
 
     #blog .section-content.col-3 article:nth-child(3n+1) {
         clear: none;
         float: none;
     }
+
 
     #blog .section-content.col-3 article.large-width {
         width: 100%;

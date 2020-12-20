@@ -11,7 +11,7 @@ $blog_post_title    = act_outs_get_option('blog_title');
 for ($i = 1; $i <= 3; $i++) :
     $blog_post_posts[] = absint(act_outs_get_option('blog_post_' . $i));
 endfor;
-
+$blog_image = act_outs_get_option('background_blog_section');
 
 ?>
 <div class="wrapper">
@@ -33,43 +33,39 @@ endfor;
             'orderby'       => 'post__in',
             'ignore_sticky_posts' => true,
         );
-        $i = 1;
         $loop = new WP_Query($args);
         if ($loop->have_posts()) :
 
             while ($loop->have_posts()) : $loop->the_post(); ?>
+
                 <article>
+
                     <div class="post-items">
-                        <div class="featured-image" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>');');">
-                            <a href="<?php the_permalink(); ?>" class="post-thumbnail-link"></a>
-                        </div><!-- .featured-image -->
-
                         <div class="entry-container">
-                            <div class="entry-meta">
-                                <?php
-                                $blog_address = act_outs_get_option('blog_address_' . $i);
-                                $blog_date = act_outs_get_option('blog_date_' . $i); ?>
-                                <span class="event-address"><?php echo esc_html($blog_address); ?></span>
-                                <span class="event-time"><?php echo esc_html($blog_date); ?></span>
-                            </div>
-
+                            <a href="<?php the_permalink(); ?>">
+                                <div class='blog-image'>
+                                    <?php the_post_thumbnail(); ?></div>
+                            </a>
                             <header class="entry-header">
-                                <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                                <h2 class="entry-title"> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                             </header>
                             <div class="entry-content">
                                 <?php
-                                $excerpt = act_outs_the_excerpt(10);
+                                $excerpt = act_outs_the_excerpt(20);
                                 echo wp_kses_post(wpautop($excerpt));
                                 ?>
+                                <a class="link-read" href="<?php the_permalink(); ?>">Read more</a>
                             </div><!-- .entry-content -->
 
-                            <span class="cat-links">
-                                <span><?php echo esc_html__('Event Type: ', 'act-outs'); ?><?php act_outs_entry_meta(); ?></span>
-                            </span>
+                            <div class="cat-links">
+                                <h5><?php echo esc_html__('Category: ', 'act-outs'); ?></h5><span><?php act_outs_entry_meta(); ?></span>
+                            </div>
+
                         </div><!-- .entry-container -->
                     </div><!-- .post-wrapper -->
                 </article>
-            <?php $i++;
+
+            <?php
             endwhile; ?>
         <?php wp_reset_postdata();
         endif; ?>

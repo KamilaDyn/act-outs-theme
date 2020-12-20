@@ -3,6 +3,21 @@
         background-color: $white;
     }
 
+    #primary article {
+        .post-item {
+            padding: 0 35px 50px 35px;
+        }
+
+        .post-item .entry-content {
+            padding-bottom: 30px;
+        }
+
+        .post-item .entry-title {
+            text-align: center;
+            color: $darkblue;
+        }
+    }
+
     #primary .event,
     #primary .firstgroup,
     #primary .secondgroup,

@@ -42,7 +42,10 @@ while ($query->have_posts()) :   $query->the_post();
                 echo wp_kses_post(wpautop($excerpt));
                 ?>
             </div><!-- .entry-content -->
-            <div class="separator"></div>
+            <div class="separator">
+            </div>
+            <?php act_outs_render_social_links() ?>
+
             <a class="btn" href="<?php echo get_permalink(); ?>">Read more</a>
         </div>
     </div><!-- .section-content -->

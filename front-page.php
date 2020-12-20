@@ -38,7 +38,7 @@ if ('posts' != get_option('show_on_front')) {
                 if (true === $disable_blog_section) :
                     $background_blog_section = act_outs_get_option('background_blog_section'); ?>
                     <section id="<?php echo esc_attr($section['id']); ?>" class=" page-section" style="background-image: url('<?php echo esc_url($background_blog_section); ?>');">
-                        <div class="overlay"></div>
+
                         <?php get_template_part('inc/sections/section', esc_attr($section['id'])); ?>
                     </section>
                 <?php endif; ?>
@@ -76,11 +76,13 @@ if ('posts' != get_option('show_on_front')) {
 
                 <?php endif; ?>
 
-            <?php } elseif ($section['id'] == 'popular') { ?>
-                <?php $disable_popular_section = act_outs_get_option('disable_popular_section');
-                if (true == $disable_popular_section) : ?>
-                    <section id="<?php echo esc_attr($section['id']); ?>" class="relative page-section blog-posts">
-                        <?php get_template_part('inc/sections/section', esc_attr($section['id'])); ?>
+            <?php } elseif ($section['id'] == 'single-event') { ?>
+                <?php $disable_single_event_section = act_outs_get_option('disable_single-event_section');
+                if (true == $disable_single_event_section) : ?>
+                    <section id="<?php echo esc_attr($section['id']); ?>">
+                        <div class="wrapper">
+                            <?php get_template_part('inc/sections/section', esc_attr($section['id'])); ?>
+                        </div>
                     </section>
                 <?php endif; ?>
             <?php } elseif ($section['id'] == 'message') { ?>
