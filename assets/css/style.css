@@ -2166,6 +2166,7 @@ p.form-submit {
 
 #masthead .header-top .wrapper .container a {
   margin-right: 20px;
+  color: white;
 }
 
 #masthead .header-top .wrapper .container a i {
@@ -2303,6 +2304,7 @@ a:active {
 }
 
 .main-navigation a {
+  color: white;
   display: block;
   text-decoration: none;
   font-size: 15px;
@@ -3647,10 +3649,6 @@ video.wp-video-shortcode {
   position: relative;
 }
 
-#courses article .entry-content p {
-  margin-bottom: 0;
-}
-
 #courses article:last-child {
   margin-bottom: 0;
 }
@@ -3677,14 +3675,6 @@ video.wp-video-shortcode {
   margin-right: -15px;
 }
 
-#courses .entry-content p {
-  margin: 0;
-}
-
-#courses .entry-content {
-  padding: 0;
-}
-
 #courses .read-more {
   margin-top: 25px;
 }
@@ -3698,10 +3688,8 @@ video.wp-video-shortcode {
 #courses .section-content.col-2 {
   margin-left: auto;
   margin-right: auto;
-}
-
-#courses .section-content.col-2 {
-  width: 80%;
+  width: 90%;
+  height: auto;
   max-width: 1200px;
   display: flex;
   flex-wrap: wrap;
@@ -3720,26 +3708,15 @@ video.wp-video-shortcode {
   margin-top: 25px;
 }
 
-#courses .col-2 article {
-  width: 50%;
-}
-
-#courses .col-2 article video {
-  width: 100%;
-}
-
 #courses .video-container video {
   width: 100%;
 }
 
 #courses .service-content .responsive-container {
-  width: 96%;
-}
-
-#courses .service-content .responsive-container:before {
-  content: '';
-  display: block;
-  padding-top: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 #courses .service-content .img-preloader {
@@ -3750,13 +3727,6 @@ video.wp-video-shortcode {
   border-radius: 3px;
   background-color: #ebe8e5;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.15);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  line-height: 100%;
-  height: 100%;
 }
 
 #courses .service-content .img-preloader .img {
@@ -3806,6 +3776,11 @@ video.wp-video-shortcode {
 #courses .service-content .img-preloader .img span img {
   width: 80px;
   height: 80px;
+}
+
+#courses .service-content .caption {
+  height: 50px;
+  line-height: 50px;
 }
 
 #courses .caption h3 {
@@ -5097,11 +5072,6 @@ input[type="submit"]:focus,
   .videos-container .video {
     width: 50%;
   }
-  #courses .col-2 article {
-    width: 80%;
-    float: left;
-    margin-bottom: 30px;
-  }
   .blog-posts-wrapper .col-3 article {
     width: 50%;
     float: left;
@@ -5232,10 +5202,6 @@ input[type="submit"]:focus,
   .footer-widgets-area.col-3:not(:last-child) {
     padding-right: 40px;
   }
-  #courses .entry-content {
-    margin-top: 15px;
-    padding: 10px 0;
-  }
   #courses .col-3 article {
     width: 33.33%;
   }
@@ -5304,80 +5270,95 @@ input[type="submit"]:focus,
 }
 
 @media screen and (min-width: 992px) {
-  #courses .col-2 article {
-    width: 50%;
+  #courses article {
+    display: flex;
   }
-  #top-bar .widget + .widget {
+  #courses .col-2 article {
+    width: 47%;
+  }
+  #courses .col-2 article video {
+    width: 100%;
+  }
+  #courses .section-content.col-2 {
+    position: relative;
+  }
+  #courses .section-content.col-2 .articles-container {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #courses #top-bar .widget + .widget {
     margin-top: 0;
   }
-  #top-bar.col-2 .widget {
+  #courses #top-bar.col-2 .widget {
     float: left;
     text-align: left;
     padding: 6px 0;
   }
-  #top-bar.col-2 .widget + .widget {
+  #courses #top-bar.col-2 .widget + .widget {
     float: right;
     text-align: right;
     padding: 0;
   }
-  .featured-content-wrapper .entry-title {
+  #courses .featured-content-wrapper .entry-title {
     font-size: 40px;
   }
-  .about-item-wrapper .entry-title {
+  #courses .about-item-wrapper .entry-title {
     font-size: 42px;
   }
-  #blog .col-4 article {
+  #courses #blog .col-4 article {
     width: 25%;
   }
-  #blog .col-4 article:nth-child(2n+1) {
+  #courses #blog .col-4 article:nth-child(2n+1) {
     clear: none;
   }
-  #blog .col-4 article:nth-child(4n+1) {
+  #courses #blog .col-4 article:nth-child(4n+1) {
     clear: left;
   }
-  #blog .col-4 article:nth-last-child(-n+4) {
+  #courses #blog .col-4 article:nth-last-child(-n+4) {
     margin-bottom: 0;
   }
-  #counter .section-content.col-5 .inner {
+  #courses #counter .section-content.col-5 .inner {
     width: 20%;
   }
-  #counter .section-content.col-5 .inner:nth-child(2n+1),
-  #counter .section-content.col-5 .inner:nth-child(3n+1) {
+  #courses #counter .section-content.col-5 .inner:nth-child(2n+1),
+  #courses #counter .section-content.col-5 .inner:nth-child(3n+1) {
     clear: none;
   }
-  #counter .section-content.col-5 .inner:nth-child(5n+1) {
+  #courses #counter .section-content.col-5 .inner:nth-child(5n+1) {
     clear: left;
   }
-  #counter .section-content.col-5 .inner:nth-last-child(-n+2) {
+  #courses #counter .section-content.col-5 .inner:nth-last-child(-n+2) {
     width: 20%;
     float: left;
   }
-  #counter .section-content.col-5 .inner:nth-last-child(-n+5) {
+  #courses #counter .section-content.col-5 .inner:nth-last-child(-n+5) {
     margin-bottom: 0;
   }
-  nav.navigation.pagination {
+  #courses nav.navigation.pagination {
     margin: 63px 0;
   }
-  #colophon .social-icons {
+  #courses #colophon .social-icons {
     margin-left: -15px;
   }
-  .social-icons li:not(:last-child) {
+  #courses .social-icons li:not(:last-child) {
     margin-right: 14px;
   }
-  .footer-widgets-area.col-4 .hentry {
+  #courses .footer-widgets-area.col-4 .hentry {
     width: 25%;
     padding-right: 40px;
   }
-  .footer-widgets-area.col-4 .hentry:last-child {
+  #courses .footer-widgets-area.col-4 .hentry:last-child {
     padding-right: 0;
   }
-  .footer-widgets-area.col-4 .hentry:nth-child(2n+1) {
+  #courses .footer-widgets-area.col-4 .hentry:nth-child(2n+1) {
     clear: none;
   }
-  .footer-widgets-area.col-4 .hentry:nth-child(4n+1) {
+  #courses .footer-widgets-area.col-4 .hentry:nth-child(4n+1) {
     clear: left;
   }
-  .footer-widgets-area.col-4 .hentry:nth-last-child(-n+4) {
+  #courses .footer-widgets-area.col-4 .hentry:nth-last-child(-n+4) {
     margin-bottom: 0;
   }
 }
@@ -5975,9 +5956,6 @@ input[type="submit"]:focus,
   #courses .entry-content {
     margin-top: 15px;
     padding: 10px 0;
-  }
-  #courses .col-2 article {
-    width: 90%;
   }
   #courses .section-content.col-2 {
     width: 90%;

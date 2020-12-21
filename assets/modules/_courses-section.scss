@@ -31,14 +31,6 @@
         margin: 0;
         position: relative;
 
-
-
-
-
-        .entry-content p {
-            margin-bottom: 0;
-        }
-
         &:last-child {
             margin-bottom: 0;
         }
@@ -66,13 +58,7 @@
         margin-right: -15px;
     }
 
-    .entry-content p {
-        margin: 0;
-    }
 
-    .entry-content {
-        padding: 0;
-    }
 
     .read-more {
         margin-top: 25px;
@@ -89,15 +75,17 @@
     .section-content.col-2 {
         margin-left: auto;
         margin-right: auto;
-    }
-
-    .section-content.col-2 {
-        width: 80%;
+        width: 90%;
+        height: auto;
         max-width: 1200px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+
+
+
     }
+
 
     #teams {
         article {
@@ -117,14 +105,6 @@
         }
     }
 
-    .col-2 article {
-        width: 50%;
-
-        video {
-            width: 100%;
-        }
-    }
-
     .video-container video {
         width: 100%;
 
@@ -132,15 +112,12 @@
 
     .service-content {
         .responsive-container {
-            width: 96%;
-
-            &:before {
-                content: '';
-                display: block;
-                padding-top: 100%;
-            }
-
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
         }
+
 
         .img-preloader {
             border: 1px solid #f6f4f3;
@@ -150,13 +127,13 @@
             border-radius: 3px;
             background-color: #ebe8e5;
             box-shadow: 0 0 2px 2px rgba(0, 0, 0, .15);
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            line-height: 100%;
-            height: 100%;
+            // position: absolute;
+            // top: 0;
+            // bottom: 0;
+            // right: 0;
+            // left: 0;
+            // line-height: 100%;
+            // height: 100%;
 
 
             .img {
@@ -208,6 +185,11 @@
                 height: 80px;
             }
 
+        }
+
+        .caption {
+            height: 50px;
+            line-height: 50px;
         }
     }
 

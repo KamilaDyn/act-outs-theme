@@ -22,38 +22,30 @@ if (!empty($courses_title)) : ?>
   </div>
 <?php endif; ?>
 <div class="section-content  col-2 clear">
-  <?php
-  $args = array(
-    'post_type'     => 'page',
-    'post_per_page' => 4,
-    'post__in'      => $course_page_posts,
-    'orderby'       => 'post__in',
-  );
-  $loop = new WP_Query($args);
-  if ($loop->have_posts()) :
-    $i = 1;
-    while ($loop->have_posts()) : $loop->the_post(); ?>
-      <article>
+  <div class="articles-container">
+    <?php
+    $args = array(
+      'post_type'     => 'page',
+      'post_per_page' => 4,
+      'post__in'      => $course_page_posts,
+      'orderby'       => 'post__in',
+    );
+    $loop = new WP_Query($args);
+    if ($loop->have_posts()) :
+      $i = 1;
+      while ($loop->have_posts()) : $loop->the_post(); ?>
+        <article>
 
-        <div class="service-content">
+          <div class="service-content">
 
 
-          <div class="entry-content">
             <div class="responsive-container ">
 
               <div class="img-preloader">
                 <div class="img"><img src="<?php the_post_thumbnail_url('video-poster'); ?>">
                   <span class="watch play-icon"><img src="<?php echo get_theme_file_uri('/assets/images/play-arrow.svg') ?>" alt="play-icon" title='play video'></span>
                 </div>
-                <?php $single_title = act_outs_get_option('course_title_' . $i);
-                if (!empty($single_title)) :
-                ?>
-                  <a href="<?php echo get_permalink() ?>">
-                    <div class="caption">
-                      <h3><?php echo esc_attr($single_title) ?></h3>
-                    </div>
-                  </a>
-                <?php endif; ?>
+
 
                 <div class="light">
                   <div class="container-btn">
@@ -69,17 +61,24 @@ if (!empty($courses_title)) : ?>
                 </div>
 
               </div>
+              <?php $single_title = act_outs_get_option('course_title_' . $i);
+              if (!empty($single_title)) :
+              ?>
+                <a href="<?php echo get_permalink() ?>">
+                  <div class="caption">
+                    <h3><?php echo esc_attr($single_title) ?></h3>
+                  </div>
+                </a>
+              <?php endif; ?>
 
-            </div><!-- .entry-content -->
-
+            </div>
           </div>
-        </div>
-      </article>
-      <?php $i++; ?>
+        </article>
+        <?php $i++; ?>
 
-    <?php endwhile; ?>
-  <?php wp_reset_postdata();
-  endif; ?>
+      <?php endwhile; ?>
+    <?php wp_reset_postdata();
+    endif; ?>
 
-
+  </div>
 </div>
