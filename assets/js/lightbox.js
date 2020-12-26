@@ -60,11 +60,14 @@ function(){
 
     })
 
-    if ($('.mejs-overlay').css('display') == 'none') {
-        $('.closebtn').css('display', 'none');
-        alert('displa')
-    }
+    
+    /*-----------------------------------
+    DISABLE RIGHT CLICK prevent downolad video
+    -------------------------*/
 
+    $('.wp-video').bind("contextmenu", function (e) {
+        return false;
+    });
 
 
 })

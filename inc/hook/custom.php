@@ -356,6 +356,7 @@ if (!function_exists('act_outs_banner_image')) :
         $archive_header = act_outs_get_option('archive_header_image');
         $search_header = act_outs_get_option('search_header_image');
         $header_404 = act_outs_get_option('404_header_image');
+        $header_category = act_outs_get_option('category_header_image');
         $archive_header_event = act_outs_get_option('archive_event_header_image');
         $archive_header_firstgroup = act_outs_get_option('archive_firstgroup_header_image');
         $archive_header_secondgroup = act_outs_get_option('archive_secondgroup_header_image');
@@ -375,6 +376,8 @@ if (!function_exists('act_outs_banner_image')) :
             $image_url = (!empty($search_header)) ? $search_header : get_template_directory_uri() . '/assets/images/default-header.jpg';
         } elseif (is_404()) {
             $image_url = (!empty($header_404)) ? $header_404 : get_template_directory_uri() . '/assets/images/default-header.jpg';
+        } elseif (is_category()) {
+            $image_url = (!empty($header_category)) ? $header_category : get_template_directory_uri() . '/assets/images/default-header.jpg';
         } elseif (is_post_type_archive('event')) {
             $image_url = (!empty($archive_header_event)) ?     $archive_header_event : get_template_directory_uri() . '/assets/images/default-header.jpg';
         } elseif (is_post_type_archive('firstgroup')) {

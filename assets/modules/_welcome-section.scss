@@ -4,6 +4,11 @@
         width: 80%;
         margin: 0 auto;
 
+        &:after,
+        &::before {
+            display: none;
+        }
+
         .btn {
             text-align: center;
             position: absolute;

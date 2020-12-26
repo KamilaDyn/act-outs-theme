@@ -210,3 +210,25 @@ $wp_customize->add_control(
         )
     )
 );
+
+
+/** Category Header Image */
+$wp_customize->add_setting(
+    'theme_options[category_header_image]',
+    array(
+        'default'           => get_template_directory_uri() . '/assets/images/default-header.jpg',
+        'sanitize_callback' => 'act_outs_sanitize_image',
+    )
+);
+
+$wp_customize->add_control(
+    new WP_Customize_Image_Control(
+        $wp_customize,
+        'theme_options[category_header_image]',
+        array(
+            'label'         => esc_html__('Header Image For Category Page', 'act-outs'),
+            'section'       => 'custom_header_image_settings',
+            'type'          => 'image',
+        )
+    )
+);

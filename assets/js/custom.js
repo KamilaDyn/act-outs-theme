@@ -9,7 +9,7 @@ jQuery(document).ready(function ($) {
     var menu_toggle = $('.menu-toggle');
     var nav_menu = $('.main-navigation ul.nav-menu');
 
- 
+
 
     /*------------------------------------------------
                 BACK TO TOP
@@ -47,7 +47,7 @@ jQuery(document).ready(function ($) {
         }
     });
 
-   
+
 
     $('.main-navigation .nav-menu .menu-item-has-children > a').after($('<button class="dropdown-toggle"><i class="fa fa-angle-down"></i></button>'));
 
@@ -66,7 +66,7 @@ jQuery(document).ready(function ($) {
     });
 
 
-   
+
 
 
     /*------------------------------------------------
