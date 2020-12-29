@@ -759,6 +759,7 @@ html {
   position: relative;
   width: 90%;
   margin: 30px auto 0;
+  background-color: #fff;
 }
 
 article {
@@ -1479,6 +1480,7 @@ html {
   position: relative;
   width: 90%;
   margin: 30px auto 0;
+  background-color: #fff;
 }
 
 article {
@@ -2731,6 +2733,10 @@ section:last-child .wrapper {
   background-color: transparent;
   border-color: #c62f23;
   color: #888;
+}
+
+.zoom-link {
+  padding: 30px 0 30px 10px;
 }
 
 /*--------------------------------------------------------------
@@ -4268,6 +4274,26 @@ ul.social-icons {
   font-size: 12px;
 }
 
+#content {
+  background-color: white;
+}
+
+.dpn-zvc-single-content-wrapper .dpn-zvc-sidebar-wrapper .dpn-zvc-sidebar-box .join-links .btn-join-link {
+  background-color: #c62f23;
+}
+
+.dpn-zvc-single-content-wrapper .dpn-zvc-sidebar-wrapper .dpn-zvc-sidebar-tile {
+  background-color: #555;
+}
+
+.dpn-zvc-single-content-wrapper .dpn-zvc-sidebar-wrapper .dpn-zvc-sidebar-box .join-links .btn-start-link {
+  background-color: #1f3a58;
+}
+
+.dpn-zvc-single-content-wrapper .dpn-zvc-sidebar-wrapper .dpn-zvc-timer .dpn-zvc-timer-cell {
+  background-color: #555;
+}
+
 /* ===========================
  Single Event
 ================================================== */
@@ -4402,6 +4428,13 @@ ul.social-icons {
 
 .single #primary {
   background-color: white;
+}
+
+.single #main .flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: hidden;
 }
 
 .single #primary article .post-item {

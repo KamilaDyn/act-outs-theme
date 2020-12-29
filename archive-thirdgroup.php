@@ -13,7 +13,7 @@ get_header(); ?>
     <div id="primary" class="content-area archive-group">
         <main id="main" class="site-main blog-posts-wrapper" role="main">
             <div class="row flex">
-                <?php if (current_user_can('read_group_third')) : ?>
+                <?php if (current_user_can('read_group_9_to_13')) : ?>
                     <?php
                     if (have_posts()) :
                         /* Start the Loop */

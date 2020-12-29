@@ -1,6 +1,14 @@
 .single {
     #primary {
         background-color: $white;
+
+    }
+
+    #main .flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        overflow: hidden;
     }
 
     #primary article {
@@ -16,6 +24,7 @@
             text-align: center;
             color: $darkblue;
         }
+
     }
 
     #primary .event,

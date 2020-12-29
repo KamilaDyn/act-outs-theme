@@ -17,7 +17,16 @@
         </div><!-- .entry-meta -->
 
         <div class="entry-content">
-            <?php the_content(); ?>
+            <?php the_content();
+
+            if (get_field('zoom_link')) {
+            ?>
+                <div class="zoom-link">
+                    <h3> <a href="<?php echo get_field('zoom_link'); ?>">
+                            <?php echo get_field('display_text') ?>
+                        </a></h3>
+                </div>
+            <?php   } ?>
             <?php
             wp_link_pages(array(
                 'before' => '<div class="page-links">' . esc_html__('Pages:', 'act-outs'),

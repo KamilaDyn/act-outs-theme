@@ -13,7 +13,7 @@ get_header(); ?>
     <div id="primary" class="content-area archive-group">
         <main id="main" class="site-main blog-posts-wrapper" role="main">
             <div class="row flex">
-                <?php if (current_user_can('read_group_first')) : ?>
+                <?php if (current_user_can('read_group_5_to_7')) : ?>
                     <?php
                     if (have_posts()) :
                         /* Start the Loop */
@@ -30,7 +30,7 @@ get_header(); ?>
                         wp_reset_postdata();
                     else :
 
-                        get_template_part('template-parts/content', 'none');
+                        get_template_part('template-parts/content', 'empty');
 
                     endif;
                 else : ?>

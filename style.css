@@ -109,3 +109,18 @@ body.login div#login form#loginform p.submit input#wp-submit:hover {
     border-color: #c62f23;
     color: #fff;
 }
+
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
+.captcha p:first-child {
+    margin: 0;
+
+}
+
+.captcha p,
+.captcha p a {
+    font-size: 14px;
+    line-height: 18px;
+}
