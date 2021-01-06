@@ -33,7 +33,7 @@ $wp_customize->add_control(new Act_Outs_Switch_Control(
     $wp_customize,
     'theme_options[disable_blog_section]',
     array(
-        'label'     => __('Enable/Disable Upcoming Event Section', 'act-outs'),
+        'label'     => __('Enable/Disable Blog Post Section', 'act-outs'),
         'section'                => 'section_home_blog',
         'on_off_label'         => act_outs_switch_options(),
     )
@@ -62,27 +62,7 @@ $wp_customize->add_control(
     )
 );
 
-// Cta Background Image
-$wp_customize->add_setting(
-    'theme_options[background_blog_section]',
-    array(
-        'type'              => 'theme_mod',
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'act_outs_sanitize_image'
-    )
-);
 
-$wp_customize->add_control(new WP_Customize_Image_Control(
-    $wp_customize,
-    'theme_options[background_blog_section]',
-    array(
-        'label'       => __('Background Image', 'act-outs'),
-        'section'     => 'section_home_blog',
-        'settings'    => 'theme_options[background_blog_section]',
-        'active_callback' => 'act_outs_blog_active',
-        'type'        => 'image',
-    )
-));
 
 
 for ($i = 1; $i <= 3; $i++) {

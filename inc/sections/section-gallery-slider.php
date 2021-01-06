@@ -19,7 +19,7 @@ $class = '';
         <?php for ($i = 1; $i <= 4; $i++) :
             $images_post = act_outs_get_option('gallery_image_' . $i);
         ?>
-            <div class="slick-item" style="background-image: url('<?php echo esc_url($images_post); ?> ?>');">
+            <div class="slick-item lozad" data-background-image="<?php echo esc_url($images_post); ?>">
                 <?php
                 $class = '';
                 if (false == $image_overlay) {

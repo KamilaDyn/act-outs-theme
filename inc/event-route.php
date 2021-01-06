@@ -25,7 +25,7 @@ function act_outs_event_results($data)
     while ($mainQuery->have_posts()) {
         $mainQuery->the_post();
         $content = apply_filters('the_content', get_the_content());
-        $eventData = new DateTime(get_field('event_date'));
+        $eventData = new DateTime(get_field('event_start'));
 
         $eventEnd = new DateTime(get_field('event_end'));
         if (get_post_type() == 'event') {

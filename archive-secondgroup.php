@@ -47,30 +47,9 @@ get_header(); ?>
                             <?php
                             $your_query = new WP_Query('pagename=7-9 year olds');
                             // "loop" through query (even though it's just one page) 
-                            while ($your_query->have_posts()) : $your_query->the_post(); ?>
-                                <div class="responsive-container ">
-
-                                    <div class="img-preloader">
-                                        <div class="img"><img src="<?php the_post_thumbnail_url('video-poster'); ?>">
-                                            <span class="watch play-icon"><img src="<?php echo get_theme_file_uri('/assets/images/play-arrow.svg') ?>" alt="play-icon" title='play video'></span>
-                                        </div>
-                                        <div class="light">
-                                            <div class="container-btn">
-                                                <button class="closebtn">x</button>
-                                            </div>
-                                            <?php
-                                            $media = get_media_embedded_in_content(
-                                                apply_filters('the_content', get_the_content())
-                                            );
-                                            the_content('video');
-                                            ?>
-                                        </div>
-
-                                    </div>
-
-                                </div><!-- .entry-content -->
-
-                            <?php endwhile;
+                            while ($your_query->have_posts()) : $your_query->the_post();
+                                get_template_part('template-parts/content', 'notlogged');
+                            endwhile;
                             // reset post data (important!)
                             wp_reset_postdata();
                             ?>

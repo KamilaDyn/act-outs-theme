@@ -23,26 +23,27 @@ if (has_post_thumbnail()) {
         <?php if (has_post_thumbnail()) { ?>
             <figure>
                 <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('act-outs-blog'); ?></a>
-
             </figure>
 
         <?php } ?>
         <div class="entry-meta posted-on">
             <h3><?php
-                $eventDate = new DateTime(get_field('event_date'));
-                echo __($eventDate->format('d.m.Y')); ?></h3>
+                $eventDate = new DateTime(get_field('event_start'));
+                $eventEnd = new DateTime(get_field('event_end'));
+                echo __($eventDate->format('d.m.Y')); ?>
+                <?php if ($eventEnd > $eventDate) : echo  ' - ' . __($eventEnd->format('d.m.Y'));
+                endif; ?>
+
+            </h3>
         </div><!-- .entry-meta -->
         <div class="entry-container">
             <header class="entry-header">
-
                 <?php
                 if (is_single()) :
                     the_title('<h1 class="entry-title">', '</h1>');
                 else :
                     the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
                 endif; ?>
-
-
             </header><!-- .entry-header -->
 
             <div class="entry-content">

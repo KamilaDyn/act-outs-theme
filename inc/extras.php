@@ -154,7 +154,7 @@ if (class_exists('WP_Customize_Control') && !class_exists('Act_Outs_Image_Radio_
                                                                                                                                                             $this->link();
                                                                                                                                                             checked($this->value(), $value);
                                                                                                                                                             ?> />
-              <img src='<?php echo esc_url($label); ?>' class='<?php echo esc_attr($class); ?>' />
+              <img class="lozad" data-src='<?php echo esc_url($label); ?>' class='<?php echo esc_attr($class); ?>' />
             </label>
           </li>
         <?php

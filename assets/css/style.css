@@ -725,6 +725,12 @@ textarea {
 
 /* Normalize
 --------------------------------------------- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Muli', sans-serif;
@@ -735,6 +741,8 @@ html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 #page {
@@ -1446,6 +1454,12 @@ body.paged #instagram {
 
 /* Normalize
 --------------------------------------------- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Muli', sans-serif;
@@ -1456,6 +1470,8 @@ html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 #page {
@@ -3777,6 +3793,7 @@ video.wp-video-shortcode {
   height: 80px;
 }
 
+#courses .service-content .img-preloader .img picture,
 #courses .service-content .img-preloader .img img {
   border-radius: 3px;
   width: 100%;

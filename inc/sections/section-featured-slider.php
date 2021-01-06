@@ -19,12 +19,12 @@ $class = '';
         'post_type' => 'event',
         'post_status' => 'publish',
         'paged' => 1,
-        'meta_key' => 'event_date',
+        'meta_key' => 'event_start',
         'orderby' => 'meta_value_num',
         'order' => 'ASC',
         'meta_query' => array(
             array(
-                'key' => 'event_date',
+                'key' => 'event_start',
                 'compare' => '>=',
                 'value' => $today,
                 'type' => 'numeric',
@@ -41,7 +41,7 @@ $class = '';
         while ($loop->have_posts()) : $loop->the_post();
             $i++; ?>
 
-            <div class="slick-item" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>');">
+            <div class="slick-item lozad" data-background-image="<?php the_post_thumbnail_url('full'); ?>">
                 <?php
                 $class = '';
                 if (false == $image_overlay) {
@@ -67,7 +67,7 @@ $class = '';
                         <div class="separator"></div>
                         <div class="entry-meta">
                             <h3> <?php
-                                    $eventDate = new DateTime(get_field('event_date'));
+                                    $eventDate = new DateTime(get_field('event_start'));
                                     echo  $eventDate->format('d/m/Y') . 'r'; ?></h3>
 
 

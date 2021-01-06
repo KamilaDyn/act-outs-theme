@@ -55,7 +55,9 @@ if (!function_exists('act_outs_setup')) :
 		add_image_size('page-image', 1060, 470, true);
 		add_image_size('single-page-image', 860, 350, true);
 		add_image_size('vertical-large', 1280, 450, true);
-		add_image_size('widget-event-small', 300, 200, true);
+		add_image_size('widget-event-small', 250, 200, true);
+
+
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
@@ -114,6 +116,24 @@ if (!function_exists('act_outs_setup')) :
 	}
 endif;
 add_action('after_setup_theme', 'act_outs_setup');
+
+
+/* ADD CUSTOM RESPONSIVE IMAGE SIZES
+================================================== */
+function act_outs_content_image_sizes_attr($sizes, $size)
+{
+	$width = $size[0];
+	if ($width > 640) {
+		return '(min-width: 840px) 640px, (min-width: 720px) calc(100vw - 200px), 100vw';
+	} else {
+		return $sizes;
+	}
+}
+add_filter('wp_calculate_image_sizes', 'act_outs_content_image_sizes_attr', 10, 2);
+
+
+
+
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -263,7 +283,7 @@ function act_outs_scripts()
 
 	wp_enqueue_style('slick-css', get_template_directory_uri() . '/assets/css/slick' . $min . '.css', '', 'v1.8.0');
 
-	wp_enqueue_style('act-outs-blocks', get_template_directory_uri() . '/assets/css/blocks' . $min . '.css');
+
 	wp_enqueue_style('act-outs-custom-style', get_template_directory_uri() . '/assets/css/style.css');
 
 	wp_enqueue_style('act-outs-style', get_stylesheet_uri());
@@ -271,6 +291,7 @@ function act_outs_scripts()
 
 	wp_enqueue_script('imagesloaded');
 
+	wp_enqueue_script('act-outs-lozad', get_template_directory_uri() . '/assets/js/lozad' . $min . '.js', array(), '1.16.0', true);
 
 	wp_enqueue_script('act-outs-navigation', get_template_directory_uri() . '/assets/js/navigation' . $min . '.js', array(), '20151215', true);
 	wp_enqueue_script('lightbox', get_template_directory_uri() . '/assets/js/lightbox' . $min . '.js', array(), '1.0.0', true);

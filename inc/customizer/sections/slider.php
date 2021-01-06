@@ -80,28 +80,3 @@ $wp_customize->add_control(
         )
     )
 );
-
-for ($i = 1; $i <= 3; $i++) {
-
-    // Slider Button Text
-    $wp_customize->add_setting(
-        'theme_options[slider_custom_btn_text_' . $i . ']',
-        array(
-
-            'type'              => 'theme_mod',
-            'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'sanitize_text_field'
-        )
-    );
-
-    $wp_customize->add_control(
-        'theme_options[slider_custom_btn_text_' . $i . ']',
-        array(
-            'label'       => sprintf(__('Button Label %d', 'act-outs'), $i),
-            'section'     => 'section_featured_slider',
-            'settings'    => 'theme_options[slider_custom_btn_text_' . $i . ']',
-            'active_callback' => 'act_outs_slider_active',
-            'type'        => 'text',
-        )
-    );
-}

@@ -9,6 +9,10 @@ jQuery(document).ready(function ($) {
     var menu_toggle = $('.menu-toggle');
     var nav_menu = $('.main-navigation ul.nav-menu');
 
+    // Initialize library
+
+
+
 
 
     /*------------------------------------------------
@@ -72,5 +76,15 @@ jQuery(document).ready(function ($) {
     /*------------------------------------------------
                     END JQUERY
     ------------------------------------------------*/
-
+    // Initialize library
+    lozad('.lozad', {
+        load: function (el) {
+            el.src = el.dataset.src;
+            el.style.backgroundImage = "url('" + el.getAttribute("data-background-image") + "')";
+            el.onload = function () {
+                el.classList.add('fade')
+            }
+        }
+    }).observe()
+ 
 });

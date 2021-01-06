@@ -33,7 +33,9 @@ if (!empty($courses_title)) : ?>
     $loop = new WP_Query($args);
     if ($loop->have_posts()) :
       $i = 1;
-      while ($loop->have_posts()) : $loop->the_post(); ?>
+      while ($loop->have_posts()) : $loop->the_post();
+        $id = get_post_thumbnail_id();
+        $alt = get_post_meta($id, '_wp_attachment_image_alt', true); ?>
         <article>
 
           <div class="service-content">
@@ -42,8 +44,12 @@ if (!empty($courses_title)) : ?>
             <div class="responsive-container ">
 
               <div class="img-preloader">
-                <div class="img"><img src="<?php the_post_thumbnail_url('video-poster'); ?>">
-                  <span class="watch play-icon"><img src="<?php echo get_theme_file_uri('/assets/images/play-arrow.svg') ?>" alt="play-icon" title='play video'></span>
+                <div class="img">
+                  <?php the_post_thumbnail('video-poster'); ?>
+                  <span class="watch play-icon">
+                    <img src="<?php echo get_theme_file_uri('/assets/images/play-arrow.svg') ?>" alt="play-icon" title='play video'>
+
+                  </span>
                 </div>
 
 

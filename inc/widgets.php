@@ -32,12 +32,12 @@ class events_widget extends WP_Widget
         $homepageEvents = new WP_Query(array(
             'post_per_page' => 3,
             'post_type' => 'event',
-            'meta_key' => 'event_date',
+            'meta_key' => 'event_start',
             'orderby' => 'meta_value_num',
             'order' => 'ASC',
             'meta_query' => array(
                 array(
-                    'key' => 'event_date',
+                    'key' => 'event_start',
                     'compare' => '>=',
                     'value' => $today,
                     'type' => 'numeric',
@@ -54,13 +54,17 @@ class events_widget extends WP_Widget
             ?>
                 <div class="event-item">
                     <a href="<?php the_permalink(); ?>">
-
-                        <img src="<?php the_post_thumbnail_url('widget-event-small'); ?>" alt="<?php the_title(); ?>">
-
+                        <?php the_post_thumbnail('widget-event-small'); ?>
                         <div class="text">
                             <h2 class="entry-title"> <?php __(the_title(), 'events_widget_domain'); ?></h2>
-                            <h3 class="entry-date"> <?php $eventDate = new DateTime(get_field('event_date'));
-                                                    echo __($eventDate->format('d.m.Y') . 'r', 'events_widget_domain'); ?></h3>
+                            <h3><?php
+                                $eventDate = new DateTime(get_field('event_start'));
+                                $eventEnd = new DateTime(get_field('event_end'));
+                                echo __($eventDate->format('d.m.Y')); ?>
+                                <?php if ($eventEnd > $eventDate) : echo  ' - ' . __($eventEnd->format('d.m.Y'));
+                                endif; ?>
+
+                            </h3>
                             <?php $content = strip_shortcodes(wp_trim_words(get_the_content(), 10));
                             $content = apply_filters('the_content', $content);
                             $content = str_replace(']]>', ']]&gt;', $content);

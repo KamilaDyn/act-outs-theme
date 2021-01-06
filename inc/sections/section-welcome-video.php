@@ -32,7 +32,8 @@ $welcome_video_post = act_outs_get_option('welcome_video');
             while ($query->have_posts()) : $query->the_post(); ?>
                 <div class="responsive-container ">
                     <div class="img-preloader">
-                        <div class="img"><img src="<?php the_post_thumbnail_url('video-poster-welcome'); ?>">
+                        <div class="img">
+                            <?php the_post_thumbnail('video-poster-welcome'); ?>
                         </div>
                         <div class="light">
                             <div class="container-btn">
@@ -46,7 +47,10 @@ $welcome_video_post = act_outs_get_option('welcome_video');
                             the_content('video');
                             ?>
                         </div>
-                        <span class="watch play-icon"><img src="<?php echo get_theme_file_uri('/assets/images/play-arrow.svg') ?>" alt="play-icon" title='play video'></span>
+                        <span class="watch play-icon"><img src="<?php echo get_theme_file_uri('/assets/images/play-arrow.svg') ?>" alt="play-icon" title='play video'>
+
+
+                        </span>
 
 
                     </div>

@@ -18,13 +18,16 @@ $args = array(
 $query  = new WP_Query($args);
 
 // The Loop
-while ($query->have_posts()) :   $query->the_post();
-?>
+while ($query->have_posts()) :   $query->the_post(); ?>
+
     <div class="section-content">
         <?php if (has_post_thumbnail()) : ?>
             <div class="author-thumbnail">
                 <a href="<?php the_permalink(); ?>">
-                    <div> <img class="img" src="<?php the_post_thumbnail_url('full'); ?>"></div>
+                    <div>
+                        <?php the_post_thumbnail('full'); ?>
+
+                    </div>
                 </a>
             </div><!-- .author-thumbnail -->
         <?php endif;

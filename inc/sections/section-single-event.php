@@ -38,7 +38,7 @@ while ($the_query->have_posts()) : $the_query->the_post();
             <li class="event-header">
                 <ul>
                     <li class="event-img">
-                        <img src="<?php the_post_thumbnail_url('thumbnail'); ?>">
+                        <?php the_post_thumbnail('thumbnail'); ?>
                     </li>
                     <li class="event-detail">
                         <h2 class="event-title"><?php the_title(); ?></h2>

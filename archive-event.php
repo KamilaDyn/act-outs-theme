@@ -5,7 +5,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package EventBell
+ * @package act-outs
  */
 
 get_header(); ?>
@@ -15,9 +15,25 @@ get_header(); ?>
             <div class="row flex">
 
                 <?php
-                if (have_posts()) :
+                $today = date('Ymd');
+                $currentEvents = new WP_Query(array(
+                    'paged' => get_query_var('paged', 1),
+                    'post_type' => 'event',
+                    'meta_key' => 'event_start',
+                    'orderby' => 'meta_value_num',
+                    'order' => 'ASC',
+                    'meta_query' => array(
+                        array(
+                            'key' => 'event_start',
+                            'compare' => '>',
+                            'value' => $today,
+                            'type' => 'numeric',
+                        )
+                    )
+                ));
+                if ($currentEvents->have_posts()) :
                     /* Start the Loop */
-                    while (have_posts()) : the_post();
+                    while ($currentEvents->have_posts()) : $currentEvents->the_post();
 
                         /*
 							 * Include the Post-Format-specific template for the content.
@@ -27,19 +43,23 @@ get_header(); ?>
                         get_template_part('template-parts/content-event', get_post_format());
 
                     endwhile;
+
                 else :
 
                     get_template_part('template-parts/content', 'none');
 
-                endif; ?>
+                endif;
+                ?>
+                <h3>Looking for past Events?<a class="link" href="<?php echo site_url('/past-events') ?>"> Check our past events archive</a></h3>
             </div>
+
             <?php
             /**
-             * Hook - eventbell_pagination_action.
+             * Hook - act_outs_pagination_action.
              *
-             * @hooked eventbell_pagination 
+             * @hooked act_outs_pagination 
              */
-            do_action('eventbell_pagination_action');
+            do_action('act_outs_pagination_action');
             // the_posts_navigation(); 
             ?>
         </main><!-- #main -->

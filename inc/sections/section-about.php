@@ -39,7 +39,7 @@ $about_category = act_outs_get_option('about_category');
 
             <article>
 
-                <div class="about-item-wrapper" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>');">
+                <div class="lozad about-item-wrapper" data-background-image="<?php the_post_thumbnail_url('full'); ?>">
                     <div class="entry-container">
                         <h4><a href="<?php the_permalink(); ?>" class="post-title"><?php the_title(); ?></a></h4>
                     </div><!-- .entry-container -->
