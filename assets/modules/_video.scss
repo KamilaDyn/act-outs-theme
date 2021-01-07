@@ -27,6 +27,19 @@
 
 }
 
+#courses .service-content .responsive-container .light {
+    width: 110%;
+    border: 1px solid #f6f4f3;
+    border-top-color: #fff;
+    border-radius: 3px;
+    border-top-color: #fff;
+    border-radius: 3px;
+    background-color: #ebe8e5;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .15);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .img-preloader {
     position: relative;
     background-position: center;
@@ -100,10 +113,13 @@ video.wp-video-shortcode,
     height: 100% !important;
 }
 
-.mejs-container {
-    padding-top: 56.25%;
-}
+figure {
 
+    .mejs-container {
+        padding-top: 56.25%;
+    }
+
+}
 
 .wp-video,
 video.wp-video-shortcode {
@@ -115,7 +131,7 @@ video.wp-video-shortcode {
 }
 
 .mejs-mediaelement {
-    position: absolute;
+    position: relative !important;
     top: 0;
     right: 0;
     bottom: 0;

@@ -193,6 +193,8 @@
         }
     }
 
+
+
     #message {
 
         .wrapper {
@@ -204,8 +206,14 @@
     #courses {
         .wrapper {
             background-color: $white;
-
         }
+    }
+
+    #welcome {
+        .entry-container.no-feature-image {
+            width: 75%;
+        }
+
     }
 
     #featured-slider article {
@@ -260,10 +268,6 @@
         max-width: 100%;
     }
 
-
-    #content {
-        width: 85%;
-    }
 
     #secondary {
         .widget-events {

@@ -6,9 +6,9 @@
  * @package act-outs
  */
 
-function act_outs_welcome_video_active($control)
+function act_outs_welcome_active($control)
 {
-    if ($control->manager->get_setting('theme_options[disable_welcome-video_section]')->value() == true) {
+    if ($control->manager->get_setting('theme_options[disable_welcome_section]')->value() == true) {
         return true;
     } else {
         return false;

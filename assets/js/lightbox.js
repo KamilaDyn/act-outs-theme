@@ -1,14 +1,6 @@
 jQuery(document).ready(function ($) {
 
-    // display video
-    $('.watch').on('click', function () {
-        // $(this).siblings('.light').css('display', 'block');
-        $(this).siblings('.light').attr('id', 'display');
-        $(this).siblings('#display').fadeIn(500);
-        $('.site-footer').append('<div id="fade"></div>');
-        var idatr = $(this).siblings('.light').children('div').children('.mejs-container').children('.mejs-inner').children('div').children('mediaelementwrapper').children('video').attr('id');
-        $(`#${idatr}`).trigger('play');
-    });
+ 
 
     // display video
     $('.watch').on('click', function () {
@@ -17,9 +9,15 @@ jQuery(document).ready(function ($) {
         $(this).siblings('#display').fadeIn(500);
         $('.site-footer').append('<div id="fade"></div>');
         var idatr = $(this).parent('.img').siblings('.light').children('div').children('.mejs-container').children('.mejs-inner').children('div').children('mediaelementwrapper').children('video').attr('id');
+        var checkid = $(this).parent('.img').siblings('.light').children('div').children('.mejs-container').children('.mejs-inner').children('div').children('mediaelementwrapper').children('video');
         $('body').addClass('not-scroll');
         $(`#${idatr}`).trigger('play');
         $('.container-btn').css('visibility', 'hidden');
+        if ($('.light[id]').length > 0 && checkid.attr('id') == idatr) {
+            $('.light').removeAttr('id');
+            $(this).parent('.img').siblings('.light').attr('id', 'display');
+        }
+
 
        
     });
@@ -37,17 +35,7 @@ if($('.container-btn').hover(function(){
 function(){
     $(this).css('visibility', 'hidden');
 }))
-    // don't display video
 
-    // $(document).on('click', '#fade', function () {
-    //     var idatr = $('#display').children('div').children('.mejs-container').children('.mejs-inner').children('div').children('mediaelementwrapper').children('video').attr('id');
-    //     $('#fade').remove();
-    //     $('body').removeClass('not-scroll');
-    //     $(`#${idatr}`).trigger('pause');
-    //     $('.watch').siblings('.light').removeAttr("id");
-
-
-    // })
 
 
     $('.closebtn').on('click', function () {

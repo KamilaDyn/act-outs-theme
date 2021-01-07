@@ -24,7 +24,7 @@ if (!function_exists('act_outs_get_default_theme_options')) :
         $defaults['disable_homepage_content_section'] = true;
 
         //Welcome Video Section
-        $default['disable_welcome-video_section'] = true;
+        $default['disable_welcome_section'] = true;
 
         // Featured Slider Section
         $defaults['disable_featured-slider_section']    = false;

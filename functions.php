@@ -42,6 +42,7 @@ if (!function_exists('act_outs_setup')) :
 		 * provide it for us.
 		 */
 		add_theme_support('title-tag');
+		add_post_type_support('page', 'excerpt');
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.

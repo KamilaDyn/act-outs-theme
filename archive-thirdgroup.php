@@ -37,14 +37,9 @@ get_header(); ?>
                     <div class="not-logged">
                         <h1>Course</h1>
                         <h3>Group 9-13 year olds</h3>
-                        <p> You are not logged in. <a href="<?php echo wp_login_url(); ?>">Log in</a> or choose your group:</p>
-                        <ul>
-                            <li><a href="<?php echo esc_url(site_url('/courses/5-7year-olds')); ?>">5-7 year olds</a></li>
-                            <li><a href="<?php echo esc_url(site_url('/courses/7-9year-olds')); ?>">7-9 year-olds</a></li>
-                            <li><a href="<?php echo esc_url(site_url('/courses/13-16year-olds')); ?>">13-16 year olds</a></li>
-                        </ul>
+                        <p>The 9-13 year old (Performance Drama Juniors) is a performance based course where we look much more at the skills of the actor. We are doing this in various ways. We are using books and music as a stimulus to devise projects, explore emotions, work on monologue preparation, we are looking at how an actor prepares, and also creating a show that can either be filmed or work online. All videos and materials can be found on the Performance Drama Juniors page, once you are logged in.</p>
                         <div class="video-container">
-                            <p>If you are not member, watch video what we do.</p>
+                            <p>If you are not a member, watch this video to see what we do.</p>
                             <?php
                             $your_query = new WP_Query('pagename=9-13 year olds');
                             // "loop" through query (even though it's just one page) 

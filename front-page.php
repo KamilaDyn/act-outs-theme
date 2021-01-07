@@ -10,9 +10,9 @@ if ('posts' != get_option('show_on_front')) {
     <?php $enabled_sections = act_outs_get_sections();
     if (is_array($enabled_sections)) {
         foreach ($enabled_sections as $section) {
-            if (($section['id'] == 'welcome-video')) { ?>
-                <?php $disable_welcome_video = act_outs_get_option('disable_welcome-video_section');
-                if (true == $disable_welcome_video) : ?>
+            if (($section['id'] == 'welcome')) { ?>
+                <?php $disable_welcome = act_outs_get_option('disable_welcome_section');
+                if (true == $disable_welcome) : ?>
 
                     <section id="<?php echo esc_attr($section['id']); ?>">
 

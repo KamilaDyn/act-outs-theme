@@ -36,14 +36,9 @@ get_header(); ?>
                     <div class="not-logged">
                         <h1>Course</h1>
                         <h3>Group 7-9 year olds</h3>
-                        <p> You are not logged in. <a href="<?php echo wp_login_url(); ?>">Log in</a> or choose your group:</p>
-                        <ul>
-                            <li><a href="<?php echo esc_url(site_url('/courses/5-7year-olds')); ?>">5-7 year-olds</a></li>
-                            <li><a href="<?php echo esc_url(site_url('/courses/9-13year-olds')); ?>">9-13 year olds</a></li>
-                            <li><a href="<?php echo esc_url(site_url('/courses/13-16year-olds')); ?>">13-16 year olds</a></li>
-                        </ul>
+                        <p>The 7-9 year old (Creative Drama Seniors) are working off story books and bringing those books to life. They are working on a single book for a 3 week-period. The books have much more content in terms of narrative than the Creative Drama Juniors, as this why we take 3 weeks to explore each story, the characters and indeed the themes. The books are filmed and you will have access to all the terms videos once you are logged onto the the Creative Drama Seniors page. Also, at the end of each video we ask the students to work on some tasks in preparation for the live Zoom session. </p>
                         <div class="video-container">
-                            <p>If you are not member, watch video what we do.</p>
+                            <p>If you are not a member, watch this video to see what we do.</p>
                             <?php
                             $your_query = new WP_Query('pagename=7-9 year olds');
                             // "loop" through query (even though it's just one page) 

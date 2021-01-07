@@ -104,6 +104,19 @@
         margin-bottom: 0;
     }
 
+    #courses .service-content .responsive-container .light {
+        width: 120%;
+        border: 1px solid #f6f4f3;
+        border-top-color: #fff;
+        border-radius: 3px;
+        border-top-color: #fff;
+        border-radius: 3px;
+        background-color: #ebe8e5;
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, .15);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     #counter .section-content.col-3 .inner {
         width: 33.33%;
         float: left;

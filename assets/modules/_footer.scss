@@ -19,6 +19,15 @@
     color: $white;
   }
 
+  .link-more {
+    color: $red;
+
+    &:hover {
+      color: $gray8;
+    }
+  }
+
+
   .widget {
     li {
       &:before {

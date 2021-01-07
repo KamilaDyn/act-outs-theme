@@ -132,11 +132,13 @@ class social_links_widget extends WP_Widget
         $social_link2 = $instance['social_link2'];
 
         $social_link3 = $instance['social_link3'];
+        $social_link4 = $instance['social_link4'];
 
         // social profile links
-        $social_link1_profile = '<li><a href="' . esc_url($social_link1) . '" target="_blank" ></a></li>';
-        $social_link2_profile = '<li><a href="' . esc_url($social_link2) . '" target="_blank" ></a></li>';
-        $social_link3_profile = '<li><a href="' . esc_url($social_link3) . '" target="_blank" ></a></li>';
+        $social_link1_profile = '<li><a href="' . esc_url($social_link1) . '" target="_blank" title="' . esc_url($social_link1) . '" ></a></li>';
+        $social_link2_profile = '<li><a href="' . esc_url($social_link2) . '" target="_blank" title="' . esc_url($social_link2) . '" ></a></li>';
+        $social_link3_profile = '<li><a href="' . esc_url($social_link3) . '" target="_blank" title="' . esc_url($social_link3) . '" ></a></li>';
+        $social_link4_profile = '<li><a href="' . esc_url($social_link4) . '" target="_blank" title="' . esc_url($social_link4) . '" ></a></li>';
         echo $args['before_widget'];
         //if title is present
         if (!empty($title))
@@ -148,6 +150,7 @@ class social_links_widget extends WP_Widget
         echo (!empty($social_link1)) ? $social_link1_profile : null;
         echo (!empty($social_link2)) ? $social_link2_profile : null;
         echo (!empty($social_link3)) ? $social_link3_profile : null;
+        echo (!empty($social_link4)) ? $social_link4_profile : null;
         echo '<ul>';
         echo '</div>';
     }
@@ -158,6 +161,7 @@ class social_links_widget extends WP_Widget
         isset($instance['social_link1']) ? $social_link1 = $instance['scocial_link1'] : null;
         isset($instance['social_link2']) ? $social_link2 = $instance['scocial_link2'] : null;
         isset($instance['social_link3']) ? $social_link3 = $instance['scocial_link3'] : null;
+        isset($instance['social_link4']) ? $social_link3 = $instance['scocial_link4'] : null;
 
 
 
@@ -178,6 +182,10 @@ class social_links_widget extends WP_Widget
             <label for="<?php echo $this->get_field_id('social_link3'); ?>"><?php _e('Social Link 3:'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('social_link3'); ?>" name="<?php echo $this->get_field_name('social_link3'); ?>" type="text" value="<?php echo esc_attr($social_link3); ?>">
         </p>
+        <p>
+            <label for="<?php echo $this->get_field_id('social_link4'); ?>"><?php _e('Social Link 4:'); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('social_link4'); ?>" name="<?php echo $this->get_field_name('social_link4'); ?>" type="text" value="<?php echo esc_attr($social_link4); ?>">
+        </p>
 <?php
     }
     public function update($new_instance, $old_instance)
@@ -187,6 +195,7 @@ class social_links_widget extends WP_Widget
         $instance['social_link1'] = (!empty($new_instance['social_link1'])) ? strip_tags($new_instance['social_link1']) : '';
         $instance['social_link2'] = (!empty($new_instance['social_link2'])) ? strip_tags($new_instance['social_link2']) : '';
         $instance['social_link3'] = (!empty($new_instance['social_link3'])) ? strip_tags($new_instance['social_link3']) : '';
+        $instance['social_link4'] = (!empty($new_instance['social_link4'])) ? strip_tags($new_instance['social_link4']) : '';
         return $instance;
     }
 }

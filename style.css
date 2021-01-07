@@ -24,9 +24,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Login Page
 --------------------------------------------------------------*/
-* {
-    font-display: swap;
-}
+
 
 body.login {
     background-color: #d4e0ee;

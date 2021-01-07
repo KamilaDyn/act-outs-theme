@@ -427,6 +427,7 @@ function act_outs_render_social_links()
     $social_link1 = act_outs_get_option('social_link_1');
     $social_link2 = act_outs_get_option('social_link_2');
     $social_link3 = act_outs_get_option('social_link_3');
+    $social_link4 = act_outs_get_option('social_link_4');
 
     if (empty($social_link1) && empty($social_link2) && empty($social_link3)) {
         return;
@@ -435,13 +436,16 @@ function act_outs_render_social_links()
     echo '<div class="social-icons">';
     echo '<ul>';
     if (!empty($social_link1)) {
-        echo '<li><a href="' . esc_url($social_link1) . '" target="_blank" ></a></li>';
+        echo '<li><a href="' . esc_url($social_link1) . '" target="_blank" title="' . esc_url($social_link1) . '" ></a></li>';
     }
     if (!empty($social_link2)) {
-        echo '<li><a href="' . esc_url($social_link2) . '" target="_blank" ></a></li>';
+        echo '<li><a href="' . esc_url($social_link2) . '" target="_blank" title="' . esc_url($social_link2) . '"></a></li>';
     }
     if (!empty($social_link3)) {
-        echo '<li><a href="' . esc_url($social_link3) . '" target="_blank" ></a></li>';
+        echo '<li><a href="' . esc_url($social_link3) . '" target="_blank" title="' . esc_url($social_link3) . '"></a></li>';
+    }
+    if (!empty($social_link4)) {
+        echo '<li><a href="' . esc_url($social_link4) . '" target="_blank" title="' . esc_url($social_link4) . '"></a></li>';
     }
     echo '</ul>';
     echo '</div>';

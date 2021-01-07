@@ -22,7 +22,7 @@ $wp_customize->add_panel(
  * Section Customizer Options.
  */
 require get_template_directory() . '/inc/customizer/sections/topgalleryslider.php';
-require get_template_directory() . '/inc/customizer/sections/welcomevideo.php';
+require get_template_directory() . '/inc/customizer/sections/welcome.php';
 require get_template_directory() . '/inc/customizer/sections/courses.php';
 require get_template_directory() . '/inc/customizer/sections/slider.php';
 require get_template_directory() . '/inc/customizer/sections/blog.php';

@@ -120,3 +120,24 @@ $wp_customize->add_control(
         'type'        => 'url'
     )
 );
+
+//social link 4 
+$wp_customize->add_setting(
+    'theme_options[social_link_4]',
+    array(
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'esc_url_raw'
+    )
+);
+
+$wp_customize->add_control(
+    'theme_options[social_link_4]',
+    array(
+        'label'       => __('Social Link 4', 'act-outs'),
+        'section'     => 'section_home_message',
+        'settings'    => 'theme_options[social_link_4]',
+        'active_callback' => 'act_outs_message_active',
+        'type'        => 'url'
+    )
+);
