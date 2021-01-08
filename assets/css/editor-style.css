@@ -1,5 +1,5 @@
 /*
-Theme Name: EventBell
+Theme Name: act-outs
 Description: Used to style Gutenberg Editor.
 */
 
@@ -19,18 +19,18 @@ Description: Used to style Gutenberg Editor.
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust:     100%;
+  -ms-text-size-adjust: 100%;
 }
 
 body {
-    margin: 0;
-    font-family: 'Muli', sans-serif;
-    font-weight: 400;
-    color: #777;
-    font-size: 16px;
-    line-height: 28px;
-    word-wrap: break-word;
-    background: #fff;
+  margin: 0;
+  font-family: 'Muli', sans-serif;
+  font-weight: 400;
+  color: #777;
+  font-size: 16px;
+  line-height: 28px;
+  word-wrap: break-word;
+  background: #fff;
 }
 
 article,
@@ -71,14 +71,14 @@ a {
 }
 
 a {
-    color: #2c78f2;
-    text-decoration: none;
-    outline: none;
+  color: #2c78f2;
+  text-decoration: none;
+  outline: none;
 }
 
 a:hover,
 a:focus {
-    color: #000;
+  color: #000;
 }
 
 a:active,
@@ -93,7 +93,7 @@ abbr[title] {
 b,
 strong {
   font-weight: bold;
-    color: #2a3235;
+  color: #2a3235;
 }
 
 dfn {
@@ -101,27 +101,27 @@ dfn {
 }
 
 h1 {
-    font-size: 52px;
+  font-size: 52px;
 }
 
 h2 {
-    font-size: 42px;
+  font-size: 42px;
 }
 
 h3 {
-    font-size: 26px;
+  font-size: 26px;
 }
 
 h4 {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 h5 {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 h6 {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 h1,
@@ -142,7 +142,7 @@ h6,
 }
 
 .editor-post-title__block .editor-post-title__input {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 mark {
@@ -276,16 +276,19 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 tbody {
-    text-align: left;
+  text-align: left;
 }
+
 tr {
-    border: 1px solid #e4e4e4;
+  border: 1px solid #e4e4e4;
 }
+
 td,
 th {
   padding: 10px;
-    font-weight: 400;
+  font-weight: 400;
 }
 
 th {
@@ -305,15 +308,18 @@ textarea {
   font-size: 16px;
   font-size: 1rem;
   line-height: 28px;
-    word-wrap: break-word;
+  word-wrap: break-word;
 }
+
 p {
   margin: 0 0 1em;
   color: #777;
 }
+
 p:last-child {
   margin-bottom: 0;
 }
+
 dfn,
 cite,
 em,
@@ -375,22 +381,25 @@ html {
 
 *,
 *:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
   box-sizing: inherit;
 }
 
 body {
-  background: #fff; /* Fallback for when there is no custom background color defined. */
-    overflow-x: hidden;
+  background: #fff;
+  /* Fallback for when there is no custom background color defined. */
+  overflow-x: hidden;
 }
 
 blockquote {
-    font-size: 18px;
-    padding: 1em;
+  font-size: 18px;
+  padding: 1em;
 }
+
 blockquote.alignright {
-    padding-right: 0;
-    margin-bottom: 14px;
+  padding-right: 0;
+  margin-bottom: 14px;
 }
 
 hr {
@@ -403,7 +412,7 @@ hr {
 ul,
 ol {
   margin: 0 0 21px;
-    padding-left: 1.5em;
+  padding-left: 1.5em;
 }
 
 ul {
@@ -414,15 +423,15 @@ ol {
   list-style: decimal;
 }
 
-li > ul,
-li > ol {
+li>ul,
+li>ol {
   margin-bottom: 0;
   margin-left: 0.5em;
 }
 
 dt {
   font-weight: bold;
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 dd {
@@ -430,20 +439,21 @@ dd {
 }
 
 img {
-  height: auto; /* Make sure images are scaled correctly. */
-  max-width: 100%; /* Adhere to container width. */
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */
   vertical-align: middle;
   outline: none;
 }
 
 figure {
-  margin: 0; /* Extra wide images within figure tags don't overflow the content area. */
+  margin: 0;
+  /* Extra wide images within figure tags don't overflow the content area. */
 }
 
 table {
   margin: 0 0 1.5em;
   width: 100%;
-    display: inline-block;
+  display: inline-block;
 }
-
-

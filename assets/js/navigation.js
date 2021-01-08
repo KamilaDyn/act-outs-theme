@@ -30,8 +30,7 @@
 	// 	menu.className += ' nav-menu';
 	// }
 	menuContainer = container.getElementsByClassName('menu-main-menu-container')[0]
-	overflow = document.querySelector('.overflow')
-	''
+	overflow = document.querySelector('.overflow');
 	button.onclick = function () {
 		if (-1 !== container.className.indexOf('toggled')) {
 			container.className = container.className.replace(' toggled', '');
@@ -114,6 +113,7 @@ overflow.onclick = function(){
 			};
 
 			for (i = 0; i < parentLink.length; ++i) {
+				e.preventDefault();
 				parentLink[i].addEventListener('touchstart', touchStartFn, false);
 			}
 		}

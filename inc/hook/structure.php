@@ -87,6 +87,7 @@ if (!function_exists('act_outs_header_start')) :
             { ?>
                 <div class="overflow"></div>
             </footer>
-    <?php  }
+        </div>
+<?php  }
         endif;
         add_action('act_outs_action_after_footer', 'act_outs_footer_end', 100);

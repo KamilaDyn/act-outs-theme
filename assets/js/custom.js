@@ -69,22 +69,20 @@ jQuery(document).ready(function ($) {
         }
     });
 
+ /*-----------------------------------
+    DISABLE RIGHT CLICK prevent downolad video
+    -------------------------*/
 
-
-
+    $('.wp-video').bind("contextmenu", function (e) {
+        return false;
+    });
+    $('.video').bind("contextmenu", function (e) {
+        return false;
+    });
 
     /*------------------------------------------------
                     END JQUERY
     ------------------------------------------------*/
-    // Initialize library
-    lozad('.lozad', {
-        load: function (el) {
-            el.src = el.dataset.src;
-            el.style.backgroundImage = "url('" + el.getAttribute("data-background-image") + "')";
-            el.onload = function () {
-                el.classList.add('fade')
-            }
-        }
-    }).observe()
+   
  
 });

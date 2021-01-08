@@ -232,50 +232,15 @@ add_filter('get_the_archive_title', function ($title) {
 
 
 /**
- * Register custom fonts.
- */
-function act_outs_fonts_url()
-{
-	$fonts_url = '';
-	$fonts     = array();
-	$subsets   = 'latin,latin-ext';
-
-	/* translators: If there are characters in your language that are not supported by |Playfair Display, translate this to 'off'. Do not translate into your own language. */
-	if ('off' !== _x('on', 'Playfair Display font: on or off', 'act-outs')) {
-		$fonts[] = 'Playfair Display';
-	}
-	/* translators: If there are characters in your language that are not supported by Muli, translate this to 'off'. Do not translate into your own language. */
-	if ('off' !== _x('on', 'Muli font: on or off', 'act-outs')) {
-		$fonts[] = 'Muli';
-	}
-
-
-	/* translators: If there are characters in your language that are not supported by Oxygen, translate this to 'off'. Do not translate into your own language. */
-	if ('off' !== _x('on', 'Oxygen font: on or off', 'act-outs')) {
-		$fonts[] = 'Oxygen';
-	}
-
-	if ($fonts) {
-		$fonts_url = add_query_arg(array(
-			'family' => urlencode(implode('|', $fonts)),
-			'subset' => urlencode($subsets),
-		), 'https://fonts.googleapis.com/css');
-	}
-
-	return esc_url_raw($fonts_url);
-}
-
-
-/**
  * Enqueue scripts and styles.
  */
 function act_outs_scripts()
 {
 	$min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
-	$fonts_url = act_outs_fonts_url();
+
 	$primary_color = act_outs_get_option('primary_color');
 
-	wp_enqueue_style('act-outs-google-fonts', $fonts_url, array(), null);
+	wp_enqueue_style('act-outs-fonts', get_template_directory_uri() . '/assets/css/fonts' . $min . '.css');
 
 
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/font-awesome' . $min . '.css', '', '4.7.0');
@@ -292,9 +257,8 @@ function act_outs_scripts()
 
 	wp_enqueue_script('imagesloaded');
 
-	wp_enqueue_script('act-outs-lozad', get_template_directory_uri() . '/assets/js/lozad' . $min . '.js', array(), '1.16.0', true);
 
-	wp_enqueue_script('act-outs-navigation', get_template_directory_uri() . '/assets/js/navigation' . $min . '.js', array(), '20151215', true);
+	wp_enqueue_script('act-outs-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true);
 	wp_enqueue_script('lightbox', get_template_directory_uri() . '/assets/js/lightbox' . $min . '.js', array(), '1.0.0', true);
 
 	wp_enqueue_script('act-outs-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix' . $min . '.js', array(), '20151215', true);
@@ -302,7 +266,7 @@ function act_outs_scripts()
 	if (is_front_page()) {
 
 		wp_enqueue_script('jquery-slick', get_template_directory_uri() . '/assets/js/slick' . $min . '.js', array('jquery'), '2017417', true);
-		wp_enqueue_script('act-outs-custom-front-page', get_template_directory_uri() . '/assets/js/custom-front-page' . $min . '.js', array('jquery'), '', true);
+		wp_enqueue_script('act-outs-custom-front-page', get_template_directory_uri() . '/assets/js/custom-front-page'  . $min . '.js', array('jquery'), '', true);
 	}
 
 	if (is_page('calendar')) {
@@ -345,7 +309,6 @@ add_filter('login_headerurl', 'ourheaderurl');
 function my_login_CSS()
 {
 	wp_enqueue_style('custom-login',  get_stylesheet_directory_uri() . '/style.css');
-	wp_enqueue_style('act-outs-google-fonts', $fonts_url, array(), null);
 }
 add_action('login_enqueue_scripts', 'my_login_CSS');
 

@@ -49,14 +49,7 @@ function(){
     })
 
     
-    /*-----------------------------------
-    DISABLE RIGHT CLICK prevent downolad video
-    -------------------------*/
-
-    $('.wp-video').bind("contextmenu", function (e) {
-        return false;
-    });
-
+   
 
 
 })

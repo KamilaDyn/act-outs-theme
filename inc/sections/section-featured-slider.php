@@ -11,7 +11,7 @@ $image_overlay   = act_outs_get_option('disable_white_overlay');
 $class = '';
 ?>
 
-<div class="featured-slider-wrapper" data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "infinite": true, "speed": 800, "dots": false, "arrows":true, "autoplay": true, "fade": false }'>
+<div class="featured-slider-wrapper">
     <?php
     $today = date('Ymd');
     $args = array(
@@ -41,7 +41,10 @@ $class = '';
         while ($loop->have_posts()) : $loop->the_post();
             $i++; ?>
 
-            <div class="slick-item lozad" data-background-image="<?php the_post_thumbnail_url('full'); ?>">
+            <div class="slick-item" style="position: relative;">
+                <div class="img-slider-cotainer">
+                    <?php the_post_thumbnail('full') ?>
+                </div>
                 <?php
                 $class = '';
                 if (false == $image_overlay) {

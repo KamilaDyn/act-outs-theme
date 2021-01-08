@@ -151,7 +151,7 @@ class social_links_widget extends WP_Widget
         echo (!empty($social_link2)) ? $social_link2_profile : null;
         echo (!empty($social_link3)) ? $social_link3_profile : null;
         echo (!empty($social_link4)) ? $social_link4_profile : null;
-        echo '<ul>';
+        echo '</ul>';
         echo '</div>';
     }
     public function form($instance)

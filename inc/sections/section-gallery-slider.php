@@ -13,13 +13,16 @@ $class = '';
 ?>
 <div class="wrapper">
 
-    <div class="featured-slider-wrapper" data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "speed": 1000, "dots": true, "arrows":true, "autoplay": true, "fade": false }'>
+    <div class="featured-slider-wrapper" data-slick='{"dots": true, "arrows":true,  "fade": false }'>
 
 
         <?php for ($i = 1; $i <= 4; $i++) :
             $images_post = act_outs_get_option('gallery_image_' . $i);
         ?>
-            <div class="slick-item lozad" data-background-image="<?php echo esc_url($images_post); ?>">
+            <div class="slick-item">
+                <div class="img-slider-cotainer">
+                    <img src="<?php echo esc_url($images_post); ?>" loading="lazy">
+                </div>
                 <?php
                 $class = '';
                 if (false == $image_overlay) {

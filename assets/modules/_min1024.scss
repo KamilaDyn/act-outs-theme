@@ -59,6 +59,7 @@
         color: $red !important;
     }
 
+
     .main-navigation ul.sub-menu>li:last-child>a {
         border-bottom: none;
     }
@@ -299,6 +300,11 @@
         .overflow {
             display: none !important;
         }
+    }
+
+    #main .not-logged .light {
+        width: 70%;
+
     }
 
 }
