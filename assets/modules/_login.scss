@@ -77,7 +77,11 @@ body.login div#login form#loginform p.submit input#wp-submit {
     border-color: $red;
     border-radius: 20px;
     z-index: 5;
-    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 3s ease-in-out;
+    -moz-transition: all 3s ease-in-out;
+    -ms-transition: all 3s ease-in-out;
+    -o-transition: all 3s ease-in-out;
+    transition: all 3s ease-in-out;
     cursor: pointer;
 }
 

@@ -19,16 +19,6 @@
 
 	menu = container.getElementsByTagName('ul')[0];
 
-	// Hide menu toggle button if menu is empty and return early.
-	// if ('undefined' === typeof menu) {
-	// 	button.style.display = 'none';
-	// 	return;
-	// }
-
-	// menu.setAttribute( 'aria-expanded', 'false' );
-	// if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
-	// 	menu.className += ' nav-menu';
-	// }
 	menuContainer = container.getElementsByClassName('menu-main-menu-container')[0]
 	overflow = document.querySelector('.overflow');
 	button.onclick = function () {
@@ -36,9 +26,6 @@
 			container.className = container.className.replace(' toggled', '');
 			menuContainer.style.transform = 'translateX(-100%)';
 			overflow.style.display = 'none';
-
-			// button.setAttribute( 'aria-expanded', 'false' );
-			// menu.setAttribute( 'aria-expanded', 'false' );
 
 		} else {
 			container.className += ' toggled';
@@ -113,7 +100,6 @@ overflow.onclick = function(){
 			};
 
 			for (i = 0; i < parentLink.length; ++i) {
-				e.preventDefault();
 				parentLink[i].addEventListener('touchstart', touchStartFn, false);
 			}
 		}

@@ -5,7 +5,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package EventBellChild
+ * @package act-outs
  */
 ?>
 <?php
@@ -18,7 +18,8 @@ $img_class = '';
 
     <div class="post-item">
         <?php if (has_post_thumbnail()) { ?>
-            <figure><?php the_post_thumbnail('single-page-image'); ?>
+            <figure>
+                <?php the_post_thumbnail('single-page-image'); ?>
 
             </figure>
 

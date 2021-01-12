@@ -12,6 +12,7 @@
         }
     }
 
+
     .main-navigation {
         border-top: 2px solid $red;
         border-bottom: 2px solid $red;
@@ -24,7 +25,9 @@
         }
     }
 
-
+    #featured-slider .slick-item {
+        padding: 280px 0;
+    }
 
 
     .main-navigation ul ul .menu-item-has-children>a:after {
@@ -182,7 +185,9 @@
         color: $darkblue
     }
 
-
+    #gallery-slider .slick-item {
+        padding: 240px 0;
+    }
 
     #page-site-header {
         height: 470px;

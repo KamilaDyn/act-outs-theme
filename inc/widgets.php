@@ -17,7 +17,7 @@ class events_widget extends WP_Widget
             // widget name
             __('Events List', 'events_widget_domain'),
             // widget description
-            array('description' => __('List of events', 'events_widget_domain'),)
+            array('description' => __('List of events/ holiday programs', 'events_widget_domain'),)
         );
     }
     public function widget($args, $instance)
@@ -31,7 +31,7 @@ class events_widget extends WP_Widget
         $today = date('Ymd');
         $homepageEvents = new WP_Query(array(
             'post_per_page' => 3,
-            'post_type' => 'event',
+            'post_type' => 'holiday-program',
             'meta_key' => 'event_start',
             'orderby' => 'meta_value_num',
             'order' => 'ASC',
@@ -86,7 +86,7 @@ class events_widget extends WP_Widget
         if (isset($instance['title']))
             $title = $instance['title'];
         else
-            $title = __('Current events', 'events_widget_domain');
+            $title = __('Current Holiday Programs', 'events_widget_domain');
     ?>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>

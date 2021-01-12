@@ -11,7 +11,12 @@
     }
 
     .single-event-info {
+        -webkit-display: flex;
+        -moz-display: flex;
+        -ms-display: flex;
+        -o-display: flex;
         display: flex;
+        -webkit-flex-wrap: wrap;
         flex-wrap: wrap;
         justify-content: space-around;
         align-items: center;

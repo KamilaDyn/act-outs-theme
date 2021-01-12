@@ -16,7 +16,7 @@ get_header(); ?>
             <?php
             while (have_posts()) : the_post();
 
-                get_template_part('template-parts/content-event-single', 'single');
+                get_template_part('template-parts/content-holiday-program-single', 'single');
 
 
 

@@ -6,38 +6,41 @@
  *@package act-outs
  */
 
-$slider_category = act_outs_get_option('slider_category');
+$slider_category = act_outs_get_option('slider_gallery_category');
 $image_overlay   = act_outs_get_option('disable_white_overlay');
 $class = '';
 
 ?>
 <div class="wrapper">
 
-    <div class="featured-slider-wrapper" data-slick='{"dots": true, "arrows":true,  "fade": false }'>
+    <div class="featured-slider-wrapper" data-slick='{"dots":true, "fade":false}'>
+        <?php $args = array(
+            'posts_per_page' => 4,
+            'post_type' => 'gallery-slider',
+            'post_status' => 'publish',
+            'paged' => 1,
+            'orderby' => 'meta_value_num',
+            'order' => 'ASC',
 
+        );
+        if (absint($slider_category) > 0) {
+            $args['cat'] = absint($slider_category);
+        }
 
-        <?php for ($i = 1; $i <= 4; $i++) :
-            $images_post = act_outs_get_option('gallery_image_' . $i);
-        ?>
-            <div class="slick-item">
-                <div class="img-slider-cotainer">
-                    <img src="<?php echo esc_url($images_post); ?>" loading="lazy">
-                </div>
-                <?php
-                $class = '';
-                if (false == $image_overlay) {
-                    $class = 'image-overlay';
-                } else {
-                    $class = 'content-overlay';
-                }
-                if (false == $image_overlay) {
-                ?>
-                    <div class="overlay"></div>
-                <?php } ?>
+        $loop = new WP_Query($args);
+        if ($loop->have_posts()) :
+            $i = 0;
+            while ($loop->have_posts()) : $loop->the_post();
+                $i++; ?>
+                <figure>
+                    <?php
+                    the_post_thumbnail('vertical-large');
+                    ?>
+                </figure>
 
+            <?php endwhile; ?>
+        <?php wp_reset_postdata();
+        endif; ?>
 
-            </div><!-- .slick-item -->
-        <?php
-        endfor; ?>
     </div><!-- .featured-slider-wrapper -->
 </div>

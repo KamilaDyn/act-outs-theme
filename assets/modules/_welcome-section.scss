@@ -26,6 +26,7 @@
         width: 90%;
         float: none;
         margin: 0 auto;
+        text-align: center;
     }
 
     .separator {
@@ -37,10 +38,6 @@
         margin: 20px auto;
     }
 
-    .btn {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+
 
 }

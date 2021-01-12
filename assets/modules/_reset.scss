@@ -511,6 +511,10 @@ textarea {
 .comment-navigation .nav-links,
 .posts-navigation .nav-links,
 .post-navigation .nav-links {
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
     display: flex;
     padding: 0 10px;
 }
@@ -695,6 +699,8 @@ textarea {
     background-color: #f1f1f1;
     border-radius: 3px;
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
     clip: auto !important;
     clip-path: none;
     color: #21759b;

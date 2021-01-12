@@ -22,7 +22,7 @@ get_header(); ?>
                 $today = date('Ymd');
                 $pastEvents = new WP_Query(array(
                     'paged' => get_query_var('paged', 1),
-                    'post_type' => 'event',
+                    'post_type' => 'holiday-program',
                     'meta_key' => 'event_start',
                     'orderby' => 'meta_value_num',
                     'order' => 'ASC',
@@ -37,7 +37,7 @@ get_header(); ?>
                 ));
                 while ($pastEvents->have_posts()) : $pastEvents->the_post();
 
-                    get_template_part('template-parts/content-event', get_post_format());
+                    get_template_part('template-parts/content-holiday-program', get_post_format());
 
 
                 endwhile; // End of the loop.

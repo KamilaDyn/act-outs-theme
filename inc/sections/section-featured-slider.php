@@ -15,8 +15,8 @@ $class = '';
     <?php
     $today = date('Ymd');
     $args = array(
-        'posts_per_page' => 6,
-        'post_type' => 'event',
+        'posts_per_page' => 15,
+        'post_type' => 'holiday-program',
         'post_status' => 'publish',
         'paged' => 1,
         'meta_key' => 'event_start',
@@ -40,48 +40,32 @@ $class = '';
         $i = 0;
         while ($loop->have_posts()) : $loop->the_post();
             $i++; ?>
+            <div class="slider-image-container">
+                <figure>
 
-            <div class="slick-item" style="position: relative;">
-                <div class="img-slider-cotainer">
-                    <?php the_post_thumbnail('full') ?>
-                </div>
-                <?php
-                $class = '';
-                if (false == $image_overlay) {
-                    $class = 'image-overlay';
-                } else {
-                    $class = 'content-overlay';
-                }
-                if (false == $image_overlay) {
-                ?>
-                    <div class="overlay"></div>
-                <?php } ?>
-                <div class="wrapper">
-                    <div class="<?php echo esc_attr($class); ?> featured-content-wrapper">
-                        <header class="entry-header">
-                            <div class="entry-meta">
-                                <?php act_outs_entry_meta(); ?>
-                            </div><!-- .entry-meta -->
+                    <?php $image = get_field('hp_image_slider');
+                    $size = 'vertical-large';
+                    $alt = get_post_meta($post->ID, '_wp_attachment_image_alt', true);
+                    if ($image) {
+                        $thumbnail = get_field('vertical-large', $file['ID']);
+                    ?>
 
-                            <a href="<?php the_permalink(); ?>">
-                                <h2 class="entry-title"><?php the_title(); ?></h2>
-                            </a>
-                        </header>
-                        <div class="separator"></div>
-                        <div class="entry-meta">
-                            <h3> <?php
-                                    $eventDate = new DateTime(get_field('event_start'));
-                                    echo  $eventDate->format('d/m/Y') . 'r'; ?></h3>
+                        <?php echo wp_get_attachment_image($image, $size, $alt); ?>
 
 
-                        </div><!-- .entry-meta -->
-                        <div class="read-more">
-                            <a href="<?php the_permalink(); ?>" class="btn btn-primary">Read more</a>
-                        </div><!-- .read-more -->
+                    <?php } else {
+                        the_post_thumbnail('vertical-large');
+                    } ?>
+                </figure>
+                <div class="read-more">
+                    <a href="<?php the_permalink(); ?>" class="btn btn-primary">Read more</a>
+                </div><!-- .read-more -->
+            </div>
 
-                    </div><!-- .featured-content-wrapper -->
-                </div><!-- .wrapper -->
-            </div><!-- .slick-item -->
+
+
+
+
         <?php endwhile; ?>
     <?php wp_reset_postdata();
     endif; ?>

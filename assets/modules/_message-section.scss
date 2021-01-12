@@ -26,6 +26,8 @@
             border-radius: 3px;
             background-color: #ebe8e5;
             box-shadow: 0 0 2px 2px rgba(0, 0, 0, .15);
+            -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, .15);
+            -moz-box-shadow: 0 0 2px 2px rgba(0, 0, 0, .15);
             overflow: hidden;
 
             .img {
@@ -107,7 +109,11 @@
                 bottom: 15px;
                 opacity: 1;
                 display: block;
-                transition: all 0.3s ease-in-out;
+                -webkit-transition: all 3s ease-in-out;
+                -moz-transition: all 3s ease-in-out;
+                -ms-transition: all 3s ease-in-out;
+                -o-transition: all 3s ease-in-out;
+                transition: all 3s ease-in-out;
 
                 z-index: 2;
             }

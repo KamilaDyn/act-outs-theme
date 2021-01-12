@@ -5,7 +5,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package EventBellChild
+ * @package act-outs
  */
 ?>
 <?php
@@ -25,17 +25,20 @@ if (has_post_thumbnail()) {
                 <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('act-outs-blog'); ?></a>
             </figure>
 
-        <?php } ?>
-        <div class="entry-meta posted-on">
-            <h3><?php
-                $eventDate = new DateTime(get_field('event_start'));
-                $eventEnd = new DateTime(get_field('event_end'));
-                echo __($eventDate->format('d.m.Y')); ?>
-                <?php if ($eventEnd > $eventDate) : echo  ' - ' . __($eventEnd->format('d.m.Y'));
-                endif; ?>
+        <?php }
+        $eventDate = new DateTime(get_field('event_start'));
+        if ($eventDate) : ?>
+            <div class="entry-meta posted-on">
+                <h3><?php
+                    $eventDate = new DateTime(get_field('event_start'));
+                    $eventEnd = new DateTime(get_field('event_end'));
+                    echo __($eventDate->format('d.m.Y')); ?>
+                    <?php if ($eventEnd > $eventDate) : echo  ' - ' . __($eventEnd->format('d.m.Y'));
+                    endif; ?>
 
-            </h3>
-        </div><!-- .entry-meta -->
+                </h3>
+            </div><!-- .entry-meta -->
+        <?php endif; ?>
         <div class="entry-container">
             <header class="entry-header">
                 <?php

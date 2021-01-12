@@ -1,44 +1,6 @@
 jQuery(document).ready(function ($) {
 
     /*------------------------------------------------
-                DECLARATIONS
-    ------------------------------------------------*/
-
-    var scroll = $(window).scrollTop();
-    var scrollup = $('.backtotop');
-    var menu_toggle = $('.menu-toggle');
-    var nav_menu = $('.main-navigation ul.nav-menu');
-
-    // Initialize library
-
-
-
-
-
-    /*------------------------------------------------
-                BACK TO TOP
-    ------------------------------------------------*/
-
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 1) {
-            scrollup.css({
-                bottom: "25px"
-            });
-        } else {
-            scrollup.css({
-                bottom: "-100px"
-            });
-        }
-    });
-
-    scrollup.click(function () {
-        $('html, body').animate({
-            scrollTop: '0px'
-        }, 800);
-        return false;
-    });
-
-    /*------------------------------------------------
                 MAIN NAVIGATION
     ------------------------------------------------*/
 

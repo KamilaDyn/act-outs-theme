@@ -18,18 +18,9 @@ get_header(); ?>
                 $today = date('Ymd');
                 $currentEvents = new WP_Query(array(
                     'paged' => get_query_var('paged', 1),
-                    'post_type' => 'event',
-                    'meta_key' => 'event_start',
+                    'post_type' => 'holiday-program',
                     'orderby' => 'meta_value_num',
                     'order' => 'ASC',
-                    'meta_query' => array(
-                        array(
-                            'key' => 'event_start',
-                            'compare' => '>',
-                            'value' => $today,
-                            'type' => 'numeric',
-                        )
-                    )
                 ));
                 if ($currentEvents->have_posts()) :
                     /* Start the Loop */
@@ -40,7 +31,7 @@ get_header(); ?>
 							 * If you want to override this in a child theme, then include a file
 							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 							 */
-                        get_template_part('template-parts/content-event', get_post_format());
+                        get_template_part('template-parts/content-holiday-program', get_post_format());
 
                     endwhile;
 
@@ -50,7 +41,7 @@ get_header(); ?>
 
                 endif;
                 ?>
-                <h3>Looking for past Events?<a class="link" href="<?php echo site_url('/past-events') ?>"> Check our past events archive</a></h3>
+                <h3>Looking for past Events?<a class="link" href="<?php echo site_url('/past-holiday-programs') ?>"> Check our past events archive</a></h3>
             </div>
 
             <?php

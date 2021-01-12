@@ -357,7 +357,7 @@ if (!function_exists('act_outs_banner_image')) :
         $search_header = act_outs_get_option('search_header_image');
         $header_404 = act_outs_get_option('404_header_image');
         $header_category = act_outs_get_option('category_header_image');
-        $archive_header_event = act_outs_get_option('archive_event_header_image');
+        $archive_header_holiday_program = act_outs_get_option('archive_holiday_program_header_image');
         $archive_header_firstgroup = act_outs_get_option('archive_firstgroup_header_image');
         $archive_header_secondgroup = act_outs_get_option('archive_secondgroup_header_image');
         $archive_header_thirdgroup = act_outs_get_option('archive_thirdgroup_header_image');
@@ -378,8 +378,8 @@ if (!function_exists('act_outs_banner_image')) :
             $image_url = (!empty($header_404)) ? $header_404 : get_template_directory_uri() . '/assets/images/default-header.jpg';
         } elseif (is_category()) {
             $image_url = (!empty($header_category)) ? $header_category : get_template_directory_uri() . '/assets/images/default-header.jpg';
-        } elseif (is_post_type_archive('event')) {
-            $image_url = (!empty($archive_header_event)) ?     $archive_header_event : get_template_directory_uri() . '/assets/images/default-header.jpg';
+        } elseif (is_post_type_archive('holiday-program')) {
+            $image_url = (!empty($archive_header_holiday_program)) ?     $archive_header_holiday_program : get_template_directory_uri() . '/assets/images/default-header.jpg';
         } elseif (is_post_type_archive('firstgroup')) {
             $image_url = (!empty($archive_header_firstgroup)) ?     $archive_header_firstgroup : get_template_directory_uri() . '/assets/images/default-header.jpg';
         } elseif (is_post_type_archive('secondgroup')) {

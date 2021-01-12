@@ -19,7 +19,11 @@ section gallery
     button.slick-arrow {
         visibility: hidden;
         opacity: 0;
-        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
     }
 
     &:hover button.slick-arrow {
@@ -31,10 +35,13 @@ section gallery
 
         padding: 180px 0;
         background-size: cover;
-        background-position: 50%;
+        background-position: center top;
         position: relative;
         background-color: #111;
+        background-repeat: no-repeat;
     }
+
+
 
     .slick-prev {
         left: 10px;

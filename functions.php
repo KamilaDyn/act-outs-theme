@@ -55,8 +55,9 @@ if (!function_exists('act_outs_setup')) :
 		add_image_size('video-poster-welcome', 950, 450, true);
 		add_image_size('page-image', 1060, 470, true);
 		add_image_size('single-page-image', 860, 350, true);
-		add_image_size('vertical-large', 1280, 450, true);
+		add_image_size('vertical-large', 1250, 560, true);
 		add_image_size('widget-event-small', 250, 200, true);
+
 
 
 
@@ -250,7 +251,9 @@ function act_outs_scripts()
 	wp_enqueue_style('slick-css', get_template_directory_uri() . '/assets/css/slick' . $min . '.css', '', 'v1.8.0');
 
 
-	wp_enqueue_style('act-outs-custom-style', get_template_directory_uri() . '/assets/css/style.css');
+
+
+	wp_enqueue_style('act-outs-custom-style', get_template_directory_uri() . '/assets/css/style' . $min . '.css');
 
 	wp_enqueue_style('act-outs-style', get_stylesheet_uri());
 
@@ -258,15 +261,15 @@ function act_outs_scripts()
 	wp_enqueue_script('imagesloaded');
 
 
-	wp_enqueue_script('act-outs-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true);
+	wp_enqueue_script('act-outs-navigation', get_template_directory_uri() . '/assets/js/navigation' . $min . '.js', array(), '20151215', true);
 	wp_enqueue_script('lightbox', get_template_directory_uri() . '/assets/js/lightbox' . $min . '.js', array(), '1.0.0', true);
 
 	wp_enqueue_script('act-outs-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix' . $min . '.js', array(), '20151215', true);
 
 	if (is_front_page()) {
 
-		wp_enqueue_script('jquery-slick', get_template_directory_uri() . '/assets/js/slick' . $min . '.js', array('jquery'), '2017417', true);
-		wp_enqueue_script('act-outs-custom-front-page', get_template_directory_uri() . '/assets/js/custom-front-page'  . $min . '.js', array('jquery'), '', true);
+		wp_enqueue_script('jquery-glider', get_template_directory_uri() . '/assets/js/slick' . $min . '.js', array('jquery'), ' 1.7.4', true);
+		wp_enqueue_script('act-outs-custom-front-page', get_template_directory_uri() . '/assets/js/custom-front-page' . $min . '.js', array('jquery'), '', true);
 	}
 
 	if (is_page('calendar')) {
@@ -309,6 +312,7 @@ add_filter('login_headerurl', 'ourheaderurl');
 function my_login_CSS()
 {
 	wp_enqueue_style('custom-login',  get_stylesheet_directory_uri() . '/style.css');
+	wp_enqueue_style('act-outs-fonts', get_template_directory_uri() . '/assets/css/fonts' . $min . '.css');
 }
 add_action('login_enqueue_scripts', 'my_login_CSS');
 

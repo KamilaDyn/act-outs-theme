@@ -6,6 +6,8 @@
     outline: none;
 }
 
+
+
 .slick-dotted.slick-slider {
     margin-bottom: 0;
 }
@@ -29,14 +31,10 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 100%;
-    height: 100%
+    width: auto;
+    height: auto;
 }
 
-.img-slider-cotainer img {
-    width: 100%;
-    height: 100%;
-}
 
 .slick-prev,
 .slick-next {
@@ -73,7 +71,7 @@
         &:before {
             content: "";
             opacity: 1;
-            background-color: $red;
+            background-color: $white;
             width: 12px;
             height: 12px;
             border-radius: 12px;
@@ -93,22 +91,25 @@
     }
 }
 
-#featured-slider {
-    .wrapper {
-        position: relative;
-        z-index: 1;
-    }
-
-    .slick-item {
-        padding: 225px 0;
-        background-size: cover;
-        background-position: 50%;
-        position: relative;
-        background-color: #111;
-    }
+// #featured-slider {
+//     .wrapper {
+//         position: relative;
+//         z-index: 1;
+//     }
 
 
-}
+
+//     .slick-item {
+//         // padding: 225px 0;
+//         background-size: cover;
+//         background-position: top;
+//         position: relative;
+//         background-color: #111;
+//         height: auto;
+//     }
+
+
+// }
 
 
 .image-overlay.featured-content-wrapper {
@@ -122,48 +123,23 @@
     left: 0;
     top: 50%;
     right: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 
-.featured-content-wrapper {
-    &::after {
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        bottom: 11px;
-        content: "";
-        display: block;
-        left: 15px;
-        position: absolute;
-        right: 15px;
-        top: 11px;
-        z-index: -1;
-    }
-
-    &::before {
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        bottom: 15px;
-        content: "";
-        display: block;
-        left: 11px;
-        position: absolute;
-        right: 11px;
-        top: 15px;
-        z-index: -1;
-    }
-}
 
 .content-overlay.featured-content-wrapper {
-    background-image: linear-gradient(rgba($darkblue, 0.5), rgba($darkblue, 0.5));
     padding: 30px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     position: absolute;
-    max-width: 750px;
     width: 100%;
     left: 0;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
+    bottom: 0;
 
 
     .entry-title {
@@ -229,6 +205,10 @@
         color: #fff;
         font-size: 40px;
         font-weight: bold;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
         transition: all 0.5s ease-in-out;
 
         &:hover {
@@ -246,7 +226,17 @@
     margin: 0;
 }
 
-.featured-content-wrapper .read-more {
+.slider-image-container {
+    position: relative;
+}
+
+.slider-image-container .read-more {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
     margin-top: 21px;
 
     a {
@@ -254,37 +244,50 @@
     }
 }
 
-.featured-slider-wrapper {
-    .slick-dots {
-        top: 0;
-        right: 10%;
-        transform: translateX(50%);
-    }
 
-    .slick-dots button {
-        &::before {
-            width: 15px;
-            height: 15px;
-            background-color: $white;
-        }
-    }
+.slick-dots {
+    top: 0;
+    right: 10%;
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
+    transform: translateX(50%);
+}
 
-    .slick-dots li.slick-active button {
-        &::before {
-            background-color: $red;
-        }
+.slick-dots li button {
+    &::before {
+        width: 15px;
+        height: 15px;
+        background-color: $white;
     }
 }
 
-#featured-slider {
+.slick-dots li.slick-active button {
+    &::before {
+        background-color: $red;
+    }
+}
+
+#featured-slider,
+#gallery-slider {
     .slick-dots {
         bottom: 25px;
+    }
+
+    &:hover button.slick-arrow {
+        visibility: visible;
+        opacity: 1;
     }
 
     button.slick-arrow {
         visibility: hidden;
         opacity: 0;
-        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
     }
 
     &:hover button.slick-arrow {

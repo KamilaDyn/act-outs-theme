@@ -38,10 +38,9 @@ $class = 'welcome';
                     echo force_balance_tags(html_entity_decode(wp_trim_words(htmlentities(get_the_content()), 120)));
                     ?>
                 </div><!-- .entry-content -->
-                <div class="separator">
-                </div>
-
+                <div class="separator"> </div>
                 <a class="btn" href="<?php echo get_permalink(); ?>">Read more</a>
+
             </div>
         </div><!-- .section-content -->
 

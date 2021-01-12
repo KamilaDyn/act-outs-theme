@@ -118,7 +118,11 @@ form.search-form button.search-submit {
         padding: 0 55px 0 15px;
         height: 50px;
         /*border: 1px solid #ddd;*/
-        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 3s ease-in-out;
+        -moz-transition: all 3s ease-in-out;
+        -ms-transition: all 3s ease-in-out;
+        -o-transition: all 3s ease-in-out;
+        transition: all 3s ease-in-out;
     }
 
     form.search-form button.search-submit {
@@ -128,7 +132,11 @@ form.search-form button.search-submit {
         font-size: 15px;
         line-height: 26px;
         height: 50px;
-        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 3s ease-in-out;
+        -moz-transition: all 3s ease-in-out;
+        -ms-transition: all 3s ease-in-out;
+        -o-transition: all 3s ease-in-out;
+        transition: all 3s ease-in-out;
     }
 
     form.search-form button.search-submit:hover,
@@ -175,8 +183,13 @@ form.search-form input {
 
 
 .widget-events {
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
     display: flex;
     justify-content: space-around;
+    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
 
     .event-item {
@@ -300,7 +313,11 @@ input[type="submit"],
     width: auto;
     height: auto;
     line-height: 28px;
-    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 3s ease-in-out;
+    -moz-transition: all 3s ease-in-out;
+    -ms-transition: all 3s ease-in-out;
+    -o-transition: all 3s ease-in-out;
+    transition: all 3s ease-in-out;
 
     &:hover {
         color: $red;

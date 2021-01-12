@@ -22,13 +22,11 @@
         display: none;
     }
 
-    #welcome-video {
-        .featured-content-wrapper {
-            width: 90%;
-            margin: 0 auto;
-        }
-
+    #welcome .wrapper {
+        padding: 80px 10px 30px;
     }
+
+
 
     #message .wrapper {
         padding: 80px 10px 30px;
@@ -162,5 +160,6 @@
     .menu-main-menu-container {
         width: 75vw;
     }
+
 
 }

@@ -13,7 +13,7 @@ function act_outs_register_event()
 function act_outs_event_results($data)
 {
     $mainQuery = new WP_Query(array(
-        'post_type' => array('event'),
+        'post_type' => array('holiday-program'),
         's' => sanitize_text_field($data['term'])
     ));
 
@@ -28,7 +28,7 @@ function act_outs_event_results($data)
         $eventData = new DateTime(get_field('event_start'));
 
         $eventEnd = new DateTime(get_field('event_end'));
-        if (get_post_type() == 'event') {
+        if (get_post_type() == 'holiday-program') {
             array_push($results['events'], array(
                 'id' => get_the_ID(),
                 'name' => get_the_title(),
