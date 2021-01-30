@@ -167,6 +167,28 @@ $wp_customize->add_control(
 );
 
 
+/** Header Archive Image Fourth Group */
+$wp_customize->add_setting(
+    'theme_options[archive_featured_videos_header_image]',
+    array(
+        'default'           => '',
+        'sanitize_callback' => 'act_outs_sanitize_image',
+    )
+);
+
+$wp_customize->add_control(
+    new WP_Customize_Image_Control(
+        $wp_customize,
+        'theme_options[archive_featured_videos_header_image]',
+        array(
+            'label'         => esc_html__('Header Image For Featured Videos Page', 'act-outs'),
+            'section'       => 'custom_header_image_settings',
+            'type'          => 'image',
+        )
+    )
+);
+
+
 /** Search Header Image */
 $wp_customize->add_setting(
     'theme_options[search_header_image]',

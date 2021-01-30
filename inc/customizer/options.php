@@ -31,6 +31,22 @@ function act_outs_event_post_choices()
     return  $choices;
 }
 
+function act_outs_featured_videos_post_choices()
+{
+
+    $post_args = array(
+        'post_type' => array('featured-videos'),
+        'numberposts' => -1
+    );
+    $posts = get_posts($post_args);
+    $choices = array();
+    $choices[0] = esc_html__('--Select--', 'act-outs');
+    foreach ($posts as $post) {
+        $choices[$post->ID] = $post->post_title;
+    }
+    return  $choices;
+}
+
 if (!function_exists('act_outs_switch_options')) :
     /**
      * List of custom Switch Control options

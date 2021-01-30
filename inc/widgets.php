@@ -30,19 +30,11 @@ class events_widget extends WP_Widget
         //output
         $today = date('Ymd');
         $homepageEvents = new WP_Query(array(
-            'post_per_page' => 3,
+            'post_per_page' => 4,
+            'paged' => get_query_var('paged', 1),
             'post_type' => 'holiday-program',
-            'meta_key' => 'event_start',
-            'orderby' => 'meta_value_num',
+            'orderby' => 'menu_order',
             'order' => 'ASC',
-            'meta_query' => array(
-                array(
-                    'key' => 'event_start',
-                    'compare' => '>=',
-                    'value' => $today,
-                    'type' => 'numeric',
-                )
-            )
         ));
 ?>
         <div class="widget-events ">
@@ -53,24 +45,25 @@ class events_widget extends WP_Widget
 
             ?>
                 <div class="event-item">
-                    <a href="<?php the_permalink(); ?>">
-                        <?php the_post_thumbnail('widget-event-small'); ?>
-                        <div class="text">
-                            <h2 class="entry-title"> <?php __(the_title(), 'events_widget_domain'); ?></h2>
+                    <?php the_post_thumbnail('widget-event-small'); ?>
+                    <div class="text">
+                        <h2 class="entry-title"> <?php __(the_title(), 'events_widget_domain'); ?></h2>
+                        <?php $eventDate = new DateTime(get_field('event_start'));
+                        $eventEnd = new DateTime(get_field('event_end'));
+                        if (get_field('event_start')) : ?>
                             <h3><?php
-                                $eventDate = new DateTime(get_field('event_start'));
-                                $eventEnd = new DateTime(get_field('event_end'));
                                 echo __($eventDate->format('d.m.Y')); ?>
                                 <?php if ($eventEnd > $eventDate) : echo  ' - ' . __($eventEnd->format('d.m.Y'));
                                 endif; ?>
-
                             </h3>
-                            <?php $content = strip_shortcodes(wp_trim_words(get_the_content(), 10));
-                            $content = apply_filters('the_content', $content);
-                            $content = str_replace(']]>', ']]&gt;', $content);
-                            echo $content; ?>
-                        </div>
-                    </a>
+                        <?php endif ?>
+                        <?php $content = strip_shortcodes(wp_trim_words(get_the_content(), 10));
+                        $content = apply_filters('the_content', $content);
+                        $content = str_replace(']]>', ']]&gt;', $content);
+                        echo $content; ?>
+                        <a href="https://actouts.com/holiday-programs/#post-<?php the_ID() ?> " class="btn">Read more</a>
+                    </div>
+
 
                 </div>
                 <hr>
@@ -153,7 +146,10 @@ class social_links_widget extends WP_Widget
         echo (!empty($social_link4)) ? $social_link4_profile : null;
         echo '</ul>';
         echo '</div>';
+        echo $args['after_widget'];
     }
+
+
     public function form($instance)
     {
         isset($instance['title']) ? $title = $instance['title'] :  $title = __('Social links list', 'social_links_widget_domain');

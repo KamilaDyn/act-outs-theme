@@ -1,0 +1,137 @@
+/*--------------------------------------------------------------
+## Message From Author
+--------------------------------------------------------------*/
+
+
+#message {
+    text-align: center;
+
+
+
+    .section-content {
+        margin: auto;
+        padding-top: 30px;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .author-thumbnail {
+            position: relative;
+            border: 1px solid #f6f4f3;
+            border-top-color: #fff;
+            border-radius: 3px;
+            border-top-color: #fff;
+            border-radius: 3px;
+            background-color: #ebe8e5;
+            box-shadow: 0 0 2px 2px rgba(0, 0, 0, .15);
+            -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, .15);
+            -moz-box-shadow: 0 0 2px 2px rgba(0, 0, 0, .15);
+            overflow: hidden;
+
+            .img {
+                padding: 7px;
+                position: relative;
+            }
+
+
+        }
+    }
+
+    .entry-header {
+        margin-bottom: 2px;
+        display: inline-block;
+    }
+
+    .entry-title a {
+        color: $darkblue;
+    }
+
+    .entry-title,
+    .entry-title {
+        a {
+
+            &:hover,
+            &:focus {
+                color: $red;
+            }
+        }
+
+    }
+
+    .author-thumbnail {
+        width: 40%;
+        position: relative;
+        float: left;
+    }
+
+    .entry-content {
+        margin-bottom: 22px;
+    }
+
+    .separator {
+        margin-bottom: 15px;
+        width: 70px;
+        background-color: $red;
+        height: 3px;
+        margin: auto;
+        margin: 20px auto;
+    }
+
+
+    .entry-container {
+        width: 55%;
+        position: relative;
+        float: right;
+
+    }
+
+    .entry-container.no-feature-image {
+        width: 100%;
+    }
+
+
+
+    .author-thumbnail {
+
+        &:before {
+            content: "";
+            border: 1px solid #fff;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            opacity: 1;
+            display: block;
+            -webkit-transition: all 3s ease-in-out;
+            -moz-transition: all 3s ease-in-out;
+            -ms-transition: all 3s ease-in-out;
+            -o-transition: all 3s ease-in-out;
+            transition: all 3s ease-in-out;
+
+            z-index: 2;
+
+
+        }
+    }
+
+
+
+
+    .social-icons li a {
+        color: $black3;
+
+    }
+
+    .social-icons li a {
+
+        &:focus,
+        &:hover {
+            color: $red;
+        }
+    }
+
+
+}

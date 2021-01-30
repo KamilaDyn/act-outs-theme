@@ -1,0 +1,24 @@
+#main .featured-videos-container {
+
+
+
+    .featured-videos {
+        padding-top: 30px;
+
+        .entry-content p {
+            text-align: center;
+        }
+
+        .entry-content .mejs-container {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+    }
+
+    .entry-header h3 {
+        text-align: center;
+        color: $darkblue;
+        font-weight: bold;
+
+    }
+}

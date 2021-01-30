@@ -49,10 +49,9 @@ if (has_post_thumbnail()) {
             </header><!-- .entry-header -->
 
             <div class="entry-content">
-                <?php $content = strip_shortcodes(wp_trim_words(get_the_content(), 80));
-                $content = apply_filters('the_content', $content);
-                $content = str_replace(']]>', ']]&gt;', $content);
-                echo $content; ?>
+                <?php
+                the_excerpt();
+                ?>
                 <a class="btn" href="<?php the_permalink(); ?>">Go to lesson</a>
             </div><!-- .entry-content -->
 

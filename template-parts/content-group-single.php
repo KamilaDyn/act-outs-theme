@@ -36,26 +36,11 @@ $img_class = '';
         <div class="entry-container">
 
             <div class="entry-content">
-                <?php $content = strip_shortcodes(get_the_content());
-                $content = apply_filters('the_content', $content);
-                $content = str_replace(']]>', ']]&gt;', $content);
-                echo $content; ?>
+                <?php
+
+                the_content(); ?>
             </div><!-- .entry-content -->
-            <?php if ($video) { ?>
-                <h3 class="video-title">Videos Section for lesson</h3>
-
-                <div class="videos-container">
-
-                    <?php
-                    foreach ($video as $singleVideo) { ?>
-                        <figure class="video">
-                            <?php echo $singleVideo;
-                            ?>
-                        </figure>
-                    <?php } ?>
-
-                </div>
-            <?php }
+            <?php
 
             if (get_field('zoom_link')) {
             ?>

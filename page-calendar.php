@@ -20,10 +20,22 @@ get_header(); ?>
 
 			<?php
 
-				get_template_part('template-parts/content', 'calendar');
-	
-		
+
+			$img_class = '';
 			?>
+			<div id="post-<?php the_ID(); ?>" <?php post_class(' ' . $img_class); ?>>
+				<div class="colors-container">
+					<ul>
+						<li><span class="color"></span>Term Dates</li>
+						<li><span class="color"></span>Bank Holidays</li>
+
+					</ul>
+				</div>
+				<div id="calendar"></div>
+			</div><!-- #post-## -->
+
+
+
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

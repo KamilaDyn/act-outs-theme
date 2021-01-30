@@ -19,30 +19,33 @@ $query  = new WP_Query($args);
 
 // The Loop
 while ($query->have_posts()) :   $query->the_post(); ?>
+    <header class="section-header">
+        <h2 class="section-title"><?php the_title(); ?></h2>
+    </header>
 
     <div class="section-content">
         <?php if (has_post_thumbnail()) : ?>
-            <div class="author-thumbnail">
-                <a href="<?php the_permalink(); ?>">
-                    <div>
-                        <?php the_post_thumbnail('full'); ?>
 
-                    </div>
-                </a>
-            </div><!-- .author-thumbnail -->
+            <div class="author-thumbnail ">
+                <?php the_post_thumbnail('single-page-image'); ?>
+            </div>
         <?php endif;
         $message_class = '';
         if (!has_post_thumbnail()) {
             $message_class = 'no-feature-image';
         } ?>
         <div class="entry-container <?php echo $message_class; ?>">
-            <header class="entry-header">
-                <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-            </header>
+
             <div class="entry-content">
+
                 <?php
                 $excerpt = act_outs_the_excerpt(85);
-                echo wp_kses_post(wpautop($excerpt));
+                if (has_excerpt()) {
+                    the_excerpt();
+                } else {
+                    echo wp_kses_post(wpautop($excerpt));
+                }
+
                 ?>
             </div><!-- .entry-content -->
             <div class="separator">

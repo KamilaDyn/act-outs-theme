@@ -14,5 +14,5 @@ $img_class = '';
 ?>
 
 <div id="post-<?php the_ID(); ?>" <?php post_class(' ' . $img_class); ?>>
-<div id="calendar"></div>
+    <div id="calendar" data-provide="calendar"></div>
 </div><!-- #post-## -->

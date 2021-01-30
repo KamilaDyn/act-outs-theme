@@ -12,36 +12,48 @@ get_header(); ?>
 <div class="wrapper page-section">
     <div id="primary" class="content-area">
         <main id="main" class="site-main blog-posts-wrapper" role="main">
-            <div class="row flex">
-
+            <div class="row ">
+                <header class="hp-header">
+                    <h2 class="hp-time-title">Running throughout February and April</h2>
+                </header>
+                <div class="separator"> </div>
                 <?php
-                $today = date('Ymd');
                 $currentEvents = new WP_Query(array(
                     'paged' => get_query_var('paged', 1),
                     'post_type' => 'holiday-program',
-                    'orderby' => 'meta_value_num',
+                    'orderby' => 'menu_order',
                     'order' => 'ASC',
                 ));
                 if ($currentEvents->have_posts()) :
                     /* Start the Loop */
                     while ($currentEvents->have_posts()) : $currentEvents->the_post();
 
-                        /*
-							 * Include the Post-Format-specific template for the content.
-							 * If you want to override this in a child theme, then include a file
-							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-							 */
                         get_template_part('template-parts/content-holiday-program', get_post_format());
 
                     endwhile;
+                    wp_reset_postdata();
+                    $id = 584;
+                    $page_pircing =  get_post($id);
 
+                    $content = apply_filters('the_content', $page_pircing->post_content); ?>
+                    <article id='post-<?php echo $id ?>' class="post-<?php echo $id ?> holiday-program type-holiday-program status-publish has-post-thumbnail hentry category-holiday-program">
+                        <div class="post-item">
+                            <header class="entry-header">
+                                <h2><?php echo apply_filters('the_title', $page_pircing->post_title); ?></h2>
+                            </header><!-- .entry-header -->
+                            <div class="entry-content">
+                                <?php echo $content ?>
+                            </div><!-- .entry-content -->
+                        </div>
+                    </article>
+                <?php
                 else :
 
                     get_template_part('template-parts/content', 'none');
 
                 endif;
                 ?>
-                <h3>Looking for past Events?<a class="link" href="<?php echo site_url('/past-holiday-programs') ?>"> Check our past events archive</a></h3>
+
             </div>
 
             <?php

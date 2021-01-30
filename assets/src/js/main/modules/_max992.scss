@@ -1,0 +1,80 @@
+@media screen and (max-width: 992px) {
+
+
+    .comments-title,
+    #reply-title {
+        font-size: 28px;
+    }
+
+    #instagram {
+        .hentry {
+            float: left;
+            width: 50%;
+            padding: 10px;
+        }
+
+    }
+
+    .video-wrapper.has-featured-image {
+        display: block;
+        align-items: center;
+    }
+
+    #video {
+
+        .featured-image,
+        .entry-container {
+            width: 100%;
+            float: none;
+        }
+    }
+
+
+    #message .author-thumbnail,
+    #message .entry-container,
+    #welcome .thumbnail,
+    #welcome .entry-container {
+        width: 80%;
+        margin: 0 auto;
+        float: none;
+    }
+
+    #message .author-thumbnail,
+    #welcome .thumbnail {
+        max-height: 400px;
+    }
+
+    #message .entry-container,
+    #welcome .entry-container {
+        padding-top: 30px;
+    }
+
+    #message .section-content,
+    #welcome .section-content {
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    #welcome .section-content .thumbnail {
+        -webkit-order: 1;
+        -ms-order: 1;
+        order: 1;
+    }
+
+    #welcome .section-content .entry-container {
+        -webkit-order: 2;
+        -ms-order: 2;
+        order: 2;
+    }
+
+    .featured-videos-container {
+        flex-direction: column;
+
+
+        .featured-videos {
+            width: 100%;
+        }
+    }
+
+}

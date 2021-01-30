@@ -73,9 +73,9 @@ if (!function_exists('act_outs_get_default_theme_options')) :
         $defaults['about_title']                            = esc_html__('Successfull Act Outs', 'act-outs');
 
 
-        // Blog Section
-        $defaults['disable_blog_section']                = false;
-        $defaults['blog_title']                                = esc_html__('Last Post in Ours Blog', 'act-outs');
+        // Featured Videos Section
+        $defaults['disable_featured-videos_section']                = false;
+        $defaults['featured_videos_title']                                = esc_html__('Featured Videos', 'act-outs');
 
         // Single Event
         $default['disable_single-event_section'] = false;

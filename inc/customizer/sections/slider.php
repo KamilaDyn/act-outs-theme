@@ -80,3 +80,25 @@ $wp_customize->add_control(
         )
     )
 );
+
+//Features Section title
+$wp_customize->add_setting(
+    'theme_options[slider_title]',
+    array(
+        'default'           => '',
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field'
+    )
+);
+
+$wp_customize->add_control(
+    'theme_options[slider_title]',
+    array(
+        'label'       => __('Section Title', 'act-outs'),
+        'section'     =>   'section_featured_slider',
+        'settings'    => 'theme_options[slider_title]',
+        'active_callback' => 'act_outs_slider_active',
+        'type'        => 'text'
+    )
+);

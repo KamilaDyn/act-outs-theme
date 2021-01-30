@@ -69,9 +69,9 @@ function act_outs_slider_active($control)
     }
 }
 
-function act_outs_blog_active($control)
+function act_outs_featured_vidoes_active($control)
 {
-    if ($control->manager->get_setting('theme_options[disable_blog_section]')->value() == true) {
+    if ($control->manager->get_setting('theme_options[disable_featured-videos_section]')->value() == true) {
         return true;
     } else {
         return false;

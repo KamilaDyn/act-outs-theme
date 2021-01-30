@@ -20,7 +20,6 @@ if ('posts' != get_option('show_on_front')) {
                     </section>
                 <?php endif; ?>
 
-
             <?php } elseif ($section['id'] == 'gallery-slider') { ?>
                 <?php $disable_gallery_section = act_outs_get_option('disable_gallery-slider_section');
                 if (true == $disable_gallery_section) : ?>
@@ -33,12 +32,10 @@ if ('posts' != get_option('show_on_front')) {
 
                 <?php endif; ?>
 
-            <?php } elseif ($section['id'] == 'blog') { ?>
-                <?php $disable_blog_section = act_outs_get_option('disable_blog_section');
-                if (true === $disable_blog_section) :
-                    $background_blog_section = act_outs_get_option('background_blog_section'); ?>
-                    <section id="<?php echo esc_attr($section['id']); ?>" class=" page-section" style="background-image: url('<?php echo esc_url($background_blog_section); ?>');">
-
+            <?php } elseif ($section['id'] == 'featured-videos') { ?>
+                <?php $disable_featured_videos_section = act_outs_get_option('disable_featured-videos_section');
+                if (true === $disable_featured_videos_section) : ?>
+                    <section id="<?php echo esc_attr($section['id']); ?>" class=" page-section">
                         <?php get_template_part('inc/sections/section', esc_attr($section['id'])); ?>
                     </section>
                 <?php endif; ?>
@@ -59,8 +56,8 @@ if ('posts' != get_option('show_on_front')) {
                 if (true == $disable_featured_slider) : ?>
 
                     <section id="<?php echo esc_attr($section['id']); ?>">
-                        <div class="wrapper"> <?php get_template_part('inc/sections/section', esc_attr($section['id'])); ?></div>
-
+                        <div class="wrapper"> <?php get_template_part('inc/sections/section', esc_attr($section['id'])); ?>
+                        </div>
                     </section>
                 <?php endif; ?>
 
@@ -68,7 +65,7 @@ if ('posts' != get_option('show_on_front')) {
                 <?php $disable_about_section = act_outs_get_option('disable_about_section');
                 if (true == $disable_about_section) : ?>
 
-                    <section id="<?php echo esc_attr($section['id']); ?>">
+                    <section id="<?php echo esc_attr($section['id']); ?>" class="page-section relative">
                         <div class="wrapper">
                             <?php get_template_part('inc/sections/section', esc_attr($section['id'])); ?>
                         </div>
@@ -89,7 +86,6 @@ if ('posts' != get_option('show_on_front')) {
                 <?php $disable_message_section = act_outs_get_option('disable_message_section');
                 if (true == $disable_message_section) : ?>
                     <section id="<?php echo esc_attr($section['id']); ?>" class="page-section relative">
-
                         <div class="wrapper">
                             <?php get_template_part('inc/sections/section', esc_attr($section['id'])); ?>
                         </div>

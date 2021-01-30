@@ -12,12 +12,15 @@
             <div class="container-btn">
                 <button class="closebtn">x</button>
             </div>
-            <?php
-            $media = get_media_embedded_in_content(
-                apply_filters('the_content', get_the_content())
-            );
-            the_content('video');
-            ?>
+            <div class="wp-video">
+                <?php
+
+                $media = get_media_embedded_in_content(
+                    apply_filters('the_content', get_the_content())
+                );
+                echo $media[0];
+                ?>
+            </div>
         </div>
 
     </div>

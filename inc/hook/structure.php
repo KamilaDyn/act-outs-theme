@@ -45,6 +45,23 @@ add_action('act_outs_action_before', 'act_outs_page_start', 10);
 if (!function_exists('act_outs_header_start')) :
     function act_outs_header_start()
     { ?>
+            <div class="" id="loading">
+                <div class="loding-container">
+                    <div class="icon"> </div>
+                    <div class="lds-ellipsis">
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+
             <header id="masthead" class="site-header nav-shrink" role="banner">
             <?php   }
     endif;

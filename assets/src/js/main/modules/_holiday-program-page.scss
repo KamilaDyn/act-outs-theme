@@ -1,0 +1,26 @@
+#main .holiday-program {
+    .entry-header {
+        h2 {
+            color: $darkblue;
+        }
+    }
+
+
+}
+
+#main .hp-time-title {
+    color: $red;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+#main .separator {
+    margin-bottom: 15px;
+    width: 150px;
+    background-color: $red;
+    height: 3px;
+    margin: auto;
+    margin: 20px auto 40px;
+}

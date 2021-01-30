@@ -1,0 +1,343 @@
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+
+
+
+.widget {
+    margin: 0 0 1.3em;
+}
+
+.widget:last-child {
+    margin-bottom: 0;
+    padding-bottom: 30px;
+}
+
+
+#secondary {
+    background-color: $lightblue;
+
+    .widget>ul li,
+    .widget_nav_menu ul li {
+        padding: 5px 20px;
+        /*    background-color: #343434;*/
+        font-weight: 500;
+    }
+
+    .widget>ul li:last-child,
+    .widget_nav_menu ul li:last-child {
+        border-bottom: none;
+    }
+
+
+    .widget ul {
+        list-style-type: none;
+
+        li::before {
+            content: "\f101";
+            font-family: "FontAwesome";
+            float: left;
+            margin-right: 15px;
+            color: $black3;
+        }
+    }
+
+    .widget li:not(:last-child) {
+        margin-bottom: 0;
+    }
+
+    .widget_nav_menu ul ul li:first-child,
+    .widget_nav_menu ul ul li:hover {
+        border-left: none;
+    }
+}
+
+
+
+
+#colophon {
+    .widget {
+        margin: 0 0 40px;
+        padding: 0 20px;
+    }
+
+    .widget.widget_text {
+        margin-bottom: 20px;
+    }
+
+    .widget:last-child {
+        margin-bottom: 0;
+    }
+
+}
+
+/* Make sure select elements fit in widgets. */
+.widget {
+    select {
+        max-width: 100%;
+        background-color: #f6f6f6;
+        padding: 10px;
+        border: none;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    select:focus {
+        outline: dotted;
+    }
+
+    input {
+        outline: none;
+        height: 40px;
+        border-radius: 0;
+        padding: 0 15px;
+        border: none;
+    }
+}
+
+
+form.search-form button.search-submit {
+    height: 45px;
+    line-height: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    border: none;
+    width: 45px;
+    border-radius: 0;
+    outline: none;
+}
+
+
+
+
+.widget_search {
+    form.search-form input[type="search"] {
+        background-image: linear-gradient(rgba(16, 24, 239, 0.8), rgba(26, 26, 55, 0.8));
+        padding: 0 55px 0 15px;
+        height: 50px;
+        /*border: 1px solid #ddd;*/
+        -webkit-transition: all 3s ease-in-out;
+        -moz-transition: all 3s ease-in-out;
+        -ms-transition: all 3s ease-in-out;
+        -o-transition: all 3s ease-in-out;
+        transition: all 3s ease-in-out;
+    }
+
+    form.search-form button.search-submit {
+        width: 50px;
+        color: #fff;
+        background-color: #000;
+        font-size: 15px;
+        line-height: 26px;
+        height: 50px;
+        -webkit-transition: all 3s ease-in-out;
+        -moz-transition: all 3s ease-in-out;
+        -ms-transition: all 3s ease-in-out;
+        -o-transition: all 3s ease-in-out;
+        transition: all 3s ease-in-out;
+    }
+
+    form.search-form button.search-submit:hover,
+    form.search-form button.search-submit:focus {
+        background-image: linear-gradient(rgba(253, 45, 85, 0.8), rgba(26, 26, 55, 0.8));
+    }
+
+
+
+    form.search-form input[type="search"]:focus {
+        border-color: #f5f5f5;
+    }
+
+}
+
+
+form.search-form {
+    position: relative;
+}
+
+form.search-form input {
+    width: 100%;
+    padding: 0 40px 0 15px;
+    font-weight: 300;
+}
+
+#wp-calendar tbody td {
+    text-align: center;
+}
+
+#wp-calendar caption {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.widget-title {
+    font-size: 18px;
+    margin: 0 0 32px;
+}
+
+.widget li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+
+.widget-events {
+    display: flex;
+    justify-content: space-around;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    .event-item {
+        width: 48%;
+        padding: 10px 15px;
+        text-align: center;
+
+        .entry-title {
+            font-size: 24px;
+        }
+
+        .entry-date {
+            color: $red;
+            font-size: 20px;
+        }
+    }
+
+
+}
+
+
+
+
+#colophon {
+
+    .widget-title,
+    .widgettitle {
+        font-size: 18px;
+        text-transform: uppercase;
+        padding: 0;
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: $gray8;
+    }
+}
+
+#secondary {
+    .btn {
+        color: $white;
+        background-color: $red;
+        transition: all 0.3 ease-in-out;
+        padding: 5px 15px;
+        margin-top: 20px;
+
+        &:hover {
+            background-color: transparent;
+            color: $black3;
+        }
+    }
+
+    .widget-title,
+    .widgettitle {
+        font-size: 28px;
+        padding: 15px 0;
+        text-align: center;
+        margin-bottom: 0;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        /*border-bottom: 1px solid #efefef;*/
+        /*background-color: #343434;*/
+    }
+
+
+    .widget_tag_cloud .tagcloud {
+        padding: 15px 40px;
+    }
+
+    .widget_tag_cloud .tagcloud a {
+        border: 1px solid rgba(0, 0, 0, 0.10);
+        padding: 0 5px;
+        display: inline-block;
+        font-weight: 600;
+    }
+
+
+    a {
+        color: $black3;
+        font-weight: 500;
+    }
+
+}
+
+
+
+#colophon {
+    .widget_tag_cloud .tagcloud a {
+        border: 1px solid rgba(0, 0, 0, 0.10);
+        padding: 0 5px;
+        display: inline-block;
+        font-weight: 600;
+    }
+
+    .widget_tag_cloud .tagcloud a {
+        border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    a {
+
+        &:hover,
+        &:focus {
+
+            color: $red;
+
+        }
+    }
+
+    .widget {
+        &:not(:last-child) {
+            margin-bottom: 35px;
+        }
+    }
+}
+
+
+.no-sidebar #secondary {
+    display: none;
+}
+
+input[type="submit"],
+.wpcf7 input[type="submit"] {
+    border-radius: 2px;
+    color: #fff;
+    display: inline-block;
+    font-weight: 600;
+    padding: 7px 25px;
+    font-size: 14px;
+    position: relative;
+    border: 2px solid;
+    background-color: #000;
+    border-color: #f5f5f5;
+    color: #fff;
+    z-index: 1;
+    width: auto;
+    height: auto;
+    line-height: 28px;
+    -webkit-transition: all 3s ease-in-out;
+    -moz-transition: all 3s ease-in-out;
+    -ms-transition: all 3s ease-in-out;
+    -o-transition: all 3s ease-in-out;
+    transition: all 3s ease-in-out;
+
+    &:hover {
+        color: $red;
+    }
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+.wpcf7 input[type="submit"]:hover,
+.wpcf7 input[type="submit"]:focus {
+    background-color: #333;
+    border-color: #333;
+    color: #fff;
+}

@@ -13,30 +13,33 @@ function act_outs_register_event()
 function act_outs_event_results($data)
 {
     $mainQuery = new WP_Query(array(
-        'post_type' => array('holiday-program'),
+        'post_type' => array('event'),
         's' => sanitize_text_field($data['term'])
     ));
 
     $results = array(
-        'events' => array(),
+        'dataSource' => array(),
 
     );
 
     while ($mainQuery->have_posts()) {
         $mainQuery->the_post();
-        $content = apply_filters('the_content', get_the_content());
         $eventData = new DateTime(get_field('event_start'));
-
         $eventEnd = new DateTime(get_field('event_end'));
-        if (get_post_type() == 'holiday-program') {
-            array_push($results['events'], array(
+
+        // $data = new Date();
+        if (get_post_type() == 'event') {
+            array_push($results['dataSource'], array(
                 'id' => get_the_ID(),
                 'name' => get_the_title(),
                 'description' => get_field('event_description'),
                 'permalink' =>  get_the_permalink(),
-                'date' => [$eventData->format('F/d/Y'), get_field('event_end') ? $eventEnd->format('F/d/Y') : $eventData->format('F/d/Y')],
                 'color' => get_field('event_color'),
                 'type' => get_field('event_type'),
+                'priority' => get_field('priority'),
+                'display' => get_field('display'),
+                "startDate" => 'new Date(' . $eventData->format('Y, m, d') . ')',
+                "endDate" => 'new Date(' . $eventEnd->format('Y, m, d') . ')',
             ));
         }
     }

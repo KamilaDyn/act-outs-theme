@@ -7,6 +7,9 @@
  *
  * @package act-outs
  */
+
+
+
 require get_theme_file_path('/inc/event-route.php');
 require get_theme_file_path('/inc/widgets.php');
 if (!defined('_S_VERSION')) {
@@ -52,9 +55,8 @@ if (!function_exists('act_outs_setup')) :
 		add_theme_support('post-thumbnails');
 		add_image_size('act-outs-blog', 360, 270, true);
 		add_image_size('video-poster', 520, 350, true);
-		add_image_size('video-poster-welcome', 950, 450, true);
 		add_image_size('page-image', 1060, 470, true);
-		add_image_size('single-page-image', 860, 350, true);
+		add_image_size('single-page-image', 800, 650, true);
 		add_image_size('vertical-large', 1250, 560, true);
 		add_image_size('widget-event-small', 250, 200, true);
 
@@ -237,69 +239,64 @@ add_filter('get_the_archive_title', function ($title) {
  */
 function act_outs_scripts()
 {
-	$min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
+	$min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '.min' : '';
+	$build = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' :  '/build';
 
 	$primary_color = act_outs_get_option('primary_color');
-
-	wp_enqueue_style('act-outs-fonts', get_template_directory_uri() . '/assets/css/fonts' . $min . '.css');
-
-
-	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/font-awesome' . $min . '.css', '', '4.7.0');
-
-	wp_enqueue_style('slick-theme-css', get_template_directory_uri() . '/assets/css/slick-theme' . $min . '.css', '', 'v2.2.0');
-
-	wp_enqueue_style('slick-css', get_template_directory_uri() . '/assets/css/slick' . $min . '.css', '', 'v1.8.0');
-
-
-
-
-	wp_enqueue_style('act-outs-custom-style', get_template_directory_uri() . '/assets/css/style' . $min . '.css');
 
 	wp_enqueue_style('act-outs-style', get_stylesheet_uri());
 
 
 	wp_enqueue_script('imagesloaded');
 
+	wp_enqueue_script('act-outs-player-js', get_template_directory_uri() . '/assets/js/player.min.js', array(), '', true);
 
-	wp_enqueue_script('act-outs-navigation', get_template_directory_uri() . '/assets/js/navigation' . $min . '.js', array(), '20151215', true);
-	wp_enqueue_script('lightbox', get_template_directory_uri() . '/assets/js/lightbox' . $min . '.js', array(), '1.0.0', true);
 
-	wp_enqueue_script('act-outs-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix' . $min . '.js', array(), '20151215', true);
 
 	if (is_front_page()) {
-
-		wp_enqueue_script('jquery-glider', get_template_directory_uri() . '/assets/js/slick' . $min . '.js', array('jquery'), ' 1.7.4', true);
-		wp_enqueue_script('act-outs-custom-front-page', get_template_directory_uri() . '/assets/js/custom-front-page' . $min . '.js', array('jquery'), '', true);
+		wp_enqueue_style('act-outs-frontpage-style', get_template_directory_uri() . '/assets' . $build . '/css/frontpage' . $min . '.css');
+		wp_enqueue_script('act-outs-frontpage-js', get_template_directory_uri() . '/assets' . $build . '/js/frontpage' . $min . '.js', array('jquery'), '', true);
 	}
 
 	if (is_page('calendar')) {
-		wp_enqueue_style('act-outs-calendar-style', get_template_directory_uri() . '/assets/evo-calendar/evo-calendar' . $min . '.css');
-		wp_enqueue_script('jquery-api', get_template_directory_uri() . '/assets/evo-calendar/jquery-3.5.1' . $min . '.js', array('jquery'), '3.5.1', true);
-		wp_enqueue_script('act-outs-calendar', get_template_directory_uri() . '/assets/evo-calendar/evo-calendar' . $min . '.js', array('jquery'), '1.1.3', true);
-		wp_enqueue_script('act-outs-custom-calendar', get_template_directory_uri() . '/assets/evo-calendar/custom-calendar' . $min . '.js', array('jquery'), '1.0.0', true);
+		wp_enqueue_style('act-outs-calendar-style', get_template_directory_uri() . '/assets' . $build . '/css/calendar' . $min . '.css', '5.6');
+
+		wp_enqueue_script('act-outs-popper-js', get_template_directory_uri() . '/assets/js/popper.min.js', array(), '', true);
+
+		wp_enqueue_script('act-outs-custom-calendar', get_template_directory_uri() . '/assets' . $build . '/js/calendar' . $min . '.js', array(), '', true);
 	}
+	wp_enqueue_script('act-outs-main-js', get_template_directory_uri() . '/assets' . $build . '/js/main' . $min . '.js', array(), '', true);
+
+	wp_enqueue_style('act-outs-custom-style', get_template_directory_uri() . '/assets' . $build . '/css/main' . $min . '.css');
 
 	$enable_counter = act_outs_get_option('disable_single-event_counter');
 	$singleevent_date = act_outs_get_option('singleevent_date');
 	if (($enable_counter == true) && !empty($singleevent_date) && is_front_page()) :
 		// count down js
-		wp_enqueue_script('act-outs-countdown', get_template_directory_uri() . '/assets/js/countdown' . $min . '.js', array('jquery'), '', true);
+		wp_enqueue_script('act-outs-countdown', get_template_directory_uri() . '/assets' . $build . '/js/countdown' . $min . '.js', array('jquery'), '', true);
 	endif;
 
-	wp_enqueue_script('act-outs-custom-js', get_template_directory_uri() . '/assets/js/custom' . $min . '.js', array('jquery'), '20151215', true);
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
 
 	// localize scripts 
-	wp_localize_script('act-outs-custom-js', 'actoutsData', array(
+	wp_localize_script('act-outs-custom-calendar', 'actoutsData', array(
 		'root_url' => get_site_url(),
 		'nonce' => wp_create_nonce('wp_rest')
 	));
 }
 add_action('wp_enqueue_scripts', 'act_outs_scripts');
 
+function my_custom_js()
+{
+	$min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '.min' : '';
+	$build = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' :  '/build';
 
+	wp_enqueue_script('act-outs-preloader', get_template_directory_uri() . '/assets' . $build . '/js/preloader' . $min . '.js', array('jquery'), '1.0.0', true);
+}
+// Add hook for front-end <head></head>
+add_action('wp_head', 'my_custom_js');
 
 /* customize login page */
 function ourheaderurl()
@@ -372,6 +369,15 @@ function remove_wp_version()
 	return '';
 }
 add_filter('the_generator', 'remove_wp_version');
+
+
+add_filter('jpeg_quality', function ($arg) {
+	return 100;
+});
+
+add_filter('wp_editor_set_quality', function ($arg) {
+	return 100;
+});
 
 /**
  * Load init.
