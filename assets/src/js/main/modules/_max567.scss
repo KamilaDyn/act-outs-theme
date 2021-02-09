@@ -158,5 +158,28 @@
         width: 75vw;
     }
 
+    #courses .wrapper,
+    #featured-videos .wrapper {
+        padding: 25px 20px;
+    }
+
+    #courses .section-content,
+    #featured-slider .section-content,
+    #featured-videos .section-content,
+    #message .section-content,
+    #welcome .section-content {
+        margin-top: 0;
+    }
+
+
+    .firstgroup,
+    .secondgroup,
+    .thirdgroup,
+    .fourthgroup {
+
+        .wp-block-embed iframe {
+            height: auto;
+        }
+    }
 
 }

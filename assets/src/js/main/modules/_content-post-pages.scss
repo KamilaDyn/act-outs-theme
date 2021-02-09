@@ -286,3 +286,44 @@ nav.navigation.pagination {
 .error-404.not-found .page-title {
     font-size: 38px;
 }
+
+.group-header {
+    width: 90%;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+#main {
+
+    .firstgroup,
+    .secondgroup,
+    .thirdgroup,
+    .fourthgroup {
+        .entry-header .entry-title {
+            font-weight: bold;
+            color: $darkblue;
+            padding-bottom: 30px;
+            letter-spacing: 2px;
+
+
+        }
+
+
+    }
+}
+
+#main .pagination {
+    text-align: center;
+    background-color: $lightblue;
+    padding: 10px 0;
+
+    a {
+        font-size: 18px;
+    }
+
+
+
+    .current {
+        color: $red;
+    }
+}
