@@ -17,6 +17,17 @@ if (!defined('_S_VERSION')) {
 	define('_S_VERSION', '1.0.0');
 }
 
+
+function number_of_posts_on_archive($query)
+{
+	if (!is_admin() and $query->is_archive) {
+		$query->set('posts_per_page', 4);
+	}
+	return $query;
+}
+
+add_filter('pre_get_posts', 'number_of_posts_on_archive');
+
 if (!function_exists('act_outs_setup')) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -120,6 +131,17 @@ if (!function_exists('act_outs_setup')) :
 	}
 endif;
 add_action('after_setup_theme', 'act_outs_setup');
+
+
+
+
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar()
+{
+	if (!current_user_can('administrator') && !is_admin()) {
+		show_admin_bar(false);
+	}
+}
 
 
 /* ADD CUSTOM RESPONSIVE IMAGE SIZES
@@ -239,7 +261,8 @@ add_filter('get_the_archive_title', function ($title) {
  */
 function act_outs_scripts()
 {
-	$min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '.min' : '';
+	$min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' :  '.min';
+
 	$build = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' :  '/build';
 
 	$primary_color = act_outs_get_option('primary_color');
@@ -290,7 +313,7 @@ add_action('wp_enqueue_scripts', 'act_outs_scripts');
 
 function my_custom_js()
 {
-	$min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '.min' : '';
+	$min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 	$build = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' :  '/build';
 
 	wp_enqueue_script('act-outs-preloader', get_template_directory_uri() . '/assets' . $build . '/js/preloader' . $min . '.js', array('jquery'), '1.0.0', true);
@@ -329,39 +352,36 @@ function redirectSubsToFrontend()
 {
 	$ourCurrentUser = wp_get_current_user();
 
-	if (count($ourCurrentUser->roles) <= 2 and $ourCurrentUser->roles[1] == 'group_first') {
+
+	if (count($ourCurrentUser->roles) == 1 && current_user_can('read_group_5_to_7')) {
 		wp_redirect(esc_url(site_url('/courses/5-7year-olds/')));
 		exit;
 	}
-	if (count($ourCurrentUser->roles) <= 2 and $ourCurrentUser->roles[1] == 'group_second') {
+	if (count($ourCurrentUser->roles) == 1 && current_user_can('read_group_7_to_9')) {
 		wp_redirect(esc_url(site_url('/courses/7-9year-olds/')));
 		exit;
 	}
-	if (count($ourCurrentUser->roles) <= 2 and $ourCurrentUser->roles[1] == 'group_third') {
+	if (count($ourCurrentUser->roles) == 1 &&  current_user_can('read_group_9_to_13')) {
 		wp_redirect(site_url('/courses/9-13year-olds/'));
 		exit;
 	}
-	if (count($ourCurrentUser->roles) <= 2 and $ourCurrentUser->roles[1] == 'group_fourth') {
+	if (count($ourCurrentUser->roles) == 1 &&  current_user_can('read_group_13_to_16')) {
 		wp_redirect(esc_url(site_url('/courses/13-16year-olds/')));
 		exit;
 	}
-	if (count($ourCurrentUser->roles) == 1 and $ourCurrentUser->roles[0] == 'subscriber') {
+	if (count($ourCurrentUser->roles) == 1 &&  current_user_can('subscriber')) {
 		wp_redirect(esc_url(site_url('/')));
+		exit;
+	}
+
+	// don't display dashbord for no admin
+	if (is_admin() && !current_user_can('administrator') && !(defined('DOING_AJAX') && DOING_AJAX)) {
+		wp_safe_redirect(home_url());
 		exit;
 	}
 }
 add_action('admin_init', 'redirectSubsToFrontend');
 
-// hide admin bar 
-
-function noSubsAdminBar()
-{
-	$currentUser = wp_get_current_user();
-	if (count($currentUser->roles) <= 2 and  ($currentUser->roles[0] == 'subscriber' or $currentUser->roles[1] == 'group_first' or $currentUser->roles[1] == 'group_second' or $currentUser->roles[1] == 'group_third' or  $currentUser->roles[1] == 'group_fourth')) {
-		show_admin_bar(false);
-	}
-}
-add_action('admin_init', 'noSubsAdminBar');
 
 
 function remove_wp_version()
