@@ -12,6 +12,9 @@ get_header(); ?>
 <div class="wrapper page-section">
     <div id="primary" class="content-area archive-group">
         <main id="main" class="site-main blog-posts-wrapper" role="main">
+            <?php if (current_user_can('read_group_5_to_7')) :
+                get_template_part('template-parts/content-header-group', get_post_format());
+            endif; ?>
             <div class="row flex">
                 <?php if (current_user_can('read_group_5_to_7')) : ?>
                     <?php
@@ -47,7 +50,6 @@ get_header(); ?>
                                 get_template_part('template-parts/content', 'notlogged');
 
                             endwhile;
-                            // reset post data (important!)
                             wp_reset_postdata();
                             ?>
 
@@ -57,14 +59,18 @@ get_header(); ?>
 
             </div>
             <?php
-            /**
-             * Hook - act_outs_pagination_action.
-             *
-             * @hooked act_outs_pagination 
-             */
-            do_action('act_outs_pagination_action');
-            // the_posts_navigation(); 
-            ?>
+            if (current_user_can('read_group_5_to_7') &&  wp_count_posts('firstgroup')->publish > 4) : ?>
+                <div class="pagination">
+                    <?php
+                    /**
+                     * Hook - act_outs_pagination_action.
+                     *
+                     * @hooked act_outs_pagination 
+                     */
+
+                    echo paginate_links(); ?>
+                </div>
+            <?php endif; ?>
         </main><!-- #main -->
     </div><!-- #primary -->
 

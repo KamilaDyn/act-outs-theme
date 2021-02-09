@@ -12,6 +12,9 @@ get_header(); ?>
 <div class="wrapper page-section">
     <div id="primary" class="content-area archive-group">
         <main id="main" class="site-main blog-posts-wrapper" role="main">
+            <?php if (current_user_can('read_group_9_to_13')) :
+                get_template_part('template-parts/content-header-group', get_post_format());
+            endif; ?>
             <div class="row flex">
                 <?php if (current_user_can('read_group_9_to_13')) : ?>
                     <?php
@@ -54,15 +57,18 @@ get_header(); ?>
                     </div>
                 <?php endif; ?>
             </div>
-            <?php
-            /**
-             * Hook - act_outs_pagination_action.
-             *
-             * @hooked act_outs_pagination 
-             */
-            do_action('act_outs_pagination_action');
-            // the_posts_navigation(); 
-            ?>
+            <?php if (current_user_can('read_group_9_to_13') &&   wp_count_posts('thirdgroup')->publish > 4) : ?>
+                <div class="pagination">
+                    <?php
+                    /**
+                     * Hook - act_outs_pagination_action.
+                     *
+                     * @hooked act_outs_pagination 
+                     */
+
+                    echo paginate_links(); ?>
+                </div>
+            <?php endif; ?>
         </main><!-- #main -->
     </div><!-- #primary -->
 
