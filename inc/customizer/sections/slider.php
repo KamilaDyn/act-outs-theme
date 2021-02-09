@@ -12,7 +12,7 @@ $default = act_outs_get_default_theme_options();
 $wp_customize->add_section(
     'section_featured_slider',
     array(
-        'title'      => __('Featured Slider Section', 'act-outs'),
+        'title'      => __('Holiday Programs Section', 'act-outs'),
         'priority'   => 10,
         'capability' => 'edit_theme_options',
         'panel'      => 'home_page_panel',
@@ -39,25 +39,6 @@ $wp_customize->add_control(new Act_Outs_Switch_Control(
 ));
 
 
-$wp_customize->add_setting(
-    'theme_options[disable_white_overlay]',
-    array(
-        'default'           => $default['disable_white_overlay'],
-        'type'              => 'theme_mod',
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'act_outs_sanitize_switch_control',
-    )
-);
-$wp_customize->add_control(new Act_Outs_Switch_Control(
-    $wp_customize,
-    'theme_options[disable_white_overlay]',
-    array(
-        'label'     => __('Disable White overlay and enable image overlay', 'act-outs'),
-        'section'                => 'section_featured_slider',
-        'on_off_label'         => act_outs_switch_options(),
-        'active_callback' => 'act_outs_slider_active',
-    )
-));
 
 // Setting  Slider Category.
 $wp_customize->add_setting(

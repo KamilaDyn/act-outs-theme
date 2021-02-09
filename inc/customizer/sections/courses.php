@@ -12,7 +12,7 @@ $default = act_outs_get_default_theme_options();
 $wp_customize->add_section(
     'section_home_courses',
     array(
-        'title'      => __('Course  Posts ', 'act-outs'),
+        'title'      => __('Courses  Section ', 'act-outs'),
         'priority'   => 20,
         'capability' => 'edit_theme_options',
         'panel'      => 'home_page_panel',

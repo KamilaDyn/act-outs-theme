@@ -458,7 +458,7 @@ if (!function_exists('act_outs_pagination')) :
     /**
      * blog/archive pagination.
      *
-     * @return pagination type value
+     * @return pagination type value 
      */
     function act_outs_pagination()
     {

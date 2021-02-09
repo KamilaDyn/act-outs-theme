@@ -12,7 +12,7 @@ $default = act_outs_get_default_theme_options();
 $wp_customize->add_section(
     'section_welcome',
     array(
-        'title'      => __('Welcome video Section', 'act-outs'),
+        'title'      => __('Welcome Section', 'act-outs'),
         'priority'   => 10,
         'capability' => 'edit_theme_options',
         'panel'      => 'home_page_panel',
